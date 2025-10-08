@@ -1,82 +1,82 @@
 body {
-    background: linear-gradient(120deg, #2874f0, #6a11cb);
-    font-family: 'Poppins', sans-serif;
-    color: #fff;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-  }
+      background: linear-gradient(120deg, #2874f0, #6a11cb);
+      font-family: 'Poppins', sans-serif;
+      color: #fff;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
 
-  .contact-container {
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    border-radius: 16px;
-    padding: 40px;
-    width: 90%;
-    max-width: 500px;
-    text-align: center;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
-    animation: fadeIn 1s ease-in-out;
-  }
+    .contact-container {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      border-radius: 16px;
+      padding: 40px;
+      width: 90%;
+      max-width: 500px;
+      text-align: center;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+      animation: fadeIn 1s ease-in-out;
+    }
 
-  .contact-container h2 {
-    font-size: 28px;
-    margin-bottom: 10px;
-  }
+    .contact-container h2 {
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
 
-  .contact-container p {
-    font-size: 15px;
-    margin-bottom: 25px;
-    color: #f0f0f0;
-  }
+    .contact-container p {
+      font-size: 15px;
+      margin-bottom: 25px;
+      color: #f0f0f0;
+    }
 
-  .contact-container input,
-  .contact-container textarea {
-    width: 100%;
-    padding: 12px;
-    margin-bottom: 15px;
-    border: none;
-    border-radius: 8px;
-    outline: none;
-    font-size: 15px;
-    color: #333;
-  }
+    .contact-container input,
+    .contact-container textarea {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 15px;
+      border: none;
+      border-radius: 8px;
+      outline: none;
+      font-size: 15px;
+      color: #333;
+    }
 
-  .contact-container button {
-    background-color: #fff;
-    color: #2874f0;
-    border: none;
-    padding: 12px 25px;
-    font-size: 16px;
-    border-radius: 25px;
-    cursor: pointer;
-    transition: 0.3s;
-    font-weight: 600;
-  }
+    .contact-container button {
+      background-color: #fff;
+      color: #2874f0;
+      border: none;
+      padding: 12px 25px;
+      font-size: 16px;
+      border-radius: 25px;
+      cursor: pointer;
+      transition: 0.3s;
+      font-weight: 600;
+    }
 
-  .contact-container button:hover {
-    background-color: #2874f0;
-    color: #fff;
-    transform: scale(1.05);
-  }
+    .contact-container button:hover {
+      background-color: #2874f0;
+      color: #fff;
+      transform: scale(1.05);
+    }
 
-  .back-link {
-    display: block;
-    margin-top: 20px;
-    text-decoration: none;
-    color: #fff;
-    font-weight: 500;
-    transition: 0.3s;
-  }
+    .back-link {
+      display: block;
+      margin-top: 20px;
+      text-decoration: none;
+      color: #fff;
+      font-weight: 500;
+      transition: 0.3s;
+    }
 
-  .back-link:hover {
-    color: #ffeb3b;
-  }
+    .back-link:hover {
+      color: #ffeb3b;
+    }
 
-  @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }

@@ -1,4 +1,3 @@
-<script>
 const sections = document.querySelectorAll("section");
 const navLinks = document.querySelectorAll(".nav-links a");
 
@@ -185,5 +184,3 @@ window.addEventListener("scroll", () => {
   } catch (e){}
 
 })(window, document);
-
-</script>

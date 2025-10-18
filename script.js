@@ -1,4 +1,4 @@
-<!--const sections = document.querySelectorAll("section");
+const sections = document.querySelectorAll("section");
 const navLinks = document.querySelectorAll(".nav-links a");
 
 window.addEventListener("scroll", () => {
@@ -183,4 +183,4 @@ window.addEventListener("scroll", () => {
     console.log('This site uses scripts to discourage casual inspection. If you are a developer working on it, please disable them in the console or contact site owner.');
   } catch (e){}
 
-})(window, document); -->
+})(window, document);

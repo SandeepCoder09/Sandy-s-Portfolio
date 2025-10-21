@@ -3,34 +3,59 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Get in Touch | Sandy's Portfolio</title>
-  <link rel="stylesheet" href="styles.css">
+  <title>Get in Touch | Sandy</title>
+  <link rel="stylesheet" href="getintouch.css">
+  <link rel="shortcut icon" href="favicon.png" type="image/png">
 </head>
 <body>
-  
-  <form action="https://formsubmit.co/sr07572107@gmail.com" method="POST">
-<!-- Custom email subject -->
-<input type="hidden" name="_subject" value="New Message from Portfolio Website!">
 
-<!-- Redirect after submit -->
-<input type="hidden" name="_next" value="https://sandeepcoder09.github.io/Sandy-s-Portfolio/thankyou.html">
+  <header class="navbar">
+    <div class="logo">SANDY</div>
+    <nav class="nav">
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#projects">Projects</a></li>
+        <li><a href="index.html#services">Services</a></li>
+      </ul>
+    </nav>
+  </header>
 
-<!-- Disable Captcha -->
-<input type="hidden" name="_captcha" value="false">
-</form>
-      
-  <div class="contact-container">
-    <h2>Get in Touch</h2>
-    <p>I’d love to hear from you! Fill out the form below and I’ll get back to you soon.</p>
+  <section class="contact-page">
+    <div class="form-container">
+      <h2>Let’s Connect</h2>
+      <p>Have a project in mind or just want to say hello? Fill out the form below!</p>
 
-    <form>
-      <input type="text" placeholder="Your Name" required>
-      <input type="email" placeholder="Your Email" required>
-      <textarea placeholder="Your Message" rows="5" required></textarea>
-      <button type="submit">Send Message</button>
-    </form>
+      <form action="https://formspree.io/f/your_form_id" method="POST" class="contact-form">
+        <div class="form-group">
+          <label for="name">Full Name</label>
+          <input type="text" id="name" name="name" placeholder="Your Name" required>
+        </div>
 
-    <a href="index.html" class="back-link">← Back to Portfolio</a>
-  </div>
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="_replyto" placeholder="you@example.com" required>
+        </div>
+
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" placeholder="Write your message..." required></textarea>
+        </div>
+
+        <button type="submit" class="btn-primary">Send Message</button>
+      </form>
+
+      <div class="socials">
+        <a href="https://wa.me/+918756454282" target="_blank">WhatsApp</a>
+        <a href="https://www.instagram.com/r_r_rahul_09/" target="_blank">Instagram</a>
+        <a href="https://www.facebook.com/share/1JHM8LHJDG/" target="_blank">Facebook</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 Sandeep Gautam | Designed with ❤️ by Sandy</p>
+  </footer>
+
 </body>
 </html>

@@ -409,8 +409,11 @@ footer {
   transition: all 0.3s ease;
   box-shadow: 0 0 15px rgba(229, 46, 113, 0.6);
   text-transform: uppercase;
-  display: flex;
-  justify-content: center;
+}
+
+.donate-btn a {
+  text-decoration: none;
+  color: white;
 }
 
 .donate-btn:hover {

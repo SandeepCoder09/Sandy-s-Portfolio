@@ -112,7 +112,7 @@ body {
   justify-content: center;
   gap: 5px;
   margin-top: 25px;
-  border-radius: 50%;
+  /* border-radius: 50%; */
   filter: brightness(0) invert(1);
 }
 
@@ -124,15 +124,14 @@ body {
   text-decoration: none;
   /* color: white; */
   /* background: rgba(255, 255, 255, 0.2); */
-  padding: 10px 20px;
+  padding: 10px 10px;
   border-radius: 50%;
   transition: 0.3s;
 }
-.socials a:hover {
+/* .socials a:hover {
   background-color: black;
-  filter: invert(1%);
   /* color: #0072ff; */
-}
+} */
 
 /* FOOTER */
 footer {

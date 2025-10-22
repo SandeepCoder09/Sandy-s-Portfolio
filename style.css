@@ -410,7 +410,8 @@ footer {
   box-shadow: 0 0 15px rgba(229, 46, 113, 0.6);
   text-transform: uppercase;
   position: absolute;
-  right: 50%;
+  right: 75%;
+  bottom: 20%;
 }
 
 .donate-btn a {

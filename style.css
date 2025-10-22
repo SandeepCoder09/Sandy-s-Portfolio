@@ -11,8 +11,7 @@ html {
 }
 
 body {
-  /* background: #0b0e1a; /* Dark purple-blue gradient theme */ */
-  background-color: whie;
+  background: #0b0e1a; /* Dark purple-blue gradient theme */
   color: #ffffff;
   overflow-x: hidden;
 }
@@ -20,7 +19,7 @@ body {
 /* ================= NAVBAR ================= */
 .navbar {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   align-items: center;
   padding: 20px 8%;
   background: rgba(20, 25, 40, 0.6);
@@ -40,7 +39,7 @@ body {
 .nav-links {
   list-style: none;
   display: flex;
-  gap: 35px;
+  gap: 25px;
 }
 
 .nav-links li a {

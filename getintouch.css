@@ -110,14 +110,14 @@ body {
 .socials {
   display: flex;
   justify-content: center;
-  gap: 20px;
+  gap: 5px;
   margin-top: 25px;
   border-radius: 50%;
   filter: brightness(0) invert(1);
 }
 
 .socials img {
-  height: 30px;
+  height: 20px;
 }
 
 .socials a {
@@ -128,10 +128,10 @@ body {
   border-radius: 50%;
   transition: 0.3s;
 }
-/* .socials a:hover {
-  background: white;
+.socials a:hover {
+  background: gray;
   color: #0072ff;
-} */
+}
 
 /* FOOTER */
 footer {

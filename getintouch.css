@@ -128,8 +128,8 @@ body {
   border-radius: 50%;
   transition: 0.3s;
 }
-.socials a:hover {
-  background: gray;
+.socials img:hover {
+  background: black;
   color: #0072ff;
 }
 

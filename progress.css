@@ -1,0 +1,12 @@
+/* ===== PAGE LOAD PROGRESS BAR ===== */
+#progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 4px;
+  background: linear-gradient(90deg, #ff8a00, #e52e71);
+  box-shadow: 0 0 10px rgba(229, 46, 113, 0.6);
+  z-index: 9999;
+  transition: width 0.4s ease;
+}

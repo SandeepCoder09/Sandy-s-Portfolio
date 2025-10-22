@@ -112,7 +112,13 @@ body {
   justify-content: center;
   gap: 20px;
   margin-top: 25px;
+  border-radius: 50%;
 }
+
+.socials img {
+  height: 30px;
+}
+
 .socials a {
   text-decoration: none;
   color: white;

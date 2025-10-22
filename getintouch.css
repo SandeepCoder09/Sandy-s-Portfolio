@@ -136,9 +136,9 @@ body {
 /* FOOTER */
 footer {
   text-align: center;
-  padding: 25px;
+  padding: 30px;
   background: rgba(0, 0, 0, 0.3);
-  position: relative;
+  position: absolute;
   bottom: 0;
   width: 100%;
 }

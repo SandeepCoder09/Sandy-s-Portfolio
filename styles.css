@@ -122,16 +122,16 @@ body {
 
 .socials a {
   text-decoration: none;
-  color: white;
-  background: rgba(255, 255, 255, 0.2);
+  /* color: white; */
+  /* background: rgba(255, 255, 255, 0.2); */
   padding: 10px 20px;
-  border-radius: 30px;
+  border-radius: 50%;
   transition: 0.3s;
 }
-.socials a:hover {
+/* .socials a:hover {
   background: white;
   color: #0072ff;
-}
+} */
 
 /* FOOTER */
 footer {

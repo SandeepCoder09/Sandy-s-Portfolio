@@ -130,6 +130,7 @@ body {
 }
 .socials img:hover {
   background-color: black;
+  filter: invert(1%);
   /* color: #0072ff; */
 }
 

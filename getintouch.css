@@ -153,3 +153,30 @@ footer {
     gap: 10px;
   }
 }
+
+/* ===== DONATE BUTTON STYLING ===== */
+.donate-btn {
+  background: linear-gradient(90deg, #ff8a00, #e52e71);
+  color: #fff;
+  padding: 12px 28px;
+  border: none;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 15px rgba(229, 46, 113, 0.6);
+  text-transform: uppercase;
+}
+
+.donate-btn:hover {
+  transform: scale(1.05);
+  background: linear-gradient(90deg, #e52e71, #ff8a00);
+  box-shadow: 0 0 25px rgba(255, 138, 0, 0.8);
+}
+
+.donate-btn:active {
+  transform: scale(0.97);
+  box-shadow: 0 0 10px rgba(255, 138, 0, 0.6);
+}

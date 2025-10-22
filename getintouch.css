@@ -120,7 +120,7 @@ body {
   height: 20px;
 }
 
-.socials img {
+.socials a {
   text-decoration: none;
   /* color: white; */
   /* background: rgba(255, 255, 255, 0.2); */
@@ -128,7 +128,7 @@ body {
   border-radius: 50%;
   transition: 0.3s;
 }
-.socials img:hover {
+.socials a:hover {
   background-color: black;
   filter: invert(1%);
   /* color: #0072ff; */

@@ -1,9 +1,9 @@
-// Registration
 document.addEventListener("DOMContentLoaded", () => {
   const registerForm = document.getElementById("registerForm");
   const loginForm = document.getElementById("loginForm");
+  const forgotForm = document.getElementById("forgotForm");
 
-  // Register new user
+  // Register
   if (registerForm) {
     registerForm.addEventListener("submit", (e) => {
       e.preventDefault();
@@ -18,13 +18,12 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Login existing user
+  // Login
   if (loginForm) {
     loginForm.addEventListener("submit", (e) => {
       e.preventDefault();
       const email = document.getElementById("loginEmail").value;
       const password = document.getElementById("loginPassword").value;
-
       const storedUser = JSON.parse(localStorage.getItem("user"));
 
       if (storedUser && storedUser.email === email && storedUser.password === password) {
@@ -33,6 +32,25 @@ document.addEventListener("DOMContentLoaded", () => {
         window.location.href = "donate.html";
       } else {
         alert("Invalid email or password!");
+      }
+    });
+  }
+
+  // Forgot password
+  if (forgotForm) {
+    forgotForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const email = document.getElementById("forgotEmail").value;
+      const newPassword = document.getElementById("newPassword").value;
+      const storedUser = JSON.parse(localStorage.getItem("user"));
+
+      if (storedUser && storedUser.email === email) {
+        storedUser.password = newPassword;
+        localStorage.setItem("user", JSON.stringify(storedUser));
+        alert("Password updated successfully!");
+        window.location.href = "login.html";
+      } else {
+        alert("Email not found. Please register first.");
       }
     });
   }

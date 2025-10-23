@@ -1,30 +1,67 @@
-document.getElementById("donateBtn").addEventListener("click", function (e) {
-  e.preventDefault();
+// Theme toggle logic
+    const themeSwitch = document.getElementById("theme-switch");
+    if (localStorage.getItem("theme") === "dark") {
+      document.body.classList.add("dark-mode");
+      themeSwitch.checked = true;
+    }
+    themeSwitch.addEventListener("change", () => {
+      if (themeSwitch.checked) {
+        document.body.classList.add("dark-mode");
+        localStorage.setItem("theme", "dark");
+      } else {
+        document.body.classList.remove("dark-mode");
+        localStorage.setItem("theme", "light");
+      }
+    });
 
-  const amount = document.getElementById("amount").value;
-  if (!amount || amount < 1) {
-    alert("Please enter a valid amount!");
-    return;
-  }
+    // Amount button logic
+    const amountButtons = document.querySelectorAll(".amount-btn");
+    const customInput = document.querySelector(".custom-input");
+    const customField = document.getElementById("custom-amount");
+    let selectedAmount = 0;
 
-  const options = {
-    key: "rzp_live_RSVszqa9cSv5dY",
-    amount: amount * 100, // amount in paise
-    currency: "INR",
-    name: "Sandy Portfolio",
-    description: "Donation Support",
-    image: "favicon.png",
-    theme: { color: "#00c6ff" },
-    handler: function (response) {
-      alert("🎉 Thank you for your support!\nPayment ID: " + response.razorpay_payment_id);
-    },
-    prefill: {
-      name: "Supporter",
-      email: "example@gmail.com",
-      contact: "9999999999",
-    },
-  };
+    amountButtons.forEach(btn => {
+      btn.addEventListener("click", () => {
+        amountButtons.forEach(b => b.classList.remove("active"));
+        btn.classList.add("active");
+        if (btn.classList.contains("custom")) {
+          customInput.style.display = "block";
+          selectedAmount = 0;
+        } else {
+          customInput.style.display = "none";
+          selectedAmount = btn.dataset.amount;
+        }
+      });
+    });
 
-  const rzp = new Razorpay(options);
-  rzp.open();
-});
+    // Razorpay integration
+    document.getElementById("donation-form").addEventListener("submit", function(e) {
+      e.preventDefault();
+      const amount = selectedAmount || customField.value;
+      if (!amount) {
+        alert("Please select or enter a donation amount.");
+        return;
+      }
+
+      const options = {
+        key: "rzp_live_RSVszqa9cSv5dY",
+        amount: amount * 100,
+        currency: "INR",
+        name: "Sandy’s Portfolio",
+        description: "Donation Support",
+        image: "09group.png",
+        handler: function(response) {
+          alert("Thank you for your donation! Payment ID: " + response.razorpay_payment_id);
+        },
+        prefill: {
+          name: document.getElementById("donor-name").value,
+          email: document.getElementById("donor-email").value,
+        },
+        theme: { color: "#007bff" },
+      };
+      const rzp = new Razorpay(options);
+      rzp.open();
+    });
+handler: function(response) {
+  window.location.href = "success.html";
+}

@@ -10,11 +10,6 @@
 <script src="progress.js" defer></script>
 </head>
 <body>
-<script>
-  if (localStorage.getItem("loggedIn") !== "true") {
-    window.location.href = "login.html";
-  }
-</script>
   <header class="navbar">
     <div class="logo">SANDY</div>
     <nav>
@@ -38,11 +33,7 @@
     </div>
   </section>
 
-  <footer>
-    <p>© 2025 Sandeep Gautam | All Rights Reserved</p>
-  </footer>
-
-  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
   <script src="donate.js"></script>
 <button id="logoutBtn">Logout</button>
 
@@ -56,5 +47,9 @@
     window.location.href = "login.html";
   });
 </script>
+
+  <footer>
+    <p>© 2025 Sandeep Gautam | All Rights Reserved</p>
+  </footer>
 </body>
 </html>

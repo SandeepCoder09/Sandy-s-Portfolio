@@ -16,6 +16,76 @@ body {
   overflow-x: hidden;
 }
 
+/* =============================
+   THEME TOGGLE STYLES
+   ============================= */
+.theme-toggle {
+  position: fixed;
+  top: 20px;
+  right: 25px;
+  z-index: 9999;
+}
+
+.theme-label {
+  background: var(--card-bg);
+  border: 2px solid var(--border-color);
+  width: 60px;
+  height: 30px;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  padding: 0 8px;
+  transition: background 0.3s ease, border 0.3s ease;
+}
+
+.theme-label .sun,
+.theme-label .moon {
+  font-size: 18px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+#theme-switch {
+  display: none;
+}
+
+/* Light Theme (default) */
+:root {
+  --bg-color: #f8f9fa;
+  --text-color: #111;
+  --accent-color: #007bff;
+  --card-bg: #ffffff;
+  --border-color: #cccccc;
+}
+
+/* Dark Theme */
+body.dark-mode {
+  --bg-color: #0b1120;
+  --text-color: #f8f9fa;
+  --accent-color: #00bcd4;
+  --card-bg: #141b2d;
+  --border-color: #2b344b;
+}
+
+/* Apply theme variables */
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+.navbar, .hero, .about, .projects, .services, .contact, footer {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+a, h1, h2, h3, h4, p {
+  color: var(--text-color);
+  transition: color 0.4s ease;
+}
+
 /* ================= NAVBAR ================= */
 .navbar {
   display: flex;

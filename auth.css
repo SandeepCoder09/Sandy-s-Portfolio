@@ -89,3 +89,32 @@ a:hover {
     padding: 30px 20px;
   }
 }
+
+/* =========================
+   Logout Button Styling
+   ========================= */
+.logout-btn {
+  display: inline-block;
+  background: linear-gradient(135deg, #ff4e50, #f9d423);
+  color: #fff;
+  padding: 12px 30px;
+  border: none;
+  border-radius: 50px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.logout-btn:hover {
+  background: linear-gradient(135deg, #f9d423, #ff4e50);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.logout-btn:active {
+  transform: translateY(1px);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}

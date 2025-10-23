@@ -10,6 +10,11 @@
 <script src="progress.js" defer></script>
 </head>
 <body>
+<script>
+  if (localStorage.getItem("loggedIn") !== "true") {
+    window.location.href = "login.html";
+  }
+</script>
   <header class="navbar">
     <div class="logo">SANDY</div>
     <nav>

@@ -3,57 +3,136 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Donate | Sandy</title>
+  <title>Donate | Sandy’s Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="donate.css" />
-  <link rel="stylesheet" href="auth.css" />
-  <link rel="shortcut icon" href="favicon.png" type="image/png" />
-<link rel="stylesheet" href="progress.css">
-<script src="progress.js" defer></script>
 </head>
 <body>
-  <header class="navbar">
-    <div class="logo">SANDY</div>
+  <header>
+    <div class="logo">
+      <img src="09group.png" alt="Sandy Logo" />
+    </div>
     <nav>
-      <ul class="nav-links">
+      <ul>
         <li><a href="index.html">Home</a></li>
-        <li><a href="getintouch.html">Contact</a></li>
+        <li><a href="donate.html" class="active">Donate</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="login.html">Logout</a></li>
       </ul>
     </nav>
+    <!-- Theme Toggle -->
+    <div class="theme-toggle">
+      <input type="checkbox" id="theme-switch" />
+      <label for="theme-switch" class="theme-label">
+        <span class="sun">☀️</span>
+        <span class="moon">🌙</span>
+      </label>
+    </div>
   </header>
 
-  <section class="donate-section">
-    <div class="donate-container">
-      <h1>Support My Work ❤️</h1>
-      <p>Your donation helps me keep creating amazing web experiences!</p>
+  <main class="donate-section">
+    <div class="donate-card">
+      <h1>Support My Work 💖</h1>
+      <p class="donate-subtext">
+        Your donation helps me keep creating amazing projects and open-source tools.
+      </p>
 
-      <div class="donate-box">
-        <label for="amount">Enter Donation Amount (INR)</label>
-        <input type="number" id="amount" placeholder="Enter amount (e.g. 100)" min="1" />
-        <button id="donateBtn" class="btn-primary">Donate Now</button>
-      </div>
+      <form id="donation-form">
+        <h3>Select Amount</h3>
+        <div class="amount-options">
+          <button type="button" class="amount-btn" data-amount="100">₹100</button>
+          <button type="button" class="amount-btn" data-amount="500">₹500</button>
+          <button type="button" class="amount-btn" data-amount="1000">₹1000</button>
+          <button type="button" class="amount-btn custom">Custom</button>
+        </div>
+
+        <div class="custom-input" style="display: none;">
+          <input type="number" id="custom-amount" placeholder="Enter custom amount (₹)" />
+        </div>
+
+        <h3>Your Details</h3>
+        <input type="text" id="donor-name" placeholder="Full Name" required />
+        <input type="email" id="donor-email" placeholder="Email Address" required />
+        <textarea id="donor-message" placeholder="Write a message (optional)"></textarea>
+
+        <button type="submit" class="donate-btn">Donate Now 💳</button>
+      </form>
     </div>
-  </section>
+  </main>
 
-<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
-  <script src="donate.js"></script>
-<button class="logout-btn" id="logoutBtn">Logout</button>
+  <footer>
+    <p>&copy; 2025 Sandy’s Portfolio | All Rights Reserved</p>
+  </footer>
 
-<script>
-  if (localStorage.getItem("loggedIn") !== "true") {
-    window.location.href = "login.html";
-  }
-  document.getElementById("logoutBtn").addEventListener("click", () => {
-    localStorage.removeItem("loggedIn");
-    alert("Logged out successfully!");
-    window.location.href = "login.html";
-  });
+  <script>
+    // Theme toggle logic
+    const themeSwitch = document.getElementById("theme-switch");
+    if (localStorage.getItem("theme") === "dark") {
+      document.body.classList.add("dark-mode");
+      themeSwitch.checked = true;
+    }
+    themeSwitch.addEventListener("change", () => {
+      if (themeSwitch.checked) {
+        document.body.classList.add("dark-mode");
+        localStorage.setItem("theme", "dark");
+      } else {
+        document.body.classList.remove("dark-mode");
+        localStorage.setItem("theme", "light");
+      }
+    });
+
+    // Amount button logic
+    const amountButtons = document.querySelectorAll(".amount-btn");
+    const customInput = document.querySelector(".custom-input");
+    const customField = document.getElementById("custom-amount");
+    let selectedAmount = 0;
+
+    amountButtons.forEach(btn => {
+      btn.addEventListener("click", () => {
+        amountButtons.forEach(b => b.classList.remove("active"));
+        btn.classList.add("active");
+        if (btn.classList.contains("custom")) {
+          customInput.style.display = "block";
+          selectedAmount = 0;
+        } else {
+          customInput.style.display = "none";
+          selectedAmount = btn.dataset.amount;
+        }
+      });
+    });
+
+    // Razorpay integration
+    document.getElementById("donation-form").addEventListener("submit", function(e) {
+      e.preventDefault();
+      const amount = selectedAmount || customField.value;
+      if (!amount) {
+        alert("Please select or enter a donation amount.");
+        return;
+      }
+
+      const options = {
+        key: "rzp_live_RSVszqa9cSv5dY",
+        amount: amount * 100,
+        currency: "INR",
+        name: "Sandy’s Portfolio",
+        description: "Donation Support",
+        image: "09group.png",
+        handler: function(response) {
+          alert("Thank you for your donation! Payment ID: " + response.razorpay_payment_id);
+        },
+        prefill: {
+          name: document.getElementById("donor-name").value,
+          email: document.getElementById("donor-email").value,
+        },
+        theme: { color: "#007bff" },
+      };
+      const rzp = new Razorpay(options);
+      rzp.open();
+    });
 handler: function(response) {
   window.location.href = "success.html";
 }
-</script>
-
-  <footer>
-    <p>© 2025 Sandeep Gautam | All Rights Reserved</p>
-  </footer>
+  </script>
+  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
 </body>
 </html>

@@ -122,8 +122,8 @@ body {
 
 .socials a {
   text-decoration: none;
-  /* color: white; */
-  /* background: rgba(255, 255, 255, 0.2); */
+  color: white;
+  background: rgba(255, 255, 255, 0.2);
   padding: 10px 10px;
   border-radius: 50%;
   transition: 0.3s;

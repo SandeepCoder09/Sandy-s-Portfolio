@@ -1,67 +1,55 @@
-// Theme toggle logic
-    const themeSwitch = document.getElementById("theme-switch");
-    if (localStorage.getItem("theme") === "dark") {
-      document.body.classList.add("dark-mode");
-      themeSwitch.checked = true;
+document.addEventListener("DOMContentLoaded", () => {
+  const amountButtons = document.querySelectorAll(".amount");
+  const customInput = document.getElementById("customAmount");
+  const donateForm = document.getElementById("donateForm");
+
+  let selectedAmount = 0;
+
+  amountButtons.forEach(btn => {
+    btn.addEventListener("click", () => {
+      selectedAmount = parseInt(btn.dataset.amount);
+      amountButtons.forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+      customInput.value = "";
+    });
+  });
+
+  customInput.addEventListener("input", () => {
+    selectedAmount = parseInt(customInput.value || 0);
+    amountButtons.forEach(b => b.classList.remove("active"));
+  });
+
+  donateForm.addEventListener("submit", e => {
+    e.preventDefault();
+
+    const name = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+
+    if (selectedAmount <= 0) {
+      alert("Please enter or select a valid amount!");
+      return;
     }
-    themeSwitch.addEventListener("change", () => {
-      if (themeSwitch.checked) {
-        document.body.classList.add("dark-mode");
-        localStorage.setItem("theme", "dark");
-      } else {
-        document.body.classList.remove("dark-mode");
-        localStorage.setItem("theme", "light");
+
+    const options = {
+      key: "rzp_live_RSVszqa9cSv5dY",
+      amount: selectedAmount * 100, // amount in paise
+      currency: "INR",
+      name: "Sandy's Portfolio",
+      description: "Support my work 💖",
+      image: "https://sandeepcoder09.github.io/Sandy-s-Portfolio/logo.png",
+      handler: function (response) {
+        alert(`🎉 Thank you for your donation!\nPayment ID: ${response.razorpay_payment_id}`);
+      },
+      prefill: {
+        name: name,
+        email: email
+      },
+      theme: {
+        color: "#007bff"
       }
-    });
+    };
 
-    // Amount button logic
-    const amountButtons = document.querySelectorAll(".amount-btn");
-    const customInput = document.querySelector(".custom-input");
-    const customField = document.getElementById("custom-amount");
-    let selectedAmount = 0;
-
-    amountButtons.forEach(btn => {
-      btn.addEventListener("click", () => {
-        amountButtons.forEach(b => b.classList.remove("active"));
-        btn.classList.add("active");
-        if (btn.classList.contains("custom")) {
-          customInput.style.display = "block";
-          selectedAmount = 0;
-        } else {
-          customInput.style.display = "none";
-          selectedAmount = btn.dataset.amount;
-        }
-      });
-    });
-
-    // Razorpay integration
-    document.getElementById("donation-form").addEventListener("submit", function(e) {
-      e.preventDefault();
-      const amount = selectedAmount || customField.value;
-      if (!amount) {
-        alert("Please select or enter a donation amount.");
-        return;
-      }
-
-      const options = {
-        key: "rzp_live_RSVszqa9cSv5dY",
-        amount: amount * 100,
-        currency: "INR",
-        name: "Sandy’s Portfolio",
-        description: "Donation Support",
-        image: "09group.png",
-        handler: function(response) {
-          alert("Thank you for your donation! Payment ID: " + response.razorpay_payment_id);
-        },
-        prefill: {
-          name: document.getElementById("donor-name").value,
-          email: document.getElementById("donor-email").value,
-        },
-        theme: { color: "#007bff" },
-      };
-      const rzp = new Razorpay(options);
-      rzp.open();
-    });
-handler: function(response) {
-  window.location.href = "success.html";
-}
+    const rzp = new Razorpay(options);
+    rzp.open();
+  });
+});

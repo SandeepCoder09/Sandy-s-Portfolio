@@ -1,9 +1,12 @@
 document.addEventListener("DOMContentLoaded", () => {
   const registerForm = document.getElementById("registerForm");
   const loginForm = document.getElementById("loginForm");
-  const forgotForm = document.getElementById("forgotForm");
+  const forgotLink = document.getElementById("forgotLink");
+  const forgotPopup = document.getElementById("forgotPopup");
+  const closePopup = document.getElementById("closePopup");
+  const resetBtn = document.getElementById("resetBtn");
 
-  // Register
+  // Registration
   if (registerForm) {
     registerForm.addEventListener("submit", (e) => {
       e.preventDefault();
@@ -11,10 +14,12 @@ document.addEventListener("DOMContentLoaded", () => {
       const email = document.getElementById("email").value;
       const password = document.getElementById("password").value;
 
-      const user = { name, email, password };
-      localStorage.setItem("user", JSON.stringify(user));
-      alert("Registration successful!");
-      window.location.href = "login.html";
+      if (name && email && password) {
+        localStorage.setItem("user", JSON.stringify({ name, email, password }));
+        showSuccess("Registration Successful!", "donate.html");
+      } else {
+        alert("Please fill all fields!");
+      }
     });
   }
 
@@ -27,31 +32,63 @@ document.addEventListener("DOMContentLoaded", () => {
       const storedUser = JSON.parse(localStorage.getItem("user"));
 
       if (storedUser && storedUser.email === email && storedUser.password === password) {
-        localStorage.setItem("loggedIn", "true");
-        alert("Login successful!");
-        window.location.href = "donate.html";
+        localStorage.setItem("userLoggedIn", "true");
+        showSuccess("Login Successful!", "donate.html");
       } else {
-        alert("Invalid email or password!");
+        alert("Invalid credentials!");
       }
     });
   }
 
-  // Forgot password
-  if (forgotForm) {
-    forgotForm.addEventListener("submit", (e) => {
+  // Forgot Password Logic
+  if (forgotLink) {
+    forgotLink.addEventListener("click", (e) => {
       e.preventDefault();
-      const email = document.getElementById("forgotEmail").value;
+      forgotPopup.classList.add("active");
+    });
+  }
+
+  if (closePopup) {
+    closePopup.addEventListener("click", () => {
+      forgotPopup.classList.remove("active");
+    });
+  }
+
+  if (resetBtn) {
+    resetBtn.addEventListener("click", () => {
+      const email = document.getElementById("resetEmail").value;
       const newPassword = document.getElementById("newPassword").value;
       const storedUser = JSON.parse(localStorage.getItem("user"));
 
       if (storedUser && storedUser.email === email) {
         storedUser.password = newPassword;
         localStorage.setItem("user", JSON.stringify(storedUser));
-        alert("Password updated successfully!");
-        window.location.href = "login.html";
+        alert("Password reset successful! You can now login with your new password.");
+        forgotPopup.classList.remove("active");
       } else {
-        alert("Email not found. Please register first.");
+        alert("No account found with that email!");
       }
     });
   }
+
+  // Redirect protection for donation page
+  if (window.location.pathname.includes("donate.html")) {
+    const loggedIn = localStorage.getItem("userLoggedIn");
+    if (!loggedIn) {
+      window.location.href = "register.html";
+    }
+  }
 });
+
+// Success animation popup
+function showSuccess(message, redirectPage) {
+  const popup = document.getElementById("successPopup");
+  const messageBox = document.getElementById("successMessage");
+  messageBox.textContent = message;
+  popup.classList.add("active");
+
+  setTimeout(() => {
+    popup.classList.remove("active");
+    window.location.href = redirectPage;
+  }, 2000);
+}

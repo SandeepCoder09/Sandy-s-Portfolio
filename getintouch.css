@@ -128,10 +128,10 @@ body {
   border-radius: 50%;
   transition: 0.3s;
 }
-/* .socials a:hover {
+.socials a:hover {
   background-color: black;
-  /* color: #0072ff; */
-} */
+  color: #0072ff;
+}
 
 /* FOOTER */
 footer {

@@ -1,49 +1,53 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Donate | Sandy’s Portfolio</title>
-  <link rel="stylesheet" href="donate.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Donate | Sandy's Portfolio</title>
+  <link rel="stylesheet" href="donate.css" />
+  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
 </head>
 <body>
   <header>
-    <div class="logo">Sandy’s Logo</div>
+    <h2 class="logo">Sandy's Logo</h2>
     <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="donate.html" class="active">Donate</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><a href="logout.html">Logout</a></li>
-      </ul>
+      <a href="index.html">Home</a>
+      <a href="donate.html" class="active">Donate</a>
+      <a href="contact.html">Contact</a>
+      <a href="#" id="logout">Logout</a>
     </nav>
   </header>
 
-  <main>
-    <div class="donation-container">
+  <section class="donate-container">
+    <div class="donate-box">
       <h2>Support My Work 💖</h2>
-      <p>Your donation helps me keep creating amazing projects and open-source tools.</p>
+      <p>Your donation helps me keep creating amazing projects and open-source tools</p>
 
-      <div class="amount-options">
-        <button>₹100</button>
-        <button>₹500</button>
-        <button>₹1000</button>
-        <button>Custom</button>
+      <div class="amount-buttons">
+        <button class="amount" data-amount="100">₹100</button>
+        <button class="amount" data-amount="500">₹500</button>
+        <button class="amount" data-amount="1000">₹1000</button>
+        <button id="customBtn">Custom</button>
       </div>
 
-      <input type="text" class="custom-amount" placeholder="Enter custom amount (₹)" />
-      <input type="text" placeholder="Full Name" required />
-      <input type="email" placeholder="Email Address" required />
-      <textarea placeholder="Write a message (optional)" rows="3"></textarea>
+      <input type="number" id="customAmount" placeholder="Enter custom amount (₹)" />
 
-      <button class="donate-btn">Donate Now 💳</button>
-      <p class="note">Thank you for supporting independent development ❤️</p>
+      <form id="donateForm">
+        <input type="text" id="name" placeholder="Full Name" required />
+        <input type="email" id="email" placeholder="Email Address" required />
+        <textarea id="message" placeholder="Write a message (optional)"></textarea>
+        <button type="submit" id="donateBtn">Donate Now 💳</button>
+      </form>
+
+      <p class="thanks">Thank you for supporting independent development ❤️</p>
     </div>
-  </main>
+  </section>
 
   <footer>
-    <p>&copy; 2025 Sandy’s Portfolio | All Rights Reserved</p>
+    <p>© 2025 Sandy's Portfolio | All Rights Reserved</p>
   </footer>
-<script src="donate.js"></script>
+
+  <script src="donate.js"></script>
 </body>
 </html>

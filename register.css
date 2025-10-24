@@ -1,0 +1,224 @@
+/* ==== Reset & Base ==== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #0f172a, #1e293b);
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* ==== Auth Container ==== */
+.auth-container {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(15px);
+  padding: 40px 50px;
+  border-radius: 20px;
+  text-align: center;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 0 25px rgba(0, 174, 255, 0.2);
+  animation: fadeIn 1s ease-in-out;
+}
+
+.auth-container h1 {
+  font-size: 1.8rem;
+  margin-bottom: 25px;
+  background: linear-gradient(90deg, #00c6ff, #0072ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ==== Form Elements ==== */
+form input {
+  width: 100%;
+  padding: 12px 15px;
+  margin: 10px 0;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+form input:focus {
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 8px #00c6ff;
+}
+
+.btn {
+  background: linear-gradient(90deg, #0072ff, #00c6ff);
+  border: none;
+  color: #fff;
+  padding: 12px 20px;
+  width: 100%;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 1rem;
+  margin-top: 15px;
+  transition: 0.3s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 15px #00c6ff;
+}
+
+p {
+  margin-top: 15px;
+  font-size: 0.9rem;
+  color: #ccc;
+}
+
+p a {
+  color: #00c6ff;
+  text-decoration: none;
+}
+
+p a:hover {
+  text-decoration: underline;
+}
+
+/* ==== Forgot Password Link ==== */
+.forgot {
+  margin-top: 20px;
+  color: #00c6ff;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: 0.3s;
+}
+
+.forgot:hover {
+  color: #4ac8ff;
+  text-decoration: underline;
+}
+
+/* ==== Forgot Password Popup ==== */
+.forgot-popup {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.forgot-popup.active {
+  display: flex;
+}
+
+.popup-content {
+  background: rgba(20, 30, 60, 0.95);
+  padding: 30px;
+  border-radius: 15px;
+  width: 90%;
+  max-width: 400px;
+  text-align: center;
+  box-shadow: 0 0 20px rgba(0, 174, 255, 0.3);
+  animation: slideDown 0.5s ease;
+}
+
+.popup-content h2 {
+  color: #00c6ff;
+  margin-bottom: 15px;
+}
+
+.popup-content input {
+  margin: 10px 0;
+}
+
+.popup-content .cancel {
+  background: #555;
+}
+
+.popup-content .cancel:hover {
+  background: #333;
+}
+
+/* ==== Success Popup ==== */
+.success-popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  background: rgba(20, 30, 60, 0.95);
+  color: #fff;
+  padding: 30px 50px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 0 25px rgba(0, 174, 255, 0.3);
+  z-index: 2000;
+  transition: transform 0.5s ease;
+}
+
+.success-popup.active {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.checkmark {
+  font-size: 3rem;
+  display: block;
+  color: #00ff7f;
+  margin-bottom: 10px;
+}
+
+/* ==== Animations ==== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* ==== Responsive ==== */
+@media (max-width: 480px) {
+  .auth-container {
+    padding: 30px 25px;
+  }
+
+  .auth-container h1 {
+    font-size: 1.5rem;
+  }
+
+  .btn {
+    font-size: 0.9rem;
+  }
+
+  form input {
+    font-size: 0.9rem;
+  }
+
+  .popup-content {
+    padding: 20px;
+  }
+}

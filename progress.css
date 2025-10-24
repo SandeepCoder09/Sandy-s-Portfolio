@@ -1,12 +1,81 @@
-/* ===== PAGE LOAD PROGRESS BAR ===== */
-#progress-bar {
+body {
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(135deg, #a1c4fd, #c2e9fb);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.auth-container {
+  background: white;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  width: 350px;
+}
+
+.auth-container h1 {
+  color: #1b1b1b;
+  margin-bottom: 25px;
+}
+
+.auth-container input {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  outline: none;
+}
+
+.auth-container .btn {
+  background: #0078ff;
+  color: white;
+  padding: 12px;
+  width: 100%;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.auth-container .btn:hover {
+  background: #005fcc;
+}
+
+.auth-container p {
+  margin-top: 15px;
+}
+
+.success-popup {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 0%;
-  height: 2px;
-  background: linear-gradient(90deg, #ff8a00, #e52e71);
-  box-shadow: 0 0 10px rgba(229, 46, 113, 0.6);
-  z-index: 9999;
-  transition: width 0.4s ease;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.8);
+  background: #1abc9c;
+  color: white;
+  padding: 30px 50px;
+  border-radius: 20px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  font-size: 1.2rem;
+  font-weight: 600;
+  opacity: 0;
+  transition: all 0.4s ease;
+  text-align: center;
+  z-index: 1000;
+}
+
+.success-popup.active {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.checkmark {
+  display: block;
+  font-size: 2rem;
+  margin-bottom: 10px;
 }

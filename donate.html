@@ -1,68 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Donate | Sandy’s Portfolio</title>
-  <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="donate.css" />
+  <link rel="stylesheet" href="donate.css">
 </head>
 <body>
   <header>
-    <div class="logo">
-      <img src="09group.png" alt="Sandy Logo" />
-    </div>
+    <div class="logo">Sandy’s Logo</div>
     <nav>
       <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="donate.html" class="active">Donate</a></li>
-        <li><a href="getintouch.html">Contact</a></li>
-        <li><a href="login.html">Logout</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="logout.html">Logout</a></li>
       </ul>
     </nav>
-    <!-- Theme Toggle -->
-    <div class="theme-toggle">
-      <input type="checkbox" id="theme-switch" />
-      <label for="theme-switch" class="theme-label">
-        <span class="sun">☀️</span>
-        <span class="moon">🌙</span>
-      </label>
-    </div>
   </header>
 
-  <main class="donate-section">
-    <div class="donate-card">
-      <h1>Support My Work 💖</h1>
-      <p class="donate-subtext">
-        Your donation helps me keep creating amazing projects and open-source tools.
-      </p>
+  <main>
+    <div class="donation-container">
+      <h2>Support My Work 💖</h2>
+      <p>Your donation helps me keep creating amazing projects and open-source tools.</p>
 
-      <form id="donation-form">
-        <h3>Select Amount</h3>
-        <div class="amount-options">
-          <button type="button" class="amount-btn" data-amount="100">₹100</button>
-          <button type="button" class="amount-btn" data-amount="500">₹500</button>
-          <button type="button" class="amount-btn" data-amount="1000">₹1000</button>
-          <button type="button" class="amount-btn custom">Custom</button>
-        </div>
+      <div class="amount-options">
+        <button>₹100</button>
+        <button>₹500</button>
+        <button>₹1000</button>
+        <button>Custom</button>
+      </div>
 
-        <div class="custom-input" style="display: none;">
-          <input type="number" id="custom-amount" placeholder="Enter custom amount (₹)" />
-        </div>
+      <input type="text" class="custom-amount" placeholder="Enter custom amount (₹)" />
+      <input type="text" placeholder="Full Name" required />
+      <input type="email" placeholder="Email Address" required />
+      <textarea placeholder="Write a message (optional)" rows="3"></textarea>
 
-        <h3>Your Details</h3>
-        <input type="text" id="donor-name" placeholder="Full Name" required />
-        <input type="email" id="donor-email" placeholder="Email Address" required />
-        <textarea id="donor-message" placeholder="Write a message (optional)"></textarea>
-
-        <button type="submit" class="donate-btn">Donate Now 💳</button>
-      </form>
+      <button class="donate-btn">Donate Now 💳</button>
+      <p class="note">Thank you for supporting independent development ❤️</p>
     </div>
   </main>
 
   <footer>
     <p>&copy; 2025 Sandy’s Portfolio | All Rights Reserved</p>
   </footer>
-  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
 </body>
 </html>

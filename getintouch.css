@@ -127,11 +127,12 @@ body {
   padding: 10px 10px;
   border-radius: 50%;
   transition: 0.3s;
-}
+  
+/* }
 .socials a:hover {
   background-color: black;
   color: #0072ff;
-}
+} */
 
 /* FOOTER */
 footer {

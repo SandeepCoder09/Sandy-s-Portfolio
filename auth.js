@@ -6,7 +6,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const closePopup = document.getElementById("closePopup");
   const resetBtn = document.getElementById("resetBtn");
 
-  // Registration
+  // -----------------------------
+  // ✅ Registration
+  // -----------------------------
   if (registerForm) {
     registerForm.addEventListener("submit", (e) => {
       e.preventDefault();
@@ -16,14 +18,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
       if (name && email && password) {
         localStorage.setItem("user", JSON.stringify({ name, email, password }));
+        localStorage.setItem("userLoggedIn", "true");
         showSuccess("Registration Successful!", "donate.html");
       } else {
-        alert("Please fill all fields!");
+        alert("⚠️ Please fill in all fields!");
       }
     });
   }
 
-  // Login
+  // -----------------------------
+  // ✅ Login
+  // -----------------------------
   if (loginForm) {
     loginForm.addEventListener("submit", (e) => {
       e.preventDefault();
@@ -35,12 +40,14 @@ document.addEventListener("DOMContentLoaded", () => {
         localStorage.setItem("userLoggedIn", "true");
         showSuccess("Login Successful!", "donate.html");
       } else {
-        alert("Invalid credentials!");
+        alert("❌ Invalid email or password!");
       }
     });
   }
 
-  // Forgot Password Logic
+  // -----------------------------
+  // ✅ Forgot Password
+  // -----------------------------
   if (forgotLink) {
     forgotLink.addEventListener("click", (e) => {
       e.preventDefault();
@@ -63,15 +70,28 @@ document.addEventListener("DOMContentLoaded", () => {
       if (storedUser && storedUser.email === email) {
         storedUser.password = newPassword;
         localStorage.setItem("user", JSON.stringify(storedUser));
-        alert("Password reset successful! You can now login with your new password.");
+        alert("✅ Password reset successful! Please login with your new password.");
         forgotPopup.classList.remove("active");
       } else {
-        alert("No account found with that email!");
+        alert("⚠️ No user found with that email!");
       }
     });
   }
 
-  // Redirect protection for donation page
+  // -----------------------------
+  // ✅ Logout
+  // -----------------------------
+  const logoutBtn = document.getElementById("logoutBtn");
+  if (logoutBtn) {
+    logoutBtn.addEventListener("click", () => {
+      localStorage.removeItem("userLoggedIn");
+      showSuccess("Logged out successfully!", "login.html");
+    });
+  }
+
+  // -----------------------------
+  // ✅ Protect Donation Page
+  // -----------------------------
   if (window.location.pathname.includes("donate.html")) {
     const loggedIn = localStorage.getItem("userLoggedIn");
     if (!loggedIn) {
@@ -80,11 +100,27 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
-// Success animation popup
+// -----------------------------
+// ✅ Success Animation Function
+// -----------------------------
 function showSuccess(message, redirectPage) {
-  const popup = document.getElementById("successPopup");
-  const messageBox = document.getElementById("successMessage");
+  let popup = document.getElementById("successPopup");
+  let messageBox = document.getElementById("successMessage");
+
+  if (!popup) {
+    popup = document.createElement("div");
+    popup.id = "successPopup";
+    popup.className = "success-popup";
+    popup.innerHTML = `
+      <div class="popup-box">
+        <h2 id="successMessage">${message}</h2>
+      </div>`;
+    document.body.appendChild(popup);
+  }
+
+  messageBox = document.getElementById("successMessage");
   messageBox.textContent = message;
+
   popup.classList.add("active");
 
   setTimeout(() => {

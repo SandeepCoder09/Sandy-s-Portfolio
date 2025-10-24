@@ -1,6 +1,4 @@
 // theme toggle switch 
-
-<script>
   const themeSwitch = document.getElementById("theme-switch");
 
   // Load saved theme
@@ -18,7 +16,6 @@
       localStorage.setItem("theme", "light");
     }
   });
-</script>
 
 // const sections = document.querySelectorAll("section");
 // const navLinks = document.querySelectorAll(".nav-links a");

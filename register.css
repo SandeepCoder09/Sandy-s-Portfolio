@@ -104,51 +104,124 @@ p a:hover {
   text-decoration: underline;
 }
 
-/* ==== Forgot Password Popup ==== */
+/* === Forgot Password Popup === */
 .forgot-popup {
-  display: none;
+  display: none; /* Hidden by default */
   position: fixed;
   top: 0;
   left: 0;
-  height: 100%;
   width: 100%;
-  background: rgba(0, 0, 0, 0.6);
+  height: 100%;
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(5px);
   justify-content: center;
   align-items: center;
-  z-index: 1000;
-}
-
-.forgot-popup.active {
-  display: flex;
+  z-index: 999;
+  animation: fadeInOverlay 0.4s ease;
 }
 
 .popup-content {
-  background: rgba(20, 30, 60, 0.95);
-  padding: 30px;
-  border-radius: 15px;
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 30px 25px;
   width: 90%;
   max-width: 400px;
   text-align: center;
-  box-shadow: 0 0 20px rgba(0, 174, 255, 0.3);
-  animation: slideDown 0.5s ease;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
+  animation: popupIn 0.5s ease;
 }
 
 .popup-content h2 {
-  color: #00c6ff;
-  margin-bottom: 15px;
+  color: #333;
+  font-size: 1.4rem;
+  margin-bottom: 20px;
 }
 
 .popup-content input {
+  width: 100%;
+  padding: 12px;
   margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 15px;
+  outline: none;
+  transition: 0.3s ease;
 }
 
-.popup-content .cancel {
-  background: #555;
+.popup-content input:focus {
+  border-color: #6e8efb;
+  box-shadow: 0 0 10px rgba(110, 142, 251, 0.3);
 }
 
-.popup-content .cancel:hover {
-  background: #333;
+/* Buttons inside popup */
+.popup-content .btn {
+  width: 45%;
+  margin: 10px 5px;
+  padding: 10px;
+  background: linear-gradient(90deg, #6e8efb, #a777e3);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s ease;
 }
+
+.popup-content .btn:hover {
+  transform: translateY(-2px);
+  background: linear-gradient(90deg, #5b7dfb, #9a65e3);
+}
+
+/* Cancel button */
+.popup-content .btn.cancel {
+  background: #ff4b5c;
+}
+
+.popup-content .btn.cancel:hover {
+  background: #e04352;
+}
+
+/* === Animations === */
+@keyframes popupIn {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInOverlay {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* === Responsive === */
+@media (max-width: 480px) {
+  .popup-content {
+    padding: 25px 20px;
+  }
+
+  .popup-content h2 {
+    font-size: 1.2rem;
+  }
+
+  .popup-content input {
+    font-size: 14px;
+  }
+
+  .popup-content .btn {
+    font-size: 14px;
+    width: 48%;
+  }
+}
+
 
 /* ==== Success Popup ==== */
 .success-popup {

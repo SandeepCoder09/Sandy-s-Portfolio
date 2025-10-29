@@ -508,16 +508,15 @@ footer {
   }
 }
 
-/* donation button base */
-.donation-btn {
+/* Donation Button */
+.donate-btn {
   position: fixed;
-  bottom: 25px;
+  bottom: -60px;
   left: 50%;
-  transform: translateX(-50%) translateY(30px);
+  transform: translateX(-50%);
   background: linear-gradient(45deg, #ff0080, #ff8c00);
   color: #fff;
   font-weight: 600;
-  letter-spacing: 1px;
   border: none;
   padding: 14px 36px;
   border-radius: 50px;
@@ -525,19 +524,19 @@ footer {
   text-decoration: none;
   box-shadow: 0 4px 20px rgba(255, 105, 180, 0.4);
   opacity: 0;
-  visibility: hidden;
-  transition: all 0.4s ease;
+  transition: all 0.5s ease;
   z-index: 9999;
 }
 
-/* .donation-btn.show {
-  opacity: 1;
-  visibility: visible;
-  transform: translateX(-50%) translateY(0);
-  bottom: 35px;
+/* Show button after scrolling down a bit */
+body:has(header:in-view) .donate-btn,
+body:has(main:in-view) .donate-btn {
+  opacity: 0;
+  bottom: -60px;
 }
 
-.donation-btn:hover {
-  transform: translateX(-50%) translateY(0) scale(1.08);
-  box-shadow: 0 6px 25px rgba(255, 140, 0, 0.6);
-} */
+/* Once page is scrolled, show it */
+body:has(footer:in-view) .donate-btn {
+  opacity: 1;
+  bottom: 35px;
+}

@@ -530,7 +530,7 @@ footer {
   z-index: 9999;
 }
 
-.donation-btn.show {
+/* .donation-btn.show {
   opacity: 1;
   visibility: visible;
   transform: translateX(-50%) translateY(0);
@@ -540,4 +540,4 @@ footer {
 .donation-btn:hover {
   transform: translateX(-50%) translateY(0) scale(1.08);
   box-shadow: 0 6px 25px rgba(255, 140, 0, 0.6);
-}
+} */

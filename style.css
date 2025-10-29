@@ -509,7 +509,7 @@ footer {
 }
 
 /* Donation Button */
-.donate-btn {
+.donation-btn {
   position: fixed;
   bottom: -60px;
   left: 50%;
@@ -529,14 +529,14 @@ footer {
 }
 
 /* Show button after scrolling down a bit */
-body:has(header:in-view) .donate-btn,
-body:has(main:in-view) .donate-btn {
+body:has(header:in-view) .donation-btn,
+body:has(main:in-view) .donation-btn {
   opacity: 0;
   bottom: -60px;
 }
 
 /* Once page is scrolled, show it */
-body:has(footer:in-view) .donate-btn {
+body:has(footer:in-view) .donation-btn {
   opacity: 1;
   bottom: 35px;
 }

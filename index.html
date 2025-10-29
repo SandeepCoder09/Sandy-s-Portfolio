@@ -116,11 +116,23 @@ Theme Toggle Button
     <p>Let's create something amazing together.</p>
     <a href="getintouch.html" class="btn-primary">Get in Touch</a>
   </section>
-
 <button class="donation-btn" onclick="window.location.href='donate.html'">Donation</button>
 
   <footer>
     <p>© 2025 Sandeep Gautam | Designed with ❤️ by Sandy</p>
   </footer>
+
+  <!-- AOS JS -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 1000,   // animation duration (ms)
+    easing: 'ease-in-out',
+    once: true,       // animation runs only once
+    mirror: false     // disables animation when scrolling up
+  });
+</script>
+
+  
 </body>
 </html>

@@ -75,7 +75,7 @@ body {
 .logo img {
   height: 45px;
   width: 45px;
-  border-radius: 10px;     /* Optional — gives a smooth corner look */
+  border-radius: 50%;     /* Optional — gives a smooth corner look */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 

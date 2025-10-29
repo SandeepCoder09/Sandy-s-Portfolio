@@ -18,7 +18,8 @@ html {
 }
 
 body {
-  background: #0b0e1a; /* Dark purple-blue gradient theme */
+  /* background: #0b0e1a; /* Dark purple-blue gradient theme */
+  background: #101426;
   color: #ffffff;
   overflow-x: hidden;
   opacity: 0;

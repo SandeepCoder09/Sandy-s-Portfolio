@@ -211,16 +211,18 @@
 
 // })(window, document);
 
-let lastScrollY = window.scrollY;
-const donateBtn = document.querySelector('.donate-btn');
+document.addEventListener("DOMContentLoaded", function() {
+  const donateBtn = document.querySelector(".donate-btn");
+  let lastScrollY = window.scrollY;
 
-window.addEventListener('scroll', () => {
-  if (window.scrollY < lastScrollY) {
-    // User is scrolling UP → show button
-    donateBtn.classList.add('show');
-  } else {
-    // User is scrolling DOWN → hide button
-    donateBtn.classList.remove('show');
-  }
-  lastScrollY = window.scrollY;
+  window.addEventListener("scroll", () => {
+    if (window.scrollY < lastScrollY) {
+      // Scrolling up → show button
+      donateBtn.classList.add("show");
+    } else {
+      // Scrolling down → hide button
+      donateBtn.classList.remove("show");
+    }
+    lastScrollY = window.scrollY;
+  });
 });

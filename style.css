@@ -84,6 +84,11 @@ body {
   box-shadow: 0 0 10px rgba(0, 255, 255, 0.4); /* soft glow on hover */
 }
 
+@media (max-width: 768px) {
+  .logo img {
+    height: 35px;
+  }
+}
 
 /* Navbar Base */
 .navbar {

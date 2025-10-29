@@ -211,18 +211,18 @@
 
 // })(window, document);
 
-document.addEventListener("DOMContentLoaded", function() {
-  const donateBtn = document.querySelector(".donate-btn");
-  let lastScrollY = window.scrollY;
+// document.addEventListener("DOMContentLoaded", function() {
+//   const donateBtn = document.querySelector(".donate-btn");
+//   let lastScrollY = window.scrollY;
 
-  window.addEventListener("scroll", () => {
-    if (window.scrollY < lastScrollY) {
-      // Scrolling up → show button
-      donateBtn.classList.add("show");
-    } else {
-      // Scrolling down → hide button
-      donateBtn.classList.remove("show");
-    }
-    lastScrollY = window.scrollY;
-  });
-});
+//   window.addEventListener("scroll", () => {
+//     if (window.scrollY < lastScrollY) {
+//       // Scrolling up → show button
+//       donateBtn.classList.add("show");
+//     } else {
+//       // Scrolling down → hide button
+//       donateBtn.classList.remove("show");
+//     }
+//     lastScrollY = window.scrollY;
+//   });
+// });

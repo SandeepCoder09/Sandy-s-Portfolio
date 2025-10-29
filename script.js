@@ -1,12 +1,9 @@
-<script>
-  const menuIcon = document.getElementById('menuIcon');
+ const menuIcon = document.getElementById('menuIcon');
   const navLinks = document.getElementById('navLinks');
 
   menuIcon.addEventListener('click', () => {
     navLinks.classList.toggle('active');
   });
-</script>
-
 
 // theme toggle switch 
   // const themeSwitch = document.getElementById("theme-switch");

@@ -65,6 +65,14 @@ body {
   transition: color 0.3s ease;
 } */
 
+.09-logo {
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  background-image: url (09logo-black.jpg);
+  border: none;
+}
+
 /* Navbar Base */
 .navbar {
   display: flex;

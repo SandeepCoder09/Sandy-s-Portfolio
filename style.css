@@ -136,7 +136,10 @@ body {
 }
 
 
-/* .nav-links li a:hover,
+/* hovering in nav links 
+========================*/
+
+.nav-links li a:hover,
 .nav-links li a.active {
   color: #00b3ff;
 }
@@ -168,7 +171,7 @@ body {
 .btn-primary:hover {
   box-shadow: 0 0 15px #00b3ff;
   transform: translateY(-2px);
-} */
+}
 
 /* =============== HERO SECTION =============== */
 .hero {

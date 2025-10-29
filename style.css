@@ -164,7 +164,7 @@ body {
 /* hovering in nav links 
 ========================*/
 
-.nav-links li a:hover,
+/* .nav-links li a:hover,
 .nav-links li a.active {
   color: #00b3ff;
 }
@@ -178,7 +178,7 @@ body {
   bottom: -4px;
   background: linear-gradient(90deg, #00b3ff, #0072ff);
   transition: width 0.4s ease;
-}
+} */
 
 .nav-links li a:hover::after,
 .nav-links li a.active::after {

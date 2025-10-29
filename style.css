@@ -508,37 +508,36 @@ footer {
   }
 }
 
-/* Donation Button Base */
-.donation-btn {
+/* donation button base */
+.donate-btn {
   position: fixed;
   bottom: 25px;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translateX(-50%) translateY(30px);
   background: linear-gradient(45deg, #ff0080, #ff8c00);
-  color: white;
+  color: #fff;
+  font-weight: 600;
+  letter-spacing: 1px;
   border: none;
   padding: 14px 36px;
-  font-size: 17px;
-  font-weight: bold;
   border-radius: 50px;
-  cursor: pointer;
+  font-size: 17px;
   text-decoration: none;
   box-shadow: 0 4px 20px rgba(255, 105, 180, 0.4);
-  transition: all 0.4s ease;
   opacity: 0;
   visibility: hidden;
-  z-index: 1000;
+  transition: all 0.4s ease;
+  z-index: 9999;
 }
 
-/* Show Animation when user scrolls up */
-.donation-btn.show {
+.donate-btn.show {
   opacity: 1;
   visibility: visible;
+  transform: translateX(-50%) translateY(0);
   bottom: 35px;
 }
 
-/* Hover Animation */
-.donation-btn:hover {
-  transform: translateX(-50%) scale(1.08);
+.donate-btn:hover {
+  transform: translateX(-50%) translateY(0) scale(1.08);
   box-shadow: 0 6px 25px rgba(255, 140, 0, 0.6);
 }

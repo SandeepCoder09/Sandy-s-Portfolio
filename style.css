@@ -65,13 +65,25 @@ body {
   transition: color 0.3s ease;
 } */
 
-.09-logo {
-  height: 100px;
-  width: 100px;
-  border-radius: 50%;
-  background-image: url (09logo-black.jpg);
-  border: none;
+/* Logo Styling */
+.logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
 }
+
+.logo img {
+  height: 45px;
+  width: auto;
+  border-radius: 10px;     /* Optional — gives a smooth corner look */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.logo img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.4); /* soft glow on hover */
+}
+
 
 /* Navbar Base */
 .navbar {

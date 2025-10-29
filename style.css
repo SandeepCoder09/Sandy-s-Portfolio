@@ -97,6 +97,7 @@ body {
   align-items: center;
   padding: 18px 25px;
   background: #0a0a0a;
+  backdrop-filter: blur(5px);
   position: fixed;
   top: 0;
   left: 0;

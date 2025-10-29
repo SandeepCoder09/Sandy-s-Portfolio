@@ -508,48 +508,37 @@ footer {
   }
 }
 
-/* Donation Button Styling */
-
+/* Donation Button Base */
 .donation-btn {
   position: fixed;
-  bottom: 40px;
+  bottom: 25px;
   left: 50%;
   transform: translateX(-50%);
-  background: linear-gradient(135deg, #ff6a00, #ee0979);
-  color: #fff;
-  font-weight: 700;
+  background: linear-gradient(45deg, #ff0080, #ff8c00);
+  color: white;
   border: none;
+  padding: 14px 36px;
+  font-size: 17px;
+  font-weight: bold;
   border-radius: 50px;
-  padding: 14px 40px;
-  font-size: 16px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
   cursor: pointer;
-  box-shadow: 0 8px 20px rgba(255, 107, 107, 0.4);
-  transition: all 0.3s ease;
-  z-index: 9999;
+  text-decoration: none;
+  box-shadow: 0 4px 20px rgba(255, 105, 180, 0.4);
+  transition: all 0.4s ease;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 1000;
 }
 
+/* Show Animation when user scrolls up */
+.donation-btn.show {
+  opacity: 1;
+  visibility: visible;
+  bottom: 35px;
+}
+
+/* Hover Animation */
 .donation-btn:hover {
-  background: linear-gradient(135deg, #ee0979, #ff6a00);
-  transform: translateX(-50%) translateY(-3px);
-  box-shadow: 0 12px 25px rgba(255, 107, 107, 0.6);
+  transform: translateX(-50%) scale(1.08);
+  box-shadow: 0 6px 25px rgba(255, 140, 0, 0.6);
 }
-
-.donation-btn:active {
-  transform: translateX(-50%) scale(0.97);
-  box-shadow: 0 5px 15px rgba(255, 107, 107, 0.4);
-}
-
-/* Optional glowing animation */
-@keyframes glowing {
-  0% { box-shadow: 0 0 5px #ff6a00, 0 0 10px #ee0979; }
-  50% { box-shadow: 0 0 20px #ff6a00, 0 0 30px #ee0979; }
-  100% { box-shadow: 0 0 5px #ff6a00, 0 0 10px #ee0979; }
-}
-
-.donation-btn {
-  animation: glowing 2s infinite alternate;
-}
-
-

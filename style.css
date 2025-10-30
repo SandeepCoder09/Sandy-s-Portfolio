@@ -136,6 +136,10 @@ body {
   cursor: pointer;
 }
 
+.menu-icon:hover {
+   transform: rotate(45deg);
+}
+
 /* Mobile Styles */
 @media (max-width: 768px) {
   .nav-links {

@@ -370,11 +370,13 @@ body {
   font-size: 20px;
   margin-bottom: 8px;
   font-weight: 600;
+  text-decoration: none;
 }
 
 .project-card p {
   color: #ccc;
   font-size: 14px;
+  text-decoration: none;
 }
 
 /* ✨ Hover Animation */

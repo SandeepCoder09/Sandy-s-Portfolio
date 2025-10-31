@@ -26,12 +26,14 @@ function updateDateTime() {
 setInterval(updateDateTime, 1000);
 updateDateTime();
 
-// 🧾 Render transactions
+// 🧾 Render transactions (newest → oldest)
 function renderList() {
   list.innerHTML = '';
   let totalIncome = 0, totalExpense = 0;
 
-  transactions.forEach(t => {
+  const sortedTransactions = [...transactions].reverse(); // Show latest first
+
+  sortedTransactions.forEach(t => {
     const li = document.createElement('li');
     li.innerHTML = `
       <div>

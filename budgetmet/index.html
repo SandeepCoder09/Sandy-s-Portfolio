@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>BudgetMate — Personal Finance Tracker</title>
   <link rel="stylesheet" href="style.css" />
 </head>
@@ -15,13 +15,17 @@
 
   <section class="container">
     <div class="input-box">
-      <input type="text" id="desc" placeholder="Enter description (e.g. Salary, Groceries)" />
-      <input type="number" id="amount" placeholder="Enter amount" />
-      <select id="type" required>
-  <option value="" disabled selected>Select Type</option>
-  <option value="income">Income</option>
-  <option value="expense">Expense</option>
-</select>
+      <input id="desc" type="text" placeholder="Enter description (e.g. Salary, Groceries)" />
+      <input id="amount" type="number" placeholder="Enter amount" />
+      <select id="type" aria-label="Select transaction type">
+        <option value="" disabled selected>Select Type</option>
+        <option value="income">Income</option>
+        <option value="expense">Expense</option>
+      </select>
+
+      <!-- ADD button clearly visible -->
+      <button id="add" class="btn" disabled>Add</button>
+    </div>
 
     <div class="summary">
       <p>Total Balance: <span id="balance">₹0</span></p>
@@ -29,7 +33,7 @@
       <p>Total Expense: <span id="expense">₹0</span></p>
     </div>
 
-    <ul id="list"></ul>
+    <ul id="list" aria-live="polite"></ul>
   </section>
 
   <footer>

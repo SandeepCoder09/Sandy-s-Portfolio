@@ -89,6 +89,22 @@ body.menu-open::after {
   z-index: 900;
 }
 
+/* Donation link special style */
+.nav-links .donate-link {
+  background: linear-gradient(135deg, #ff0066, #ff9900);
+  color: #fff;
+  font-weight: 600;
+  padding: 10px 18px;
+  border-radius: 8px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.nav-links .donate-link:hover {
+  background: linear-gradient(135deg, #ff9900, #ff0066);
+  transform: scale(1.05);
+}
+
 
 @keyframes fadeInBody {
   to {

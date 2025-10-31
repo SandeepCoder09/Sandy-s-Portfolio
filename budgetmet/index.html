@@ -17,12 +17,11 @@
     <div class="input-box">
       <input type="text" id="desc" placeholder="Enter description (e.g. Salary, Groceries)" />
       <input type="number" id="amount" placeholder="Enter amount" />
-      <select id="type">
-        <option value="income">Income</option>
-        <option value="expense">Expense</option>
-      </select>
-      <button id="add">Add</button>
-    </div>
+      <select id="type" required>
+  <option value="" disabled selected>Select Type</option>
+  <option value="income">Income</option>
+  <option value="expense">Expense</option>
+</select>
 
     <div class="summary">
       <p>Total Balance: <span id="balance">₹0</span></p>

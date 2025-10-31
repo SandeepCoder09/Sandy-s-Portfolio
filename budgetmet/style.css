@@ -9,6 +9,15 @@ body {
   padding: 40px;
 }
 
+#datetime {
+  text-align: center;
+  color: #00ffc8;
+  font-size: 1rem;
+  margin-top: 5px;
+  letter-spacing: 0.5px;
+}
+
+
 .container {
   max-width: 600px;
   width: 100%;

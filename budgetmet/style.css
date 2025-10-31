@@ -180,49 +180,34 @@ footer {
 }
 
 
-/* Dropdown base styling */
+/* Custom dropdown list */
 select {
-  width: 100%;
-  padding: 12px 15px;
+  background-color: #121212;
+  color: #00ffc8;
+  border: 1px solid #00ffc8;
   border-radius: 10px;
-  border: 1px solid rgba(0, 255, 200, 0.2);
-  background-color: rgba(20, 20, 20, 0.9);
-  color: #fff;
+  padding: 12px;
   font-size: 15px;
+  font-weight: 500;
   outline: none;
-  transition: all 0.3s ease;
-  appearance: none;
-  cursor: pointer;
+  width: 100%;
 }
 
-/* Hover and focus effects */
-select:hover, select:focus {
-  border-color: #00ffc8;
-  box-shadow: 0 0 10px rgba(0, 255, 200, 0.3);
-}
-
-/* Style dropdown options */
-option {
-  background-color: #111;
+/* Make sure dropdown popup inherits dark mode */
+select option {
+  background-color: #121212;
   color: #ccc;
-  padding: 10px;
-  border-radius: 8px;
   font-size: 15px;
+  padding: 10px;
 }
 
-/* 🟢 Income option style */
-option[value="income"] {
-  color: #00ffb3;
+/* Highlight colors */
+select option[value="income"] {
+  color: #00ff99;
   font-weight: 600;
 }
 
-/* 🔴 Expense option style */
-option[value="expense"] {
-  color: #ff5555;
+select option[value="expense"] {
+  color: #ff5757;
   font-weight: 600;
-}
-
-/* Optional animation on open */
-select:focus {
-  transform: scale(1.02);
 }

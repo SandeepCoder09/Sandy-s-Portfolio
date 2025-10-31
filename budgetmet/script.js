@@ -1,81 +1,81 @@
-// 🕒 Real-time Date and Clock
-function updateDateTime() {
-  const now = new Date();
-  const date = now.toLocaleDateString('en-IN', {
-    weekday: 'long',
-    year: 'numeric',
-    month: 'short',
-    day: 'numeric'
-  });
-  const time = now.toLocaleTimeString('en-IN', {
-    hour: '2-digit',
-    minute: '2-digit',
-    second: '2-digit'
-  });
-  document.getElementById('datetime').textContent = `${date} | ${time}`;
-}
-
-setInterval(updateDateTime, 1000);
-updateDateTime();
-
 const desc = document.getElementById('desc');
 const amount = document.getElementById('amount');
 const type = document.getElementById('type');
 const add = document.getElementById('add');
 const list = document.getElementById('list');
-const totalIncome = document.getElementById('totalIncome');
-const totalExpense = document.getElementById('totalExpense');
 const balance = document.getElementById('balance');
+const incomeEl = document.getElementById('income');
+const expenseEl = document.getElementById('expense');
+const liveDate = document.getElementById('live-date');
 
 let transactions = JSON.parse(localStorage.getItem('transactions')) || [];
 
-function updateValues() {
-  const income = transactions.filter(t => t.type === 'income').reduce((a, b) => a + b.amount, 0);
-  const expense = transactions.filter(t => t.type === 'expense').reduce((a, b) => a + b.amount, 0);
-  totalIncome.textContent = `₹${income}`;
-  totalExpense.textContent = `₹${expense}`;
-  balance.textContent = `₹${income - expense}`;
-  localStorage.setItem('transactions', JSON.stringify(transactions));
-  renderChart(income, expense);
+// 🔥 Live clock & date
+function updateDateTime() {
+  const now = new Date();
+  liveDate.textContent = now.toLocaleString('en-IN', {
+    weekday: 'short',
+    year: 'numeric',
+    month: 'short',
+    day: 'numeric',
+    hour: '2-digit',
+    minute: '2-digit',
+    second: '2-digit',
+  });
 }
+setInterval(updateDateTime, 1000);
+updateDateTime();
 
+// 🧾 Render transactions
 function renderList() {
   list.innerHTML = '';
-  transactions.forEach((t, i) => {
+  let totalIncome = 0, totalExpense = 0;
+
+  transactions.forEach(t => {
     const li = document.createElement('li');
-    li.innerHTML = `${t.desc} <span>${t.type === 'income' ? '+' : '-'}₹${t.amount}</span>`;
+    li.innerHTML = `
+      <div>
+        <strong>${t.desc}</strong><br>
+        <small>${t.dateTime}</small>
+      </div>
+      <span style="color:${t.type === 'income' ? '#00ffc8' : '#ff5252'};">
+        ${t.type === 'income' ? '+' : '-'}₹${t.amount}
+      </span>
+    `;
     list.appendChild(li);
+
+    if (t.type === 'income') totalIncome += t.amount;
+    else totalExpense += t.amount;
   });
+
+  incomeEl.textContent = `₹${totalIncome}`;
+  expenseEl.textContent = `₹${totalExpense}`;
+  balance.textContent = `₹${(totalIncome - totalExpense).toFixed(2)}`;
 }
 
+// ➕ Add new transaction
 add.addEventListener('click', () => {
-  if (desc.value && amount.value) {
-    transactions.push({ desc: desc.value, amount: parseFloat(amount.value), type: type.value });
-    desc.value = '';
-    amount.value = '';
-    renderList();
-    updateValues();
-  }
+  if (!desc.value || !amount.value) return alert('Please fill all fields!');
+
+  const now = new Date();
+  const dateTime = now.toLocaleString('en-IN', {
+    day: '2-digit', month: 'short', year: 'numeric',
+    hour: '2-digit', minute: '2-digit', second: '2-digit'
+  });
+
+  const transaction = {
+    desc: desc.value,
+    amount: parseFloat(amount.value),
+    type: type.value,
+    dateTime
+  };
+
+  transactions.push(transaction);
+  localStorage.setItem('transactions', JSON.stringify(transactions));
+
+  desc.value = '';
+  amount.value = '';
+  renderList();
 });
 
-let chart;
-function renderChart(income, expense) {
-  const ctx = document.getElementById('chart').getContext('2d');
-  if (chart) chart.destroy();
-  chart = new Chart(ctx, {
-    type: 'doughnut',
-    data: {
-      labels: ['Income', 'Expense'],
-      datasets: [{
-        data: [income, expense],
-        backgroundColor: ['#00ffc8', '#ff5252']
-      }]
-    },
-    options: {
-      plugins: { legend: { labels: { color: '#fff' } } }
-    }
-  });
-}
-
 renderList();
-updateValues();

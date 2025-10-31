@@ -1,40 +1,93 @@
-html {
-  scroll-behavior: smooth;
-}
-
 body {
-  min-height: 200vh; /* for testing scroll */
-}
-
-/* Donation Button */
-.donate-btn {
-  position: fixed;
-  bottom: -60px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: linear-gradient(45deg, #ff0080, #ff8c00);
+  background: #0d0d0d;
   color: #fff;
-  font-weight: 600;
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  padding: 40px;
+}
+
+.container {
+  max-width: 600px;
+  width: 100%;
+  background: #1a1a1a;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.4);
+}
+
+h1 {
+  text-align: center;
+  color: #00ffc8;
+  margin-bottom: 10px;
+}
+
+p {
+  text-align: center;
+  color: #bbb;
+}
+
+.form {
+  display: flex;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+input, select, button {
+  padding: 10px;
   border: none;
-  padding: 14px 36px;
-  border-radius: 50px;
-  font-size: 17px;
-  text-decoration: none;
-  box-shadow: 0 4px 20px rgba(255, 105, 180, 0.4);
-  opacity: 0;
-  transition: all 0.5s ease;
-  z-index: 9999;
+  border-radius: 8px;
+  font-size: 1rem;
 }
 
-/* Show button after scrolling down a bit */
-body:has(header:in-view) .donate-btn,
-body:has(main:in-view) .donate-btn {
-  opacity: 0;
-  bottom: -60px;
+input, select {
+  flex: 1;
+  background: #222;
+  color: #fff;
 }
 
-/* Once page is scrolled, show it */
-body:has(footer:in-view) .donate-btn {
-  opacity: 1;
-  bottom: 35px;
+button {
+  background: #00ffc8;
+  color: #0d0d0d;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background: transparent;
+  border: 1px solid #00ffc8;
+  color: #00ffc8;
+}
+
+.summary {
+  background: #121212;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 30px;
+}
+
+.summary h2 {
+  color: #00ffc8;
+  margin-bottom: 10px;
+}
+
+canvas {
+  margin: 20px 0;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  background: #1f1f1f;
+  padding: 10px;
+  margin: 5px 0;
+  border-left: 5px solid #00ffc8;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
 }

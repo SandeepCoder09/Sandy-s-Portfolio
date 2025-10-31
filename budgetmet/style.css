@@ -1,213 +1,88 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap');
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
+*{box-sizing:border-box;margin:0;padding:0;font-family:"Poppins",sans-serif}
+body{
+  background:linear-gradient(135deg,#0f0f0f,#1a1a1a);
+  color:#fff;
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  padding:20px;
 }
 
-body {
-  background: linear-gradient(135deg, #0f0f0f, #1a1a1a);
-  color: #fff;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 20px;
+header{text-align:center;margin-bottom:18px;animation:fadeDown 1s}
+header h1{color:#00ffc8;font-size:2.5rem;letter-spacing:1px}
+.tagline{color:#ccc;font-size:.95rem}
+#live-date{margin-top:8px;color:#00ffc8;font-size:.9rem}
+
+/* container */
+.container{
+  width:100%;
+  max-width:480px;
+  background:#181818;padding:22px;border-radius:16px;
+  box-shadow:0 0 25px rgba(0,255,200,0.12);animation:fadeUp 1s;
 }
 
-header {
-  text-align: center;
-  margin-bottom: 20px;
-  animation: fadeDown 1s ease-in-out;
-}
-
-header h1 {
-  color: #00ffc8;
-  font-size: 2.5em;
-  letter-spacing: 1px;
-}
-
-.tagline {
-  color: #ccc;
-  font-size: 0.9em;
-}
-
-#live-date {
-  margin-top: 8px;
-  color: #00ffc8;
-  font-size: 0.85em;
-}
-
-.container {
-  background: #181818;
-  padding: 25px;
-  border-radius: 15px;
-  width: 100%;
-  max-width: 450px;
-  box-shadow: 0 0 25px rgba(0, 255, 200, 0.15);
-  animation: fadeUp 1s ease-in-out;
-}
-
-.input-box {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
+/* inputs */
+.input-box{display:flex;flex-direction:column;gap:12px}
 .input-box input,
-.input-box select,
-.input-box button {
-  padding: 10px;
-  border: none;
-  border-radius: 8px;
-  outline: none;
-  font-size: 1em;
+.input-box select{
+  padding:12px;border-radius:10px;border:none;background:#222;color:#fff;font-size:15px;outline:none;
+  box-shadow: inset 0 0 8px rgba(0,0,0,0.4);
 }
 
-.input-box input,
-.input-box select {
-  background: #222;
-  color: #fff;
+/* select placeholder styling */
+select{
+  appearance:none; /* remove default arrow on most browsers */
+  background-image: linear-gradient(45deg, transparent 50%, rgba(255,255,255,0.12) 50%),
+                    linear-gradient(135deg, rgba(255,255,255,0.12) 50%, transparent 50%),
+                    linear-gradient(to right, rgba(0,255,200,0.06), rgba(0,255,200,0.02));
+  background-position: calc(100% - 18px) calc(1em + 2px), calc(100% - 13px) calc(1em + 2px), 100% 0;
+  background-size: 6px 6px, 6px 6px, 1px 1.5em;
+  background-repeat: no-repeat;
+  border:1px solid rgba(0,255,200,0.08);
 }
 
-.input-box button {
-  background: #00ffc8;
-  color: #111;
-  cursor: pointer;
-  transition: all 0.3s ease;
+/* placeholder color (default option) */
+select option[value=""]{ color:#9b9b9b; }
+
+/* button */
+.btn{
+  padding:12px;border-radius:10px;border:none;font-weight:600;font-size:15px;cursor:pointer;
+  background:#00ffc8;color:#07110f;transition:all .22s ease;
+  box-shadow:0 6px 18px rgba(0,255,200,0.06);
+}
+.btn:disabled{
+  opacity:0.45;cursor:not-allowed;transform:none;box-shadow:none;
+}
+.btn:not(:disabled):hover{ transform:translateY(-3px); box-shadow:0 14px 30px rgba(0,255,200,0.12); }
+
+/* summary box */
+.summary{ margin-top:16px; background:#111;padding:14px;border-radius:10px; box-shadow: inset 0 0 8px rgba(0,255,200,0.06); }
+.summary p{ display:flex; justify-content:space-between; color:#cfcfcf; font-size:.95rem; margin:6px 0;}
+
+/* list items */
+ul{ list-style:none; margin-top:14px; padding:0 }
+li{
+  background:#1f1f1f;padding:12px 14px;margin:10px 0;border-left:4px solid #00ffc8;border-radius:8px;
+  display:flex;justify-content:space-between;align-items:center;transition:all .25s;opacity:0;animation:fadeIn .45s forwards;
+}
+li:hover{ transform:translateY(-6px); box-shadow:0 8px 30px rgba(0,255,200,0.06); }
+li small{ color:#9b9b9b;font-size:.82rem; display:block; margin-top:6px; }
+
+/* amount color helpers */
+.amount-income{ color:#00ffc8; font-weight:700 }
+.amount-expense{ color:#ff6b6b; font-weight:700 }
+
+/* responsive */
+@media (max-width:600px){
+  header h1{ font-size:1.9rem }
+  .container{ padding:18px; }
+  .input-box input, .input-box select, .btn{ padding:10px; font-size:0.95rem }
+  li{ flex-direction:column; align-items:flex-start; gap:6px }
 }
 
-.input-box button:hover {
-  background: #00e6b0;
-  transform: scale(1.03);
-}
-
-.summary {
-  margin-top: 20px;
-  background: #111;
-  padding: 15px;
-  border-radius: 10px;
-  box-shadow: inset 0 0 8px rgba(0, 255, 200, 0.2);
-}
-
-.summary p {
-  display: flex;
-  justify-content: space-between;
-  font-size: 0.95em;
-  color: #ccc;
-}
-
-ul {
-  list-style: none;
-  margin-top: 15px;
-}
-
-li {
-  background: #1f1f1f;
-  padding: 12px 15px;
-  margin: 10px 0;
-  border-left: 4px solid #00ffc8;
-  border-radius: 8px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  transition: all 0.3s ease;
-  opacity: 0;
-  animation: fadeIn 0.5s forwards;
-}
-
-li:hover {
-  transform: scale(1.02);
-  box-shadow: 0 0 15px rgba(0, 255, 200, 0.2);
-}
-
-li small {
-  color: #888;
-  font-size: 0.8em;
-}
-
-footer {
-  margin-top: 25px;
-  font-size: 0.8em;
-  color: #888;
-  text-align: center;
-}
-
-/* ✅ Responsive Styling */
-@media (max-width: 600px) {
-  header h1 {
-    font-size: 1.9em;
-  }
-
-  .container {
-    padding: 20px;
-    max-width: 100%;
-  }
-
-  .input-box input,
-  .input-box select,
-  .input-box button {
-    font-size: 0.95em;
-    padding: 8px;
-  }
-
-  .summary {
-    font-size: 0.9em;
-  }
-
-  li {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 5px;
-  }
-}
-
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(30px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes fadeDown {
-  from { opacity: 0; transform: translateY(-30px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes fadeIn {
-  to { opacity: 1; }
-}
-
-
-/* Custom dropdown list */
-select {
-  background-color: #121212;
-  color: #00ffc8;
-  border: 1px solid #00ffc8;
-  border-radius: 10px;
-  padding: 12px;
-  font-size: 15px;
-  font-weight: 500;
-  outline: none;
-  width: 100%;
-}
-
-/* Make sure dropdown popup inherits dark mode */
-select option {
-  background-color: #121212;
-  color: #ccc;
-  font-size: 15px;
-  padding: 10px;
-}
-
-/* Highlight colors */
-select option[value="income"] {
-  color: #00ff99;
-  font-weight: 600;
-}
-
-select option[value="expense"] {
-  color: #ff5757;
-  font-weight: 600;
-}
+@keyframes fadeUp{ from{opacity:0;transform:translateY(24px)} to{opacity:1;transform:none} }
+@keyframes fadeDown{ from{opacity:0;transform:translateY(-24px)} to{opacity:1;transform:none} }
+@keyframes fadeIn{ to{opacity:1} }

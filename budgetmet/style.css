@@ -1,0 +1,40 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 200vh; /* for testing scroll */
+}
+
+/* Donation Button */
+.donate-btn {
+  position: fixed;
+  bottom: -60px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(45deg, #ff0080, #ff8c00);
+  color: #fff;
+  font-weight: 600;
+  border: none;
+  padding: 14px 36px;
+  border-radius: 50px;
+  font-size: 17px;
+  text-decoration: none;
+  box-shadow: 0 4px 20px rgba(255, 105, 180, 0.4);
+  opacity: 0;
+  transition: all 0.5s ease;
+  z-index: 9999;
+}
+
+/* Show button after scrolling down a bit */
+body:has(header:in-view) .donate-btn,
+body:has(main:in-view) .donate-btn {
+  opacity: 0;
+  bottom: -60px;
+}
+
+/* Once page is scrolled, show it */
+body:has(footer:in-view) .donate-btn {
+  opacity: 1;
+  bottom: 35px;
+}

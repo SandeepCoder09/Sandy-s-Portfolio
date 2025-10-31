@@ -64,8 +64,8 @@ body {
 /* Logo Styling */
 .logo {
   display: flex;
-  align-items: left;
-  justify-content: center;
+  align-items: center;
+  justify-content: left;
 }
 
 .logo img {

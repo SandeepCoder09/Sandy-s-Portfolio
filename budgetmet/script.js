@@ -1,3 +1,23 @@
+// 🕒 Real-time Date and Clock
+function updateDateTime() {
+  const now = new Date();
+  const date = now.toLocaleDateString('en-IN', {
+    weekday: 'long',
+    year: 'numeric',
+    month: 'short',
+    day: 'numeric'
+  });
+  const time = now.toLocaleTimeString('en-IN', {
+    hour: '2-digit',
+    minute: '2-digit',
+    second: '2-digit'
+  });
+  document.getElementById('datetime').textContent = `${date} | ${time}`;
+}
+
+setInterval(updateDateTime, 1000);
+updateDateTime();
+
 const desc = document.getElementById('desc');
 const amount = document.getElementById('amount');
 const type = document.getElementById('type');

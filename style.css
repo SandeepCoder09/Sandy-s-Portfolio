@@ -379,7 +379,7 @@ body {
   text-decoration: none;
 }
 
-/* ✨ Hover Animation */
+/* ✨ Hover Animation 
 .project-card:hover {
   transform: translateY(-8px) scale(1.03);
   box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
@@ -389,7 +389,7 @@ body {
 
 .project-card:hover img {
   transform: scale(1.05);
-}
+} */
 
 /* =============== SERVICES =============== */
 .services {

@@ -1,9 +1,32 @@
- const menuIcon = document.getElementById('menuIcon');
+// Menu Icon Script //
+
+  const menuIcon = document.getElementById('menuIcon');
+  const navLinks = document.getElementById('navLinks');
+  let isOpen = false;
+
+  menuIcon.addEventListener('click', () => {
+    isOpen = !isOpen;
+    menuIcon.classList.toggle('active');
+    navLinks.classList.toggle('active');
+    menuIcon.innerHTML = isOpen ? '&times;' : '&#9776;'; // ☰ → ×
+  });
+
+  // Click outside to close
+  document.addEventListener('click', (e) => {
+    if (!menuIcon.contains(e.target) && !navLinks.contains(e.target)) {
+      menuIcon.classList.remove('active');
+      navLinks.classList.remove('active');
+      menuIcon.innerHTML = '&#9776;';
+      isOpen = false;
+    }
+  });
+
+// const menuIcon = document.getElementById('menuIcon');
   const navLinks = document.getElementById('navLinks');
 
   menuIcon.addEventListener('click', () => {
     navLinks.classList.toggle('active');
-  });
+  });//
 
 // theme toggle switch 
   // const themeSwitch = document.getElementById("theme-switch");

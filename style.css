@@ -129,7 +129,7 @@ body {
   color: #00aaff;
 }
 
-/* Hamburger Menu */
+/* Hamburger Menu
 .menu-icon {
   display: none;
   font-size: 26px;
@@ -139,6 +139,24 @@ body {
 
 .menu-icon:hover {
    transform: rotate(90deg);
+} */
+
+/* Default hamburger */
+.menu-icon {
+  font-size: 30px;
+  cursor: pointer;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+/* Active animation — rotate and change symbol */
+.menu-icon.active {
+  transform: rotate(180deg);
+  color: #ff4081;
+}
+
+/* Optional hover effect */
+.menu-icon:hover {
+  color: #00bfff;
 }
 
 /* Mobile Styles */
@@ -159,9 +177,9 @@ body {
     display: flex;
   }
 
-  .menu-icon {
+  /* .menu-icon {
     display: block;
-  }
+  } */
 }
 
 

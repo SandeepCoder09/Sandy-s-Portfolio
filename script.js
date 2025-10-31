@@ -8,6 +8,24 @@
 // theme toggle switch 
   // const themeSwitch = document.getElementById("theme-switch");
 
+  const menuIcon = document.getElementById('menuToggle');
+  const navLinks = document.getElementById('navLinks');
+
+  menuIcon.addEventListener('click', () => {
+    menuIcon.classList.toggle('active');
+    navLinks.classList.toggle('active');
+    document.body.classList.toggle('menu-open');
+  });
+
+  // Click outside to close
+  document.addEventListener('click', (e) => {
+    if (!menuIcon.contains(e.target) && !navLinks.contains(e.target)) {
+      menuIcon.classList.remove('active');
+      navLinks.classList.remove('active');
+      document.body.classList.remove('menu-open');
+    }
+  });
+
   // // Load saved theme
   // if (localStorage.getItem("theme") === "dark") {
   //   document.body.classList.add("dark-mode");

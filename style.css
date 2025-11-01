@@ -530,6 +530,17 @@ body {
   }
 }
 
+[data-aos="fade-up"] {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease-out;
+}
+
+[data-aos="fade-up"].aos-animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 
 /* =============== SERVICES =============== */
 .services {

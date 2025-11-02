@@ -1,45 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>BudgetMate — Personal Finance Tracker</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BudgetMate</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header>
-    <h1>💰 BudgetMate</h1>
-    <p class="tagline">Track your income & expenses in style</p>
-    <p id="live-date"></p>
+  <header class="topbar">
+    <a href="../index.html" class="back-btn">← Back to Portfolio</a>
+    <div>
+      <span id="userEmail">Guest</span>
+      <button id="signOutBtn" class="secondary-btn">Sign Out</button>
+    </div>
   </header>
 
-  <section class="container">
-    <div class="input-box">
-      <input id="desc" type="text" placeholder="Enter description (e.g. Salary, Groceries)" />
-      <input id="amount" type="number" placeholder="Enter amount" />
-      <select id="type" aria-label="Select transaction type">
-        <option value="" disabled selected>Select Type</option>
+  <main class="app">
+    <h1>BudgetMate</h1>
+    <p id="live-date"></p>
+
+    <div class="summary">
+      <div>💰 Income: <span id="income">₹0</span></div>
+      <div>💸 Expense: <span id="expense">₹0</span></div>
+      <div>🧾 Balance: <span id="balance">₹0</span></div>
+    </div>
+
+    <div class="add-transaction">
+      <input id="desc" type="text" placeholder="Description" />
+      <input id="amount" type="number" placeholder="Amount (₹)" />
+      <select id="type">
+        <option value="">Select type</option>
         <option value="income">Income</option>
         <option value="expense">Expense</option>
       </select>
-
-      <!-- ADD button clearly visible -->
-      <button id="add" class="btn" disabled>Add</button>
+      <button id="add" class="primary-btn">Add</button>
     </div>
 
-    <div class="summary">
-      <p>Total Balance: <span id="balance">₹0</span></p>
-      <p>Total Income: <span id="income">₹0</span></p>
-      <p>Total Expense: <span id="expense">₹0</span></p>
-    </div>
+    <ul id="list"></ul>
+  </main>
 
-    <ul id="list" aria-live="polite"></ul>
-  </section>
-
-  <footer>
-    <p>© 2025 BudgetMate | Built by Sandy 💻</p>
-  </footer>
-
-  <script src="script.js"></script>
+  <!-- Firebase -->
+  <script src="https://www.gstatic.com/firebasejs/9.24.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.24.0/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.24.0/firebase-firestore-compat.js"></script>
+  <script type="module" src="script.js"></script>
 </body>
 </html>

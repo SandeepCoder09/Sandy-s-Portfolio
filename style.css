@@ -555,7 +555,7 @@ footer {
 .contact-btn,
 .donate-inline-btn {
   display: inline-block;
-  padding: 12px 30px;
+  padding: 12px 36px; /* same height for both */
   border-radius: 40px;
   font-weight: 600;
   font-size: 1rem;
@@ -565,19 +565,19 @@ footer {
   text-decoration: none;
   transition: all 0.3s ease;
   color: #000;
+  background: linear-gradient(90deg, #00ffaa, #00ff66);
   box-shadow: 0 0 25px rgba(0, 255, 128, 0.4);
 }
 
 /* === GET IN TOUCH BUTTON === */
 .contact-btn {
-  background: linear-gradient(90deg, #00ffaa, #00ff66);
-  width: 200px; /* normal size */
+  width: 200px;
 }
 
-/* === BIGGER DONATE BUTTON BELOW === */
+/* === WIDER DONATE BUTTON === */
 .donate-inline-btn {
+  width: 260px; /* only width increased */
   background: linear-gradient(90deg, #00ff66, #00ffaa);
-  width: 260px; /* wider than Get in Touch */
   box-shadow: 0 0 30px rgba(0, 255, 128, 0.6);
   font-weight: 700;
 }
@@ -599,14 +599,11 @@ footer {
     font-size: 0.9rem;
   }
   .contact-btn {
-    width: 160px;
-    padding: 10px 22px;
+    width: 170px;
     font-size: 0.9rem;
   }
   .donate-inline-btn {
-    width: 220px;
-    padding: 11px 24px;
-    font-size: 1rem;
+    width: 230px;
+    font-size: 0.95rem;
   }
 }
-

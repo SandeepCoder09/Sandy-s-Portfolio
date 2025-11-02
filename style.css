@@ -396,6 +396,7 @@ body {
   background: #0b0b0b;
   display: block;
   padding: 15px;
+  border-radius: 20px;
   transition: transform 0.4s ease;
 }
 

@@ -1,122 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sandy | Portfolio</title>
-  <link rel="stylesheet" href="style.css">
-  <!-- AOS Animation -->
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-  <link rel="shortcut icon" href="favicon.png" type="image/png">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sandy 09 | Hacker Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
-  <!-- NAVBAR -->
+  <!-- ===== NAVBAR ===== -->
   <nav>
-  <a href="index.html" class="logo">
-    <img src="09logo-green.png" alt="Sandy Logo">
-  </a>
+    <a href="#home" class="logo">SANDY<span>09</span></a>
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="menu-icon" id="menuIcon">&#9776;</div>
+  </nav>
 
-  <ul class="nav-links">
-    <li><a href="#home">Home</a></li>
-    <li><a href="#about">About</a></li>
-    <li><a href="#projects">Projects</a></li>
-    <li><a href="#contact">Contact</a></li>
-    <li><a href="donate.html" class="donate-btn">Donate</a></li>
-  </ul>
-
-  <div class="menu-icon" id="menuIcon">
-    <span></span>
-    <span></span>
-    <span></span>
-  </div>
-</nav>
-
-
-  <!-- HERO SECTION -->
-  <section class="hero" id="home" data-aos="fade-up">
+  <!-- ===== HERO SECTION ===== -->
+  <section id="home" class="hero">
     <div class="hero-content">
-      <h3>Hello, I’m</h3>
-      <h1>Sandeep Coder</h1>
-      <h2>Front-End Web Developer</h2>
-      <p>I create futuristic, glowing cyberpunk websites that blend style with smooth interactivity.</p>
-      <div class="buttons">
-        <a href="getintouch.html" class="btn-primary">Hire Me</a>
-        <a href="#projects" class="btn-outline">View Projects</a>
-      </div>
-    </div>
-    <div class="hero-img">
-      <img src="profile2.jpg" alt="Sandeep Gautam">
+      <h1 class="glow-text">SANDY <span>09</span></h1>
+      <p class="tagline">Coding the Future | Cyber Mind | Web Innovator</p>
+      <a href="#projects" class="cta-btn">View Projects</a>
     </div>
   </section>
 
-  <!-- ABOUT -->
-  <section class="about" id="about" data-aos="fade-up">
-    <div class="about-text">
-      <h2>About Me</h2>
-      <p>I’m a cyberpunk-inspired front-end developer who loves designing in the neon green aesthetic — clean, glowing, and high-tech.</p>
-      <div class="skills">
-        <div><h4>HTML</h4><div class="bar html"></div></div>
-        <div><h4>CSS</h4><div class="bar css"></div></div>
-        <div><h4>JavaScript</h4><div class="bar js"></div></div>
-      </div>
-    </div>
-    <div class="about-img">
-      <img src="profile.jpg" alt="About Sandy">
-    </div>
+  <!-- ===== ABOUT ===== -->
+  <section id="about" class="about">
+    <h2>About Me</h2>
+    <p>
+      I’m Sandy, a passionate web developer focused on crafting clean, modern, and futuristic web experiences.
+      With a hacker mindset, I turn code into creativity and design into digital art.
+    </p>
   </section>
 
-  <!-- PROJECTS -->
-  <section class="projects" id="projects" data-aos="fade-up">
-    <h2 class="section-title">Recent Projects</h2>
-
+  <!-- ===== PROJECTS ===== -->
+  <section id="projects" class="projects">
+    <h2>Recent Projects</h2>
     <div class="project-grid">
       <div class="project-card">
-        <img src="webdesign.png" alt="Website Design">
-        <h4>Website Design</h4>
-        <p>Modern responsive web layouts for clients and portfolios.</p>
+        <h3>3D Portfolio</h3>
+        <p>My 3D cyberpunk-style web portfolio with glowing animations.</p>
       </div>
-
-      <a href="https://sandeepcoder09.github.io/3DPortfolioBySandy/" class="project-card">
-        <img src="Portfolio3D.png" alt="3D Portfolio">
-        <h4>3D Portfolio</h4>
-        <p>Experience my futuristic 3D portfolio built with green neon lights.</p>
-      </a>
-
-      <a href="budgetmet/index.html" class="project-card">
-        <img src="BudgeMateLogo.png" alt="BudgetMate">
-        <h4>BudgetMate</h4>
-        <p>Track your finances with style and digital precision.</p>
-      </a>
+      <div class="project-card">
+        <h3>Crypto Dashboard</h3>
+        <p>Live crypto tracker with neon UI & futuristic charts.</p>
+      </div>
+      <div class="project-card">
+        <h3>BudgetMate</h3>
+        <p>Smart finance tracker built with clean design & modern UX.</p>
+      </div>
     </div>
   </section>
 
-  <!-- CONTACT -->
-  <section class="contact" id="contact" data-aos="fade-up">
+  <!-- ===== CONTACT ===== -->
+  <section id="contact" class="contact">
     <h2>Contact Me</h2>
-    <p>Let's craft your futuristic digital experience together.</p>
-    <a href="getintouch.html" class="btn-primary">Get in Touch</a>
+    <form>
+      <input type="text" placeholder="Your Name" required />
+      <input type="email" placeholder="Your Email" required />
+      <textarea placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+    <div class="socials">
+      <a href="#">GitHub</a> | <a href="#">LinkedIn</a> | <a href="#">Twitter</a>
+    </div>
   </section>
 
-  <!-- FOOTER -->
+  <!-- ===== FOOTER ===== -->
   <footer>
-    <p>© 2025 Sandeep Gautam | Designed in <span>Cyberpunk Green</span> by Sandy</p>
+    <p>© 2025 Sandy09 | Designed in Hacker Mode 💻</p>
   </footer>
 
-  <!-- Donation Button -->
-  <button data-aos="zoom-in" class="donation-btn" onclick="window.location.href='donate.html'">Donation</button>
-
-  <!-- AOS Animation -->
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
-    AOS.init({ duration: 1000, easing: 'ease-in-out', once: true });
-  </script>
-
-  <!-- Toggle Nav -->
-  <script>
-    const menuIcon = document.getElementById('menuIcon');
-    const navLinks = document.getElementById('navLinks');
-    menuIcon.onclick = () => navLinks.classList.toggle('active');
+    // Mobile Menu Toggle
+    const menuIcon = document.getElementById("menuIcon");
+    const navLinks = document.querySelector(".nav-links");
+    menuIcon.addEventListener("click", () => {
+      navLinks.classList.toggle("show");
+    });
   </script>
 </body>
 </html>

@@ -520,90 +520,56 @@ footer {
   footer { font-size: 0.85rem; }
 }
 
-/* === CONTACT SECTION (HACKER THEME) === */
-.contact {
-  background: linear-gradient(180deg, #030a03, #071b0a);
-  text-align: center;
-  padding: 80px 10%;
-  color: #00ffcc;
-  font-family: 'Orbitron', sans-serif;
-}
-
-.contact h2 {
-  font-size: 2rem;
-  font-weight: 700;
-  color: #00ffcc;
-  text-transform: uppercase;
-  text-shadow: 0 0 20px #00ffcc;
-  margin-bottom: 20px;
-}
-
-.contact p {
-  font-size: 1rem;
-  color: #a8f0c8;
-  margin-bottom: 40px;
-}
-
+/* contact section */
 .contact-buttons {
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  gap: 20px;
+  gap: 25px;
+  margin-top: 25px;
 }
 
-/* === CONTACT + DONATE BUTTONS === */
-.contact-btn,
-.donate-inline-btn {
-  display: inline-block;
-  padding: 12px 36px; /* same height for both */
-  border-radius: 40px;
-  font-weight: 600;
-  font-size: 1rem;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  cursor: pointer;
-  text-decoration: none;
-  transition: all 0.3s ease;
+.btn {
+  background: linear-gradient(90deg, #00ff99, #00ffaa);
   color: #000;
-  background: linear-gradient(90deg, #00ffaa, #00ff66);
-  box-shadow: 0 0 25px rgba(0, 255, 128, 0.4);
+  font-family: "Orbitron", sans-serif;
+  font-weight: 600;
+  letter-spacing: 1px;
+  border: none;
+  padding: 12px 36px;
+  border-radius: 50px;
+  cursor: pointer;
+  text-transform: uppercase;
+  box-shadow: 0 0 15px #00ff99;
+  transition: all 0.3s ease;
+  text-decoration: none;
 }
 
-/* === GET IN TOUCH BUTTON === */
-.contact-btn {
-  width: 200px;
-}
-
-/* === WIDER DONATE BUTTON === */
-.donate-inline-btn {
-  width: 260px; /* only width increased */
-  background: linear-gradient(90deg, #00ff66, #00ffaa);
-  box-shadow: 0 0 30px rgba(0, 255, 128, 0.6);
-  font-weight: 700;
-}
-
-/* === BUTTON HOVER EFFECTS === */
-.contact-btn:hover,
-.donate-inline-btn:hover {
-  transform: scale(1.08);
-  box-shadow: 0 0 40px rgba(0, 255, 128, 1);
+.btn:hover {
   background: linear-gradient(90deg, #00ffaa, #00ff99);
+  transform: scale(1.05);
+  box-shadow: 0 0 25px #00ffaa;
 }
 
-/* === RESPONSIVE FIXES === */
-@media (max-width: 480px) {
-  .contact h2 {
-    font-size: 1.6rem;
+/* Donate button: slightly larger width & distinct glow */
+.donate-btn {
+  padding: 12px 50px;
+  box-shadow: 0 0 20px #00ffcc;
+}
+
+.donate-btn:hover {
+  box-shadow: 0 0 30px #00ffcc;
+}
+
+/* Responsive fix */
+@media (max-width: 600px) {
+  .contact-buttons {
+    flex-direction: column;
+    gap: 15px;
   }
-  .contact p {
-    font-size: 0.9rem;
-  }
-  .contact-btn {
-    width: 170px;
-    font-size: 0.9rem;
-  }
-  .donate-inline-btn {
-    width: 230px;
-    font-size: 0.95rem;
+
+  .btn, .donate-btn {
+    width: 80%;
+    text-align: center;
   }
 }

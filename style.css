@@ -519,3 +519,52 @@ footer {
   .section-title { font-size: 1.6rem; }
   footer { font-size: 0.85rem; }
 }
+
+/* === FLOATING DONATE BUTTON === */
+.floating-btn {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  background: linear-gradient(90deg, #00ffcc, #00ff66);
+  color: #000;
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 600;
+  border: none;
+  padding: 12px 28px;
+  border-radius: 40px;
+  cursor: pointer;
+  box-shadow: 0 0 20px rgba(0, 255, 128, 0.6), inset 0 0 10px rgba(0, 255, 128, 0.4);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  z-index: 1000;
+  transition: all 0.3s ease-in-out;
+}
+
+/* === HOVER GLOW EFFECT === */
+.floating-btn:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 35px rgba(0, 255, 128, 0.9), 0 0 60px rgba(0, 255, 128, 0.5);
+  color: #000;
+  background: linear-gradient(90deg, #00ffaa, #00ff77);
+}
+
+/* === PULSE ANIMATION === */
+@keyframes glowPulse {
+  0% { box-shadow: 0 0 10px rgba(0, 255, 128, 0.5), 0 0 20px rgba(0, 255, 128, 0.3); }
+  50% { box-shadow: 0 0 25px rgba(0, 255, 128, 0.9), 0 0 40px rgba(0, 255, 128, 0.6); }
+  100% { box-shadow: 0 0 10px rgba(0, 255, 128, 0.5), 0 0 20px rgba(0, 255, 128, 0.3); }
+}
+
+.floating-btn {
+  animation: glowPulse 2s infinite;
+}
+
+/* === RESPONSIVE FIX === */
+@media (max-width: 480px) {
+  .floating-btn {
+    bottom: 15px;
+    right: 15px;
+    padding: 10px 20px;
+    font-size: 0.85rem;
+  }
+}

@@ -5,25 +5,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sandy | Portfolio</title>
   <link rel="stylesheet" href="style.css">
-  <!-- AOS CSS -->
-<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <!-- AOS Animation -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <link rel="shortcut icon" href="favicon.png" type="image/png">
 </head>
-<body> 
-  <nav>
-<a href="index.html" class="logo">
-  <img src="09logo-black.jpg" alt="Sandy Logo">
-</a>
 
-  <ul class="nav-links">
-    <li><a href="#home">Home</a></li>
-    <li><a href="#about">About</a></li>
-    <li><a href="#projects">Projects</a></li>
-    <li><a href="#contact">Contact</a></li>
-    <li><a href="donate.html" class="donate-btn">Donation</a></li>
-  </ul>
-  <div class="menu-icon" id="menuIcon">&#9776;</div>
-</nav>
+<body>
+  <!-- NAVBAR -->
+  <nav>
+    <a href="index.html" class="logo">
+      <img src="09logo-black.jpg" alt="Sandy Logo">
+    </a>
+
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="donate.html" class="donate-btn">Donation</a></li>
+    </ul>
+    <div class="menu-icon" id="menuIcon">&#9776;</div>
+  </nav>
 
   <!-- HERO SECTION -->
   <section class="hero" id="home" data-aos="fade-up">
@@ -31,7 +33,7 @@
       <h3>Hello, I’m</h3>
       <h1>Sandeep Coder</h1>
       <h2>Front-End Web Developer</h2>
-      <p>I build beautiful, interactive, and user-friendly websites with a modern touch and smooth performance.</p>
+      <p>I create futuristic, glowing cyberpunk websites that blend style with smooth interactivity.</p>
       <div class="buttons">
         <a href="getintouch.html" class="btn-primary">Hire Me</a>
         <a href="#projects" class="btn-outline">View Projects</a>
@@ -46,7 +48,7 @@
   <section class="about" id="about" data-aos="fade-up">
     <div class="about-text">
       <h2>About Me</h2>
-      <p>I'm a passionate front-end developer who focuses on creating engaging, clean, and accessible digital experiences. I love combining design with technology to bring ideas to life.</p>
+      <p>I’m a cyberpunk-inspired front-end developer who loves designing in the neon green aesthetic — clean, glowing, and high-tech.</p>
       <div class="skills">
         <div><h4>HTML</h4><div class="bar html"></div></div>
         <div><h4>CSS</h4><div class="bar css"></div></div>
@@ -59,73 +61,56 @@
   </section>
 
   <!-- PROJECTS -->
-<section class="projects" id="projects" data-aos="fade-up">
-  <h2 class="section-title">Recent Projects</h2>
+  <section class="projects" id="projects" data-aos="fade-up">
+    <h2 class="section-title">Recent Projects</h2>
 
-  <div class="project-grid">
-    <div class="project-card">
-      <img src="webdesign.png" alt="Website Design">
-      <h4>Website Design</h4>
-      <p>Modern responsive design for clients and portfolios.</p>
-    </div>
-
-    <a href="https://sandeepcoder09.github.io/3DPortfolioBySandy/" class="project-card">
-      <img src="Portfolio3D.png" alt="CryptoDashboard Preview">
-      <h4>3D Portfolio Design</h4>
-      <p>Take a Look at my 3D Desined Portfolio.</p>
-    </a>
-
-    <a href="budgetmet/index.html" class="project-card">
-      <img src="BudgeMateLogo.png" alt="BudgetMate Preview">
-      <h4>BudgetMate</h4>
-      <p>Track your income, expenses, and manage your finances efficiently.</p>
-    </a>
-  </div>
-</section>
-
-  <!-- SERVICES -->
-  <section class="services" id="services" data-aos="fade-up">
-    <h2>Services</h2>
-    <div class="service-grid">
-      <div class="service-card">
-        <h4>Web Design</h4>
-        <p>Clean, attractive, and responsive website design tailored for your brand.</p>
+    <div class="project-grid">
+      <div class="project-card">
+        <img src="webdesign.png" alt="Website Design">
+        <h4>Website Design</h4>
+        <p>Modern responsive web layouts for clients and portfolios.</p>
       </div>
-      <div class="service-card">
-        <h4>UI/UX Design</h4>
-        <p>Creating intuitive and delightful user experiences.</p>
-      </div>
-      <div class="service-card">
-        <h4>Frontend Development</h4>
-        <p>Converting ideas into pixel-perfect, fast, and responsive interfaces.</p>
-      </div>
+
+      <a href="https://sandeepcoder09.github.io/3DPortfolioBySandy/" class="project-card">
+        <img src="Portfolio3D.png" alt="3D Portfolio">
+        <h4>3D Portfolio</h4>
+        <p>Experience my futuristic 3D portfolio built with green neon lights.</p>
+      </a>
+
+      <a href="budgetmet/index.html" class="project-card">
+        <img src="BudgeMateLogo.png" alt="BudgetMate">
+        <h4>BudgetMate</h4>
+        <p>Track your finances with style and digital precision.</p>
+      </a>
     </div>
   </section>
 
   <!-- CONTACT -->
   <section class="contact" id="contact" data-aos="fade-up">
     <h2>Contact Me</h2>
-    <p>Let's create something amazing together.</p>
+    <p>Let's craft your futuristic digital experience together.</p>
     <a href="getintouch.html" class="btn-primary">Get in Touch</a>
   </section>
-  
-<button data-aos="zoom-in" class="donation-btn" onclick="window.location.href='donate.html'">Donation</button>
 
+  <!-- FOOTER -->
   <footer>
-    <p>© 2025 Sandeep Gautam | Designed with ❤️ by Sandy</p>
+    <p>© 2025 Sandeep Gautam | Designed in <span>Cyberpunk Green</span> by Sandy</p>
   </footer>
 
-  <!-- AOS JS -->
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>
-  AOS.init({
-    duration: 1000,   // animation duration (ms)
-    easing: 'ease-in-out',
-    once: true,       // animation runs only once
-    mirror: false     // disables animation when scrolling up
-  });
-</script>
+  <!-- Donation Button -->
+  <button data-aos="zoom-in" class="donation-btn" onclick="window.location.href='donate.html'">Donation</button>
 
-<script src="script.js"> </script>  
+  <!-- AOS Animation -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 1000, easing: 'ease-in-out', once: true });
+  </script>
+
+  <!-- Toggle Nav -->
+  <script>
+    const menuIcon = document.getElementById('menuIcon');
+    const navLinks = document.getElementById('navLinks');
+    menuIcon.onclick = () => navLinks.classList.toggle('active');
+  </script>
 </body>
 </html>

@@ -1,183 +1,127 @@
-/* ==== Reset & Base ==== */
+/* Hacker Theme - Login Page */
+
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Roboto Mono", monospace;
+  font-family: "Space Mono", monospace;
 }
 
 body {
-  background: radial-gradient(circle at top, #0a0f1e, #000);
-  color: #d4faff;
+  background: radial-gradient(circle at top, #0d0d0d 0%, #000 100%);
+  color: #00ff88;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  flex-direction: column;
   overflow: hidden;
 }
 
-/* ==== Auth Container ==== */
 .auth-container {
-  background: rgba(10, 30, 50, 0.6);
-  border: 1px solid rgba(0, 255, 170, 0.2);
-  backdrop-filter: blur(15px);
-  padding: 40px 50px;
-  border-radius: 16px;
+  background: rgba(0, 0, 0, 0.85);
+  border: 1px solid #00ff88;
+  border-radius: 12px;
+  padding: 40px;
+  width: 350px;
   text-align: center;
-  width: 90%;
-  max-width: 420px;
-  box-shadow: 0 0 25px rgba(0, 255, 170, 0.15);
-  animation: fadeIn 1s ease-in-out;
-  position: relative;
-}
-
-.auth-container::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: 16px;
-  padding: 2px;
-  background: linear-gradient(135deg, #00ffc3, #0072ff);
-  mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
-  -webkit-mask-composite: xor;
-  mask-composite: exclude;
-  pointer-events: none;
-}
-
-/* ==== Title ==== */
-.auth-container h1 {
-  font-size: 1.9rem;
-  margin-bottom: 25px;
-  background: linear-gradient(90deg, #00ffcc, #00aaff);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  letter-spacing: 1px;
-  text-shadow: 0 0 12px rgba(0, 255, 170, 0.3);
-}
-
-/* ==== Form ==== */
-form input {
-  width: 100%;
-  padding: 12px 15px;
-  margin: 10px 0;
-  border-radius: 10px;
-  border: 1px solid rgba(0, 255, 170, 0.2);
-  outline: none;
-  font-size: 1rem;
-  color: #fff;
-  background: rgba(0, 0, 0, 0.4);
-  transition: all 0.3s ease;
-}
-
-form input:focus {
-  border-color: #00ffcc;
-  box-shadow: 0 0 10px #00ffcc;
-  background: rgba(0, 0, 0, 0.6);
-}
-
-/* ==== Buttons ==== */
-.btn {
-  background: linear-gradient(90deg, #00ffcc, #00aaff);
-  border: none;
-  color: #000;
-  padding: 12px 20px;
-  width: 100%;
-  border-radius: 10px;
-  cursor: pointer;
-  font-size: 1rem;
-  font-weight: 600;
-  margin-top: 15px;
-  transition: all 0.3s ease;
-  box-shadow: 0 0 10px rgba(0, 255, 170, 0.4);
-}
-
-.btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 0 20px rgba(0, 255, 170, 0.6);
-  background: linear-gradient(90deg, #00aaff, #00ffcc);
-}
-
-/* ==== Text & Links ==== */
-p {
-  margin-top: 15px;
-  font-size: 0.9rem;
-  color: #9fffd9;
-}
-
-p a {
-  color: #00ffcc;
-  text-decoration: none;
-  font-weight: 500;
-}
-
-p a:hover {
-  text-shadow: 0 0 10px #00ffcc;
-}
-
-/* ==== Forgot Password ==== */
-.forgot {
-  margin-top: 15px;
-  display: inline-block;
-  color: #00ffcc;
-  text-decoration: none;
-  font-size: 0.9rem;
+  box-shadow: 0 0 30px #00ff8855;
   transition: 0.3s;
 }
 
-.forgot:hover {
-  text-shadow: 0 0 8px #00ffcc;
+.auth-container:hover {
+  box-shadow: 0 0 45px #00ff88aa;
 }
 
-/* ==== Success Popup ==== */
+.auth-container h1 {
+  margin-bottom: 25px;
+  font-size: 1.8em;
+  color: #00ffcc;
+  text-shadow: 0 0 8px #00ff88;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+input {
+  background: #0f0f0f;
+  border: 1px solid #00ff88;
+  color: #00ffcc;
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 8px;
+  font-size: 1em;
+  outline: none;
+  transition: 0.2s;
+}
+
+input:focus {
+  box-shadow: 0 0 10px #00ff88;
+}
+
+.btn {
+  background: #00ff88;
+  color: #000;
+  border: none;
+  padding: 12px;
+  margin-top: 10px;
+  border-radius: 8px;
+  font-size: 1em;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: #00ffaa;
+  box-shadow: 0 0 15px #00ff88;
+}
+
+.forgot,
+p a {
+  display: inline-block;
+  margin-top: 12px;
+  color: #00ffcc;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.forgot:hover,
+p a:hover {
+  color: #00ffaa;
+  text-shadow: 0 0 5px #00ff88;
+}
+
+/* Success Popup */
 .success-popup {
   position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) scale(0);
-  background: rgba(10, 20, 30, 0.95);
-  color: #00ffcc;
-  padding: 30px 50px;
-  border-radius: 12px;
-  text-align: center;
-  box-shadow: 0 0 25px rgba(0, 255, 170, 0.3);
-  z-index: 2000;
-  transition: transform 0.4s ease;
-}
-
-.success-popup.active {
-  transform: translate(-50%, -50%) scale(1);
+  top: 20px;
+  right: 20px;
+  background: #0a0;
+  color: #fff;
+  padding: 15px 25px;
+  border-radius: 10px;
+  display: none;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 0 20px #00ff88;
+  animation: slideIn 0.5s ease-out;
 }
 
 .checkmark {
-  font-size: 3rem;
-  color: #00ffcc;
-  margin-bottom: 10px;
+  font-size: 1.5em;
 }
 
-/* ==== Animations ==== */
-@keyframes fadeIn {
+@keyframes slideIn {
   from {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(-20px);
   }
   to {
     opacity: 1;
     transform: translateY(0);
-  }
-}
-
-/* ==== Responsive ==== */
-@media (max-width: 480px) {
-  .auth-container {
-    padding: 30px 25px;
-  }
-
-  .auth-container h1 {
-    font-size: 1.6rem;
-  }
-
-  .btn {
-    font-size: 0.9rem;
   }
 }

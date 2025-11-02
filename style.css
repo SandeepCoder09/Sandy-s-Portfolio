@@ -520,56 +520,78 @@ footer {
   footer { font-size: 0.85rem; }
 }
 
-/* contact section */
+.contact {
+  text-align: center;
+  padding: 100px 8%;
+}
+
+.contact h2 {
+  color: #00ff99;
+  font-family: "Orbitron", sans-serif;
+  font-size: 2rem;
+  letter-spacing: 2px;
+  text-shadow: 0 0 10px #00ff99;
+  margin-bottom: 10px;
+}
+
+.contact p {
+  color: #b3ffcc;
+  margin-bottom: 25px;
+  font-size: 1rem;
+}
+
 .contact-buttons {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  gap: 25px;
-  margin-top: 25px;
+  gap: 15px;
 }
 
-.btn {
-  background: linear-gradient(90deg, #00ff99, #00ffaa);
-  color: #000;
-  font-family: "Orbitron", sans-serif;
-  font-weight: 600;
-  letter-spacing: 1px;
-  border: none;
-  padding: 12px 36px;
-  border-radius: 50px;
-  cursor: pointer;
-  text-transform: uppercase;
-  box-shadow: 0 0 15px #00ff99;
-  transition: all 0.3s ease;
+/* === Get in Touch Button === */
+.btn-primary {
+  background: linear-gradient(90deg, #00ff99, #00cc66);
+  color: #0b0f14;
+  padding: 12px 28px;
+  border-radius: 40px;
   text-decoration: none;
+  font-weight: 700;
+  letter-spacing: 1px;
+  font-family: "Orbitron", sans-serif;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 20px rgba(0, 255, 153, 0.3);
 }
 
-.btn:hover {
-  background: linear-gradient(90deg, #00ffaa, #00ff99);
+.btn-primary:hover {
   transform: scale(1.05);
-  box-shadow: 0 0 25px #00ffaa;
+  box-shadow: 0 0 25px #00ff99;
 }
 
-/* Donate button: slightly larger width & distinct glow */
-.donate-btn {
-  padding: 12px 50px;
-  box-shadow: 0 0 20px #00ffcc;
+/* === Donate Button (Wider) === */
+.btn-donate {
+  background: transparent;
+  border: 2px solid #00ff99;
+  color: #00ff99;
+  width: 240px;
+  padding: 14px 0;
+  border-radius: 40px;
+  text-decoration: none;
+  font-weight: 700;
+  letter-spacing: 1px;
+  font-family: "Orbitron", sans-serif;
+  transition: all 0.4s ease;
+  box-shadow: 0 0 10px rgba(0, 255, 153, 0.2);
 }
 
-.donate-btn:hover {
-  box-shadow: 0 0 30px #00ffcc;
+.btn-donate:hover {
+  background: #00ff99;
+  color: #0b0f14;
+  transform: translateY(-4px);
+  box-shadow: 0 0 25px #00ff99;
 }
 
-/* Responsive fix */
-@media (max-width: 600px) {
-  .contact-buttons {
-    flex-direction: column;
-    gap: 15px;
-  }
-
-  .btn, .donate-btn {
+/* === Responsive === */
+@media (max-width: 480px) {
+  .btn-donate {
     width: 80%;
-    text-align: center;
   }
 }

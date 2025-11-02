@@ -1,1 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>BudgetMate — Login</title>
 
+  <!-- Firebase compat SDKs -->
+  <script src="https://www.gstatic.com/firebasejs/9.24.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.24.0/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.24.0/firebase-firestore-compat.js"></script>
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="hacker-bg">
+  <main class="auth-card">
+    <h2 class="logo">Budget<span class="accent">Mate</span></h2>
+    <p class="sub">Sign in to access synced transactions</p>
+
+    <label class="field">
+      <span>Email</span>
+      <input id="email" type="email" placeholder="you@domain.com" />
+    </label>
+
+    <label class="field">
+      <span>Password</span>
+      <input id="password" type="password" placeholder="min 6 chars" />
+    </label>
+
+    <div class="actions">
+      <button id="signIn" class="btn primary">Sign In</button>
+      <a href="register.html" class="btn ghost">Create account</a>
+      <button id="guest" class="btn link">Continue as Guest</button>
+    </div>
+
+    <div id="message" class="message"></div>
+
+    <footer class="small">Secure sync • Firestore • Multi-device</footer>
+  </main>
+
+  <script src="auth.js"></script>
+</body>
+</html>

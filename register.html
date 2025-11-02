@@ -35,7 +35,10 @@
     <span class="checkmark">✅</span>
     <span id="successMessage">Registration Successful!</span>
   </div>
-
+  <script>
+    localStorage.setItem("isRegistered", "true");
+localStorage.setItem("lastActiveTime", Date.now());
+  </script>
   <script src="auth.js"></script>
 </body>
 </html>

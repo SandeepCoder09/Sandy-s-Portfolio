@@ -18,7 +18,7 @@ body {
   animation: fadeInBody 1s ease-in forwards;
 }
 
-/* === NAVBAR BASE === */
+/* =============== NAVIGATION BAR =============== */
 nav {
   width: 100%;
   background: #0b0d17;
@@ -29,8 +29,8 @@ nav {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 100;
-  box-shadow: 0 2px 15px rgba(0, 255, 255, 0.1);
+  z-index: 1000;
+  box-shadow: 0 2px 15px rgba(0, 255, 255, 0.15);
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
@@ -38,6 +38,7 @@ nav {
 nav .logo img {
   height: 45px;
   width: auto;
+  cursor: pointer;
   transition: transform 0.3s ease;
 }
 
@@ -48,9 +49,9 @@ nav .logo img:hover {
 /* === NAV LINKS === */
 .nav-links {
   display: flex;
+  align-items: center;
   list-style: none;
   gap: 30px;
-  align-items: center;
   transition: all 0.4s ease;
 }
 
@@ -83,12 +84,12 @@ nav .logo img:hover {
   width: 100%;
 }
 
-/* === DONATION BUTTON === */
+/* === DONATE BUTTON === */
 .donate-btn {
   background: linear-gradient(90deg, #00ffff, #007bff);
   color: #0b0d17;
   padding: 8px 18px;
-  border-radius: 20px;
+  border-radius: 25px;
   font-weight: 600;
   transition: all 0.3s ease;
 }
@@ -98,7 +99,7 @@ nav .logo img:hover {
   transform: scale(1.05);
 }
 
-/* === MENU ICON (MOBILE) === */
+/* === MENU ICON === */
 .menu-icon {
   display: none;
   font-size: 1.8rem;
@@ -111,14 +112,14 @@ nav .logo img:hover {
   color: #00ffff;
 }
 
-/* === RESPONSIVE === */
+/* =============== RESPONSIVE NAVBAR =============== */
 @media (max-width: 992px) {
   nav {
     padding: 15px 6%;
   }
 
   .nav-links {
-    gap: 20px;
+    gap: 25px;
   }
 }
 
@@ -131,16 +132,17 @@ nav .logo img:hover {
     position: fixed;
     top: 70px;
     right: -100%;
-    background: #0b0d17;
+    background: rgba(11, 13, 23, 0.98);
     flex-direction: column;
     width: 100%;
     max-width: 300px;
     height: 100vh;
-    gap: 25px;
     justify-content: center;
     align-items: center;
+    gap: 30px;
     transition: right 0.4s ease;
-    box-shadow: -2px 0 15px rgba(0, 255, 255, 0.1);
+    box-shadow: -2px 0 15px rgba(0, 255, 255, 0.15);
+    backdrop-filter: blur(8px);
   }
 
   .nav-links.active {
@@ -148,7 +150,12 @@ nav .logo img:hover {
   }
 
   .nav-links li a {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
+  }
+
+  .donate-btn {
+    padding: 10px 22px;
+    font-size: 1.1rem;
   }
 }
 
@@ -165,7 +172,6 @@ nav .logo img:hover {
     font-size: 1.1rem;
   }
 }
-
 
 /* =============== HERO SECTION =============== */
 .hero {

@@ -7,15 +7,100 @@
 //   navLinks.classList.toggle('active');
 // });
 
-import { auth } from "../firebase.js";
+import { auth, db } from "../firebase.js";
 
+// Redirect if not signed in
 auth.onAuthStateChanged(user => {
   if (!user) {
     window.location.href = "../users.html";
   } else {
     document.getElementById("userEmail").textContent = user.email;
+    initApp(user.uid);
   }
 });
+
+document.getElementById("signOutBtn").addEventListener("click", async () => {
+  await auth.signOut();
+  window.location.href = "../users.html";
+});
+
+function initApp(uid) {
+  const descEl = document.getElementById("desc");
+  const amountEl = document.getElementById("amount");
+  const typeEl = document.getElementById("type");
+  const listEl = document.getElementById("list");
+  const incomeEl = document.getElementById("income");
+  const expenseEl = document.getElementById("expense");
+  const balanceEl = document.getElementById("balance");
+
+  let income = 0, expense = 0;
+
+  // Live date
+  const liveDate = document.getElementById("live-date");
+  setInterval(() => {
+    const now = new Date();
+    liveDate.textContent = now.toLocaleString();
+  }, 1000);
+
+  // Add transaction
+  document.getElementById("add").addEventListener("click", async () => {
+    const desc = descEl.value.trim();
+    const amount = parseFloat(amountEl.value);
+    const type = typeEl.value;
+
+    if (!desc || !amount || !type) return alert("Please fill all fields");
+
+    const data = {
+      desc,
+      amount,
+      type,
+      createdAt: new Date().toISOString()
+    };
+
+    try {
+      await db.collection("users").doc(uid).collection("transactions").add(data);
+      descEl.value = "";
+      amountEl.value = "";
+      typeEl.value = "";
+    } catch (err) {
+      console.error(err);
+      alert("Error adding transaction!");
+    }
+  });
+
+  // Listen for real-time updates (newest first)
+  db.collection("users")
+    .doc(uid)
+    .collection("transactions")
+    .orderBy("createdAt", "desc")
+    .onSnapshot(snapshot => {
+      listEl.innerHTML = "";
+      income = 0;
+      expense = 0;
+
+      snapshot.forEach(doc => {
+        const t = doc.data();
+        const li = document.createElement("li");
+        li.classList.add(t.type);
+        li.innerHTML = `
+          <div>
+            <strong>${t.desc}</strong>
+            <small>${new Date(t.createdAt).toLocaleString()}</small>
+          </div>
+          <span>${t.type === "income" ? "+" : "-"}₹${t.amount}</span>
+        `;
+        listEl.appendChild(li);
+
+        if (t.type === "income") income += t.amount;
+        else expense += t.amount;
+      });
+
+      const balance = income - expense;
+      incomeEl.textContent = "₹" + income.toFixed(2);
+      expenseEl.textContent = "₹" + expense.toFixed(2);
+      balanceEl.textContent = "₹" + balance.toFixed(2);
+    });
+}
 
 // Scroll effect
 window.addEventListener('scroll', () => {

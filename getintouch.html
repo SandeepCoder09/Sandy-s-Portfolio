@@ -64,5 +64,11 @@
     <p>© 2025 Sandeep Gautam | Designed with ❤️ by Sandy</p>
   </footer>
 
+  <script>
+    AOS.init({ duration: 1000, easing: 'ease-in-out', once: true });
+    const menuIcon = document.getElementById("menuIcon");
+    const navLinks = document.querySelector(".nav-links");
+    menuIcon.addEventListener("click", () => navLinks.classList.toggle("active"));
+  </script>
 </body>
 </html>

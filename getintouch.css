@@ -161,13 +161,15 @@ textarea {
 
 .socials img {
   width: 45px;
-  filter: drop-shadow(0 0 8px #00ffaa);
+  filter: brightness(0) invert(1) drop-shadow(0 0 8px #00ffaa);
   transition: all 0.3s ease;
+  opacity: 0.9;
 }
 
 .socials img:hover {
   transform: scale(1.15);
-  filter: drop-shadow(0 0 15px #00ff99);
+  filter: brightness(0) invert(1) drop-shadow(0 0 15px #00ff99);
+  opacity: 1;
 }
 
 /* ---------- Footer ---------- */

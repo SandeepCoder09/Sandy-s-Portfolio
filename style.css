@@ -597,3 +597,22 @@ footer {
     width: 80%;
   }
 }
+
+/* Binary background canvas: full-screen and behind everything */
+#binaryCanvas {
+  position: fixed;
+  inset: 0;                 /* top:0; right:0; bottom:0; left:0 */
+  z-index: 0;               /* keep behind site content (ensure content z-index > 0) */
+  pointer-events: none;     /* clicks pass through */
+  display: block;
+  opacity: 0.14;            /* subtle — increase if you want stronger effect */
+  mix-blend-mode: screen;   /* nicer glow on dark backgrounds */
+}
+
+/* Ensure your page content sits above the canvas.
+   If you use fixed nav or sections with z-index 0, make them higher:
+*/
+body > *:not(#binaryCanvas) {
+  position: relative;
+  z-index: 1;
+}

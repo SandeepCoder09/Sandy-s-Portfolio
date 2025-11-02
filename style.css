@@ -520,51 +520,84 @@ footer {
   footer { font-size: 0.85rem; }
 }
 
-/* === FLOATING DONATE BUTTON === */
-.floating-btn {
-  position: fixed;
-  bottom: 25px;
-  right: 25px;
-  background: linear-gradient(90deg, #00ffcc, #00ff66);
-  color: #000;
+/* === CONTACT SECTION (HACKER THEME) === */
+.contact {
+  background: linear-gradient(180deg, #030a03, #071b0a);
+  text-align: center;
+  padding: 80px 10%;
+  color: #00ffcc;
   font-family: 'Orbitron', sans-serif;
-  font-weight: 600;
-  border: none;
-  padding: 12px 28px;
-  border-radius: 40px;
-  cursor: pointer;
-  box-shadow: 0 0 20px rgba(0, 255, 128, 0.6), inset 0 0 10px rgba(0, 255, 128, 0.4);
+}
+
+.contact h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #00ffcc;
   text-transform: uppercase;
+  text-shadow: 0 0 20px #00ffcc;
+  margin-bottom: 20px;
+}
+
+.contact p {
+  font-size: 1rem;
+  color: #a8f0c8;
+  margin-bottom: 40px;
+}
+
+.contact-buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+/* === CONTACT + DONATE BUTTONS === */
+.contact-btn,
+.donate-inline-btn {
+  display: inline-block;
+  padding: 12px 30px;
+  border-radius: 40px;
+  font-weight: 600;
+  font-size: 1rem;
   letter-spacing: 1px;
-  z-index: 1000;
-  transition: all 0.3s ease-in-out;
-}
-
-/* === HOVER GLOW EFFECT === */
-.floating-btn:hover {
-  transform: scale(1.08);
-  box-shadow: 0 0 35px rgba(0, 255, 128, 0.9), 0 0 60px rgba(0, 255, 128, 0.5);
+  text-transform: uppercase;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.3s ease;
   color: #000;
-  background: linear-gradient(90deg, #00ffaa, #00ff77);
+  box-shadow: 0 0 25px rgba(0, 255, 128, 0.4);
 }
 
-/* === PULSE ANIMATION === */
-@keyframes glowPulse {
-  0% { box-shadow: 0 0 10px rgba(0, 255, 128, 0.5), 0 0 20px rgba(0, 255, 128, 0.3); }
-  50% { box-shadow: 0 0 25px rgba(0, 255, 128, 0.9), 0 0 40px rgba(0, 255, 128, 0.6); }
-  100% { box-shadow: 0 0 10px rgba(0, 255, 128, 0.5), 0 0 20px rgba(0, 255, 128, 0.3); }
+/* === GET IN TOUCH BUTTON === */
+.contact-btn {
+  background: linear-gradient(90deg, #00ffaa, #00ff66);
 }
 
-.floating-btn {
-  animation: glowPulse 2s infinite;
+/* === DONATE BUTTON BELOW === */
+.donate-inline-btn {
+  background: linear-gradient(90deg, #00ff66, #00ffaa);
+  box-shadow: 0 0 30px rgba(0, 255, 128, 0.5);
 }
 
-/* === RESPONSIVE FIX === */
+/* === BUTTON HOVER EFFECTS === */
+.contact-btn:hover,
+.donate-inline-btn:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 35px rgba(0, 255, 128, 0.9);
+  background: linear-gradient(90deg, #00ffaa, #00ff99);
+}
+
+/* === RESPONSIVE FIXES === */
 @media (max-width: 480px) {
-  .floating-btn {
-    bottom: 15px;
-    right: 15px;
-    padding: 10px 20px;
-    font-size: 0.85rem;
+  .contact h2 {
+    font-size: 1.6rem;
+  }
+  .contact p {
+    font-size: 0.9rem;
+  }
+  .contact-btn,
+  .donate-inline-btn {
+    padding: 10px 24px;
+    font-size: 0.9rem;
   }
 }

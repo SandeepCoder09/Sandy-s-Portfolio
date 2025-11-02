@@ -12,6 +12,55 @@ window.addEventListener('scroll', () => {
   nav.classList.toggle('scrolled', window.scrollY > 20);
 });
 
+<script>
+  // ✅ Save current activity time
+  function updateUserActivity() {
+    localStorage.setItem("lastActiveTime", Date.now());
+  }
+
+  // ✅ Check if user is active within last 5 minutes
+  function isUserActive() {
+    const lastActive = localStorage.getItem("lastActiveTime");
+    if (!lastActive) return false;
+    const now = Date.now();
+    const diffMinutes = (now - parseInt(lastActive)) / (1000 * 60);
+    return diffMinutes < 5; // Active if within 5 minutes
+  }
+
+  // ✅ When page loads
+  document.addEventListener("DOMContentLoaded", () => {
+    const donateBtn = document.querySelector(".btn-donate");
+
+    if (donateBtn) {
+      donateBtn.addEventListener("click", (e) => {
+        e.preventDefault();
+
+        const isRegistered = localStorage.getItem("isRegistered") === "true";
+        const active = isUserActive();
+
+        if (!isRegistered) {
+          // 🟠 User not registered → Redirect to register.html
+          window.location.href = "register.html";
+        } else if (!active) {
+          // 🔴 User registered but inactive → Redirect to login.html
+          window.location.href = "login.html";
+        } else {
+          // 🟢 User registered & active → Redirect to donate.html
+          window.location.href = "donate.html";
+        }
+      });
+    }
+
+    // Mark user activity at page load
+    updateUserActivity();
+  });
+
+  // ✅ Keep session alive on interaction
+  window.addEventListener("mousemove", updateUserActivity);
+  window.addEventListener("keydown", updateUserActivity);
+</script>
+
+
 // const menuIcon = document.getElementById('menuIcon');
  // const navLinks = document.getElementById('navLinks');
 

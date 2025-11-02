@@ -1,183 +1,201 @@
+/* ---------- Global Styles ---------- */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
 }
+
 body {
-  background: linear-gradient(120deg, #0072ff, #00c6ff);
-  color: #fff;
+  background: radial-gradient(circle at top, #0a0a0a 0%, #000000 100%);
+  color: #e0e0e0;
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-/* NAVBAR */
+/* ---------- Navbar ---------- */
 .navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(10, 10, 10, 0.95);
+  border-bottom: 1px solid #00ff99;
+  padding: 15px 50px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 25px 8%;
-  background: rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(10px);
-  position: fixed;
-  width: 100%;
-  top: 0;
-  z-index: 100;
-}
-.logo {
-  font-size: 1.8rem;
-  font-weight: bold;
-  background: white;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: white;
-}
-.nav-links {
-  display: flex;
-  list-style: none;
-  gap: 25px;
-}
-.nav-links a {
-  text-decoration: none;
-  color: white;
-  font-weight: 500;
-  transition: 0.3s;
-}
-.nav-links a:hover {
-  color: #f8f8f8;
+  z-index: 1000;
+  box-shadow: 0 0 15px rgba(0, 255, 153, 0.3);
 }
 
-/* CONTACT FORM */
+.logo {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #00ff99;
+  letter-spacing: 2px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+.nav-links a {
+  color: #e0e0e0;
+  text-decoration: none;
+  font-weight: 400;
+  transition: 0.3s;
+}
+
+.nav-links a:hover {
+  color: #00ff99;
+  text-shadow: 0 0 10px #00ff99;
+}
+
+/* ---------- Contact Section ---------- */
 .contact-page {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 150px 20px 80px;
+  padding: 140px 20px 80px;
+}
+
+.form-container {
+  background: rgba(20, 20, 20, 0.8);
+  border: 1px solid #00ff99;
+  border-radius: 15px;
+  padding: 40px 60px;
+  max-width: 600px;
+  width: 100%;
+  box-shadow: 0 0 25px rgba(0, 255, 153, 0.3);
+  backdrop-filter: blur(10px);
   text-align: center;
 }
-.form-container {
-  background: rgba(255, 255, 255, 0.15);
-  padding: 40px;
-  border-radius: 20px;
-  max-width: 500px;
-  width: 100%;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
-}
+
 .form-container h2 {
+  color: #00ff99;
   font-size: 2rem;
   margin-bottom: 10px;
 }
+
 .form-container p {
+  color: #b0b0b0;
+  margin-bottom: 30px;
   font-size: 1rem;
-  margin-bottom: 25px;
 }
-.contact-form .form-group {
+
+/* ---------- Form ---------- */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group {
   text-align: left;
-  margin-bottom: 20px;
 }
-.contact-form label {
+
+label {
   display: block;
-  margin-bottom: 5px;
-  color: #fff;
+  color: #00ffaa;
+  margin-bottom: 6px;
+  font-size: 0.95rem;
 }
-.contact-form input,
-.contact-form textarea {
+
+input,
+textarea {
   width: 100%;
-  padding: 12px;
-  border-radius: 10px;
-  border: none;
+  padding: 12px 15px;
+  border: 1px solid #00ff99;
+  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.6);
+  color: #e0e0e0;
+  font-size: 0.95rem;
   outline: none;
-  font-size: 1rem;
+  transition: all 0.3s ease;
 }
-.contact-form textarea {
+
+input:focus,
+textarea:focus {
+  border-color: #00ffaa;
+  box-shadow: 0 0 15px #00ffaa;
+}
+
+textarea {
   height: 120px;
   resize: none;
 }
+
+/* ---------- Button ---------- */
 .btn-primary {
-  background: white;
-  color: #0072ff;
-  padding: 12px 30px;
-  border: none;
-  border-radius: 25px;
+  background: linear-gradient(90deg, #00ff99, #00ffaa);
+  color: #000;
   font-weight: 600;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 50px;
+  padding: 12px 40px;
   cursor: pointer;
-  transition: 0.3s;
-}
-.btn-primary:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
+  box-shadow: 0 0 15px #00ff99;
+  transition: all 0.3s ease;
 }
 
-/* SOCIALS */
+.btn-primary:hover {
+  background: linear-gradient(90deg, #00ffaa, #00ff99);
+  transform: scale(1.05);
+  box-shadow: 0 0 25px #00ffaa;
+}
+
+/* ---------- Socials ---------- */
 .socials {
+  margin-top: 40px;
   display: flex;
   justify-content: center;
-  gap: 5px;
-  margin-top: 25px;
-  /* border-radius: 50%; */
-  filter: brightness(0) invert(1);
+  gap: 25px;
 }
 
 .socials img {
-  height: 20px;
+  width: 45px;
+  filter: drop-shadow(0 0 8px #00ffaa);
+  transition: all 0.3s ease;
 }
 
-.socials a {
-  text-decoration: none;
-  color: white;
-  background: rgba(255, 255, 255, 0.2);
-  padding: 10px 10px;
-  border-radius: 50%;
-  transition: 0.3s;
-  
-/* }
-.socials a:hover {
-  background-color: black;
-  color: #0072ff;
-} */
+.socials img:hover {
+  transform: scale(1.15);
+  filter: drop-shadow(0 0 15px #00ff99);
+}
 
-/* FOOTER */
+/* ---------- Footer ---------- */
 footer {
   text-align: center;
-  padding: 30px;
-  background: rgba(0, 0, 0, 0.3);
-  position: absolute;
-  bottom: 0;
-  width: 100%;
+  padding: 25px;
+  color: #999;
+  border-top: 1px solid #00ff99;
+  font-size: 0.9rem;
+  background: rgba(10, 10, 10, 0.9);
+  box-shadow: 0 -5px 15px rgba(0, 255, 153, 0.1);
 }
 
-/* RESPONSIVE */
+footer span {
+  color: #00ff99;
+}
+
+/* ---------- Responsive ---------- */
 @media (max-width: 768px) {
+  .navbar {
+    padding: 15px 25px;
+  }
+
   .form-container {
-    padding: 25px;
+    padding: 30px 25px;
   }
-  .nav-links {
-    flex-direction: column;
-    gap: 10px;
+
+  .socials img {
+    width: 38px;
   }
-}
-
-/* ===== DONATE BUTTON STYLING ===== */
-.donate-btn {
-  background: linear-gradient(90deg, #ff8a00, #e52e71);
-  color: #fff;
-  padding: 12px 28px;
-  border: none;
-  border-radius: 50px;
-  font-size: 1.1rem;
-  font-weight: 600;
-  letter-spacing: 0.5px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 0 15px rgba(229, 46, 113, 0.6);
-  text-transform: uppercase;
-}
-
-.donate-btn:hover {
-  transform: scale(1.05);
-  background: linear-gradient(90deg, #e52e71, #ff8a00);
-  box-shadow: 0 0 25px rgba(255, 138, 0, 0.8);
-}
-
-.donate-btn:active {
-  transform: scale(0.97);
-  box-shadow: 0 0 10px rgba(255, 138, 0, 0.6);
 }

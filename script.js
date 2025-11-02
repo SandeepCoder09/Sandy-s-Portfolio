@@ -7,6 +7,16 @@
 //   navLinks.classList.toggle('active');
 // });
 
+import { auth } from "../firebase.js";
+
+auth.onAuthStateChanged(user => {
+  if (!user) {
+    window.location.href = "../users.html";
+  } else {
+    document.getElementById("userEmail").textContent = user.email;
+  }
+});
+
 // Scroll effect
 window.addEventListener('scroll', () => {
   nav.classList.toggle('scrolled', window.scrollY > 20);

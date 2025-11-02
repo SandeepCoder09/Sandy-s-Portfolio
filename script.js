@@ -297,3 +297,8 @@ window.addEventListener('scroll', () => {
 //     lastScrollY = window.scrollY;
 //   });
 // });
+
+document.getElementById("signOutBtn").addEventListener("click", async () => {
+  await auth.signOut();
+  window.location.href = "../users.html";
+});

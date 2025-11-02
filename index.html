@@ -3,87 +3,136 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sandy 09 | Hacker Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700&display=swap" rel="stylesheet">
+  <title>Sandy | Portfolio</title>
+
   <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <link rel="shortcut icon" href="favicon.png" type="image/png" />
 </head>
+
 <body>
   <!-- ===== NAVBAR ===== -->
   <nav>
-    <a href="#home" class="logo">SANDY<span>09</span></a>
+    <a href="index.html" class="logo">
+      <img src="09logo-black.jpg" alt="Sandy Logo" />
+    </a>
+
     <ul class="nav-links">
       <li><a href="#home">Home</a></li>
       <li><a href="#about">About</a></li>
       <li><a href="#projects">Projects</a></li>
+      <li><a href="#services">Services</a></li>
       <li><a href="#contact">Contact</a></li>
+      <li><a href="donate.html" class="donate-btn">Donate</a></li>
     </ul>
+
     <div class="menu-icon" id="menuIcon">&#9776;</div>
   </nav>
 
-  <!-- ===== HERO SECTION ===== -->
-  <section id="home" class="hero">
+  <!-- ===== HERO ===== -->
+  <section class="hero" id="home" data-aos="fade-up">
     <div class="hero-content">
-      <h1 class="glow-text">SANDY <span>09</span></h1>
-      <p class="tagline">Coding the Future | Cyber Mind | Web Innovator</p>
-      <a href="#projects" class="cta-btn">View Projects</a>
+      <h3>Hi, I’m</h3>
+      <h1>Sandy 09</h1>
+      <h2>Front-End Web Developer</h2>
+      <p>
+        I craft visually stunning, responsive, and dynamic web experiences that
+        bring your ideas to life.
+      </p>
+      <div class="buttons">
+        <a href="getintouch.html" class="btn-primary">Hire Me</a>
+        <a href="#projects" class="btn-outline">My Projects</a>
+      </div>
+    </div>
+    <div class="hero-img">
+      <img src="profile2.jpg" alt="Sandy Profile" />
     </div>
   </section>
 
   <!-- ===== ABOUT ===== -->
-  <section id="about" class="about">
-    <h2>About Me</h2>
-    <p>
-      I’m Sandy, a passionate web developer focused on crafting clean, modern, and futuristic web experiences.
-      With a hacker mindset, I turn code into creativity and design into digital art.
-    </p>
+  <section class="about" id="about" data-aos="fade-up">
+    <div class="about-text">
+      <h2>About Me</h2>
+      <p>
+        I’m a passionate front-end developer focused on designing smooth,
+        interactive, and accessible digital experiences. My work merges design
+        and technology for maximum impact.
+      </p>
+      <div class="skills">
+        <div><h4>HTML</h4><div class="bar html"></div></div>
+        <div><h4>CSS</h4><div class="bar css"></div></div>
+        <div><h4>JavaScript</h4><div class="bar js"></div></div>
+      </div>
+    </div>
+    <div class="about-img">
+      <img src="profile.jpg" alt="About Sandy" />
+    </div>
   </section>
 
   <!-- ===== PROJECTS ===== -->
-  <section id="projects" class="projects">
-    <h2>Recent Projects</h2>
+  <section class="projects" id="projects" data-aos="fade-up">
+    <h2 class="section-title">Recent Projects</h2>
+
     <div class="project-grid">
-      <div class="project-card">
-        <h3>3D Portfolio</h3>
-        <p>My 3D cyberpunk-style web portfolio with glowing animations.</p>
+      <a href="#" class="project-card">
+        <img src="webdesign.png" alt="Website Design" />
+        <h4>Website Design</h4>
+        <p>Modern, elegant and responsive layouts for clients.</p>
+      </a>
+
+      <a href="https://sandeepcoder09.github.io/3DPortfolioBySandy/" class="project-card">
+        <img src="Portfolio3D.png" alt="3D Portfolio" />
+        <h4>3D Portfolio</h4>
+        <p>Explore my futuristic interactive portfolio design.</p>
+      </a>
+
+      <a href="budgetmet/index.html" class="project-card">
+        <img src="BudgeMateLogo.png" alt="BudgetMate" />
+        <h4>BudgetMate</h4>
+        <p>Track your income, expenses, and finances efficiently.</p>
+      </a>
+    </div>
+  </section>
+
+  <!-- ===== SERVICES ===== -->
+  <section class="services" id="services" data-aos="fade-up">
+    <h2>Services</h2>
+    <div class="service-grid">
+      <div class="service-card">
+        <h4>Web Design</h4>
+        <p>Clean, futuristic, and responsive website designs.</p>
       </div>
-      <div class="project-card">
-        <h3>Crypto Dashboard</h3>
-        <p>Live crypto tracker with neon UI & futuristic charts.</p>
+      <div class="service-card">
+        <h4>UI/UX Design</h4>
+        <p>Seamless, intuitive, and user-centered interfaces.</p>
       </div>
-      <div class="project-card">
-        <h3>BudgetMate</h3>
-        <p>Smart finance tracker built with clean design & modern UX.</p>
+      <div class="service-card">
+        <h4>Frontend Development</h4>
+        <p>Pixel-perfect coding for high-performance websites.</p>
       </div>
     </div>
   </section>
 
   <!-- ===== CONTACT ===== -->
-  <section id="contact" class="contact">
+  <section class="contact" id="contact" data-aos="fade-up">
     <h2>Contact Me</h2>
-    <form>
-      <input type="text" placeholder="Your Name" required />
-      <input type="email" placeholder="Your Email" required />
-      <textarea placeholder="Your Message" required></textarea>
-      <button type="submit">Send Message</button>
-    </form>
-    <div class="socials">
-      <a href="#">GitHub</a> | <a href="#">LinkedIn</a> | <a href="#">Twitter</a>
-    </div>
+    <p>Let’s work together to create something exceptional.</p>
+    <a href="getintouch.html" class="btn-primary">Get in Touch</a>
   </section>
 
-  <!-- ===== FOOTER ===== -->
   <footer>
-    <p>© 2025 Sandy09 | Designed in Hacker Mode 💻</p>
+    <p>© 2025 Sandy | Designed with 💙 by Sandeep 09</p>
   </footer>
 
+  <button class="floating-btn" onclick="window.location.href='donate.html'">Donate</button>
+
+  <!-- AOS JS -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
-    // Mobile Menu Toggle
+    AOS.init({ duration: 1000, easing: 'ease-in-out', once: true });
     const menuIcon = document.getElementById("menuIcon");
     const navLinks = document.querySelector(".nav-links");
-    menuIcon.addEventListener("click", () => {
-      navLinks.classList.toggle("show");
-    });
+    menuIcon.addEventListener("click", () => navLinks.classList.toggle("active"));
   </script>
 </body>
 </html>

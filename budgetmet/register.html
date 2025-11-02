@@ -1,34 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>BudgetMate — Sign In</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <header class="auth-header">
-    <h1>BudgetMate</h1>
-    <p>Sync your transactions across devices</p>
-  </header>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>BudgetMate — Register</title>
 
-  <main class="auth-wrap">
-    <input id="email" type="email" placeholder="Email address" />
-    <input id="password" type="password" placeholder="Password" />
-
-    <div class="auth-actions">
-      <button id="signUp" class="primary-btn">Create Account</button>
-      <button id="signIn" class="secondary-btn">Sign In</button>
-      <button id="guest" class="link-btn">Continue as Guest</button>
-    </div>
-
-    <p id="message"></p>
-  </main>
-
-  <!-- Firebase SDK -->
+  <!-- Firebase compat SDKs -->
   <script src="https://www.gstatic.com/firebasejs/9.24.0/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/9.24.0/firebase-auth-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/9.24.0/firebase-firestore-compat.js"></script>
-  <script type="module" src="users.js"></script>
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="hacker-bg">
+  <main class="auth-card">
+    <h2 class="logo">Budget<span class="accent">Mate</span></h2>
+    <p class="sub">Create an account to sync across devices</p>
+
+    <label class="field">
+      <span>Email</span>
+      <input id="email" type="email" placeholder="you@domain.com" />
+    </label>
+
+    <label class="field">
+      <span>Password</span>
+      <input id="password" type="password" placeholder="min 6 chars" />
+    </label>
+
+    <div class="actions">
+      <button id="signUp" class="btn primary">Create Account</button>
+      <a href="login.html" class="btn ghost">Back to Sign In</a>
+      <button id="guest" class="btn link">Continue as Guest</button>
+    </div>
+
+    <div id="message" class="message"></div>
+
+    <footer class="small">Your data is private — protected by Firebase rules</footer>
+  </main>
+
+  <script src="auth.js"></script>
 </body>
 </html>

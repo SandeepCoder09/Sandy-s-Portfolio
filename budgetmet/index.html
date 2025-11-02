@@ -1,48 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>BudgetMate</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>BudgetMate — Dashboard</title>
+
+  <!-- Firebase compat SDKs -->
+  <script src="https://www.gstatic.com/firebasejs/9.24.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.24.0/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.24.0/firebase-firestore-compat.js"></script>
+
   <link rel="stylesheet" href="style.css" />
 </head>
-<body>
+<body class="hacker-bg">
   <header class="topbar">
-    <a href="../index.html" class="back-btn">← Back to Portfolio</a>
-    <div>
-      <span id="userEmail">Guest</span>
-      <button id="signOutBtn" class="secondary-btn">Sign Out</button>
+    <div class="left">
+      <a class="back" href="../index.html">← Portfolio</a>
+    </div>
+    <div class="right">
+      <span id="userEmail" class="user">Guest</span>
+      <button id="signOutBtn" class="btn ghost">Sign Out</button>
     </div>
   </header>
 
-  <main class="app">
-    <h1>BudgetMate</h1>
-    <p id="live-date"></p>
+  <main class="app-card" role="main">
+    <h1 class="app-title">BudgetMate</h1>
+    <p id="live-date" class="live-date"></p>
 
-    <div class="summary">
-      <div>💰 Income: <span id="income">₹0</span></div>
-      <div>💸 Expense: <span id="expense">₹0</span></div>
-      <div>🧾 Balance: <span id="balance">₹0</span></div>
-    </div>
+    <section class="summary grid">
+      <div class="stat card">
+        <div class="label">INCOME</div>
+        <div id="income" class="value">₹0</div>
+      </div>
+      <div class="stat card">
+        <div class="label">EXPENSE</div>
+        <div id="expense" class="value">₹0</div>
+      </div>
+      <div class="stat card balance">
+        <div class="label">BALANCE</div>
+        <div id="balance" class="value">₹0</div>
+      </div>
+    </section>
 
-    <div class="add-transaction">
-      <input id="desc" type="text" placeholder="Description" />
+    <section class="form card">
+      <input id="desc" placeholder="Description (e.g., Salary, Groceries)" />
       <input id="amount" type="number" placeholder="Amount (₹)" />
       <select id="type">
         <option value="">Select type</option>
         <option value="income">Income</option>
         <option value="expense">Expense</option>
       </select>
-      <button id="add" class="primary-btn">Add</button>
-    </div>
+      <div class="form-actions">
+        <button id="add" class="btn primary">Add Transaction</button>
+        <button id="syncNow" class="btn ghost">Sync Now</button>
+      </div>
+    </section>
 
-    <ul id="list"></ul>
+    <section class="transactions card">
+      <h3>Transaction History</h3>
+      <ul id="list" class="tx-list" aria-live="polite"></ul>
+    </section>
   </main>
 
-  <!-- Firebase -->
-  <script src="https://www.gstatic.com/firebasejs/9.24.0/firebase-app-compat.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/9.24.0/firebase-auth-compat.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/9.24.0/firebase-firestore-compat.js"></script>
-  <script type="module" src="script.js"></script>
+  <footer class="small muted">BudgetMate • Multi-device sync</footer>
+
+  <script src="script.js"></script>
 </body>
 </html>

@@ -1,123 +1,116 @@
-/* === Hacker Theme Login Page === */
+/* === Hacker Theme — BudgetMate Login === */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
 
 :root {
-  --bg: #050505;
-  --panel: #0d0d0d;
-  --accent: #00ff9d;
-  --text: #e0e0e0;
-  --error: #ff5555;
-  --glow: 0 0 10px var(--accent), 0 0 25px var(--accent);
+  --bg: #020202;
+  --card: #0c0c0c;
+  --accent: #00ff99;
+  --text: #e5e5e5;
+  --muted: #999;
+  --error: #ff5c5c;
+  --shadow: 0 0 15px rgba(0, 255, 153, 0.3);
 }
 
 * {
-  box-sizing: border-box;
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
 }
 
 body.hacker-bg {
-  background-color: var(--bg);
-  background-image: radial-gradient(circle at top left, #0f0f0f, #000);
-  color: var(--text);
+  background: radial-gradient(circle at top left, #021, #000);
   min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
+  color: var(--text);
   overflow: hidden;
 }
 
-/* Floating glowing lines background */
+/* Subtle animated hacker grid background */
 body.hacker-bg::before {
-  content: "";
+  content: '';
   position: absolute;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
+  inset: 0;
   background: repeating-linear-gradient(
     0deg,
-    transparent,
-    transparent 30px,
-    rgba(0, 255, 157, 0.04) 31px
+    rgba(0, 255, 153, 0.05),
+    transparent 1px,
+    transparent 40px
   );
-  animation: scrollBg 15s linear infinite;
+  animation: moveBg 30s linear infinite;
   z-index: 0;
 }
 
-@keyframes scrollBg {
+@keyframes moveBg {
   from { transform: translateY(0); }
-  to { transform: translateY(-30px); }
+  to { transform: translateY(-40px); }
 }
 
 /* === Auth Card === */
 .auth-card {
   position: relative;
   z-index: 1;
-  background: rgba(10, 10, 10, 0.9);
-  padding: 2.5rem 2rem;
-  border-radius: 16px;
-  box-shadow: 0 0 25px rgba(0, 255, 157, 0.2);
-  max-width: 400px;
   width: 90%;
+  max-width: 400px;
+  background: rgba(10, 10, 10, 0.95);
+  border: 1px solid rgba(0, 255, 153, 0.3);
+  border-radius: 14px;
+  padding: 2rem;
+  box-shadow: var(--shadow);
   text-align: center;
-  border: 1px solid rgba(0, 255, 157, 0.3);
-  backdrop-filter: blur(6px);
-  animation: fadeIn 1.2s ease forwards;
+  backdrop-filter: blur(8px);
+  animation: fadeUp 1s ease;
 }
 
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(30px); }
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* === Logo === */
+/* === Logo & Sub === */
 .logo {
   font-size: 2rem;
-  letter-spacing: 1px;
-  margin-bottom: 0.5rem;
+  font-weight: 600;
   color: var(--text);
-  text-shadow: var(--glow);
+  margin-bottom: 0.5rem;
+  text-shadow: 0 0 10px var(--accent);
 }
 .logo .accent {
   color: var(--accent);
 }
-
-/* === Subtitle === */
 .sub {
   font-size: 0.95rem;
-  color: #aaa;
+  color: var(--muted);
   margin-bottom: 2rem;
 }
 
 /* === Input Fields === */
 .field {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+  text-align: left;
   margin-bottom: 1.5rem;
-  width: 100%;
 }
-
 .field span {
+  display: block;
+  color: var(--accent);
   font-size: 0.9rem;
   margin-bottom: 6px;
-  color: var(--accent);
 }
-
 .field input {
   width: 100%;
   padding: 0.75rem;
   background: #111;
-  border: 1px solid rgba(0, 255, 157, 0.4);
+  border: 1px solid rgba(0, 255, 153, 0.4);
   border-radius: 8px;
   color: var(--text);
-  outline: none;
-  transition: all 0.3s;
+  font-size: 0.95rem;
+  transition: 0.3s;
 }
-
 .field input:focus {
   border-color: var(--accent);
-  box-shadow: var(--glow);
+  box-shadow: 0 0 10px rgba(0, 255, 153, 0.4);
+  outline: none;
 }
 
 /* === Buttons === */
@@ -127,34 +120,30 @@ body.hacker-bg::before {
   gap: 0.8rem;
   margin-top: 1rem;
 }
-
 .btn {
   padding: 0.8rem;
-  border-radius: 8px;
   font-weight: 600;
+  border-radius: 8px;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: 0.3s;
 }
-
 .btn.primary {
   background: var(--accent);
   color: #000;
   border: none;
-  box-shadow: var(--glow);
 }
 .btn.primary:hover {
+  background: #00e68a;
   transform: translateY(-2px);
 }
-
 .btn.ghost {
-  border: 1px solid var(--accent);
   background: transparent;
   color: var(--accent);
+  border: 1px solid var(--accent);
 }
 .btn.ghost:hover {
-  background: rgba(0, 255, 157, 0.1);
+  background: rgba(0, 255, 153, 0.1);
 }
-
 .btn.link {
   background: none;
   color: var(--accent);
@@ -176,13 +165,30 @@ footer.small {
   margin-top: 2rem;
   font-size: 0.8rem;
   color: #777;
-  border-top: 1px solid rgba(255,255,255,0.1);
-  padding-top: 1rem;
 }
 
-/* === Responsive === */
+/* === Responsive Fix === */
+@media (max-width: 768px) {
+  .auth-card {
+    padding: 1.8rem;
+    width: 85%;
+  }
+  .logo {
+    font-size: 1.8rem;
+  }
+  .sub {
+    font-size: 0.9rem;
+  }
+  .btn {
+    font-size: 0.9rem;
+  }
+}
+
 @media (max-width: 480px) {
-  .logo { font-size: 1.7rem; }
-  .auth-card { padding: 2rem 1.5rem; }
-  .btn { font-size: 0.9rem; }
+  .auth-card {
+    padding: 1.5rem;
+  }
+  .logo {
+    font-size: 1.6rem;
+  }
 }

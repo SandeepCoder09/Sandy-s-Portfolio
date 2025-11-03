@@ -1,185 +1,94 @@
-/* === Hacker Theme — BudgetMate Register === */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
-
-:root {
-  --bg: #020202;
-  --card: #0c0c0c;
-  --accent: #00ff99;
-  --text: #e5e5e5;
-  --muted: #999;
-  --error: #ff5c5c;
-  --shadow: 0 0 15px rgba(0, 255, 153, 0.3);
-}
-
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Orbitron', sans-serif;
 }
 
-body.hacker-bg {
-  background: radial-gradient(circle at top left, #021, #000);
-  min-height: 100vh;
+body {
+  background-color: #000;
+  color: #00ff99;
   display: flex;
-  align-items: center;
   justify-content: center;
-  color: var(--text);
+  align-items: center;
+  height: 100vh;
   overflow: hidden;
 }
 
-body.hacker-bg::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: repeating-linear-gradient(
-    0deg,
-    rgba(0, 255, 153, 0.05),
-    transparent 1px,
-    transparent 40px
-  );
-  animation: moveBg 30s linear infinite;
-  z-index: 0;
-}
-
-@keyframes moveBg {
-  from { transform: translateY(0); }
-  to { transform: translateY(-40px); }
-}
-
-/* === Auth Card === */
-.auth-card {
-  position: relative;
-  z-index: 1;
-  width: 90%;
-  max-width: 400px;
-  background: rgba(10, 10, 10, 0.95);
-  border: 1px solid rgba(0, 255, 153, 0.3);
-  border-radius: 14px;
-  padding: 2rem;
-  box-shadow: var(--shadow);
+.container {
+  background: rgba(0, 0, 0, 0.8);
+  border: 1px solid #00ff99;
+  box-shadow: 0 0 20px #00ff99;
+  border-radius: 15px;
+  padding: 30px;
+  width: 350px;
   text-align: center;
-  backdrop-filter: blur(8px);
-  animation: fadeUp 1s ease;
+  animation: glow 2s infinite alternate;
 }
 
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(30px); }
-  to { opacity: 1; transform: translateY(0); }
+@keyframes glow {
+  0% { box-shadow: 0 0 10px #00ff99; }
+  100% { box-shadow: 0 0 30px #00ff99; }
 }
 
-/* === Logo & Sub === */
-.logo {
-  font-size: 2rem;
-  font-weight: 600;
-  color: var(--text);
-  margin-bottom: 0.5rem;
-  text-shadow: 0 0 10px var(--accent);
-}
-.logo .accent {
-  color: var(--accent);
-}
-.sub {
-  font-size: 0.95rem;
-  color: var(--muted);
-  margin-bottom: 2rem;
+h2 {
+  margin-bottom: 20px;
+  color: #00ffcc;
+  text-shadow: 0 0 10px #00ffcc;
 }
 
-/* === Fields === */
-.field {
-  text-align: left;
-  margin-bottom: 1.5rem;
-}
-.field span {
-  display: block;
-  color: var(--accent);
-  font-size: 0.9rem;
-  margin-bottom: 6px;
-}
-.field input {
+input {
   width: 100%;
-  padding: 0.75rem;
-  background: #111;
-  border: 1px solid rgba(0, 255, 153, 0.4);
+  padding: 10px;
+  margin: 10px 0;
+  background: black;
+  border: 1px solid #00ff99;
+  color: #00ff99;
   border-radius: 8px;
-  color: var(--text);
-  font-size: 0.95rem;
-  transition: 0.3s;
-}
-.field input:focus {
-  border-color: var(--accent);
-  box-shadow: 0 0 10px rgba(0, 255, 153, 0.4);
   outline: none;
+  font-size: 14px;
 }
 
-/* === Buttons === */
-.actions {
-  display: flex;
-  flex-direction: column;
-  gap: 0.8rem;
-  margin-top: 1rem;
+input::placeholder {
+  color: #00ff99a0;
 }
-.btn {
-  padding: 0.8rem;
-  font-weight: 600;
+
+button {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  background: #00ff99;
+  color: black;
+  font-weight: bold;
+  border: none;
   border-radius: 8px;
   cursor: pointer;
   transition: 0.3s;
 }
-.btn.primary {
-  background: var(--accent);
-  color: #000;
-  border: none;
-}
-.btn.primary:hover {
-  background: #00e68a;
-  transform: translateY(-2px);
-}
-.btn.ghost {
-  background: transparent;
-  color: var(--accent);
-  border: 1px solid var(--accent);
-}
-.btn.ghost:hover {
-  background: rgba(0, 255, 153, 0.1);
-}
-.btn.link {
-  background: none;
-  color: var(--accent);
-  font-size: 0.9rem;
-  text-decoration: underline;
+
+button:hover {
+  background: #00cc88;
+  box-shadow: 0 0 15px #00ff99;
 }
 
-/* === Message & Footer === */
-.message {
-  margin-top: 1rem;
-  min-height: 20px;
-  font-size: 0.9rem;
-  color: var(--error);
-  text-shadow: 0 0 5px var(--error);
+#recaptcha-container {
+  margin: 15px 0;
 }
 
-footer.small {
-  margin-top: 2rem;
-  font-size: 0.8rem;
-  color: #777;
+.success {
+  color: #00ffcc;
+  font-size: 14px;
+  margin-top: 10px;
 }
 
-/* === Responsive === */
-@media (max-width: 768px) {
-  .auth-card {
-    padding: 1.8rem;
-    width: 85%;
-  }
-  .logo {
-    font-size: 1.8rem;
-  }
+.error {
+  color: #ff4444;
+  font-size: 14px;
+  margin-top: 10px;
 }
-@media (max-width: 480px) {
-  .auth-card {
-    padding: 1.5rem;
-  }
-  .logo {
-    font-size: 1.6rem;
+
+@media (max-width: 400px) {
+  .container {
+    width: 90%;
   }
 }

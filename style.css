@@ -326,6 +326,11 @@ nav {
   filter: brightness(0.9);
 }
 
+#cal {
+      height: 200px;
+      width: 200px;
+}
+
 .project-card h4 {
   color: #00ff99;
   margin: 15px 0 5px;

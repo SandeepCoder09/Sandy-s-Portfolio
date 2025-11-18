@@ -66,3 +66,32 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
+
+app.post("/create-order", async (req, res) => {
+  const { amount, name, email, message } = req.body;
+
+  const orderData = {
+    order_amount: amount,
+    order_currency: "INR",
+    order_id: "ORD_" + Date.now(),
+    customer_details: {
+      customer_id: "CID_" + Date.now(),
+      customer_name: name,
+      customer_email: email
+    }
+  };
+
+  const response = await fetch("https://api.cashfree.com/pg/orders", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      "x-client-id": process.env.CASHFREE_CLIENT_ID,
+      "x-client-secret": process.env.CASHFREE_CLIENT_SECRET,
+      "x-api-version": "2022-09-01"
+    },
+    body: JSON.stringify(orderData)
+  });
+
+  const data = await response.json();
+  res.json({ order_token: data.order_token });
+});

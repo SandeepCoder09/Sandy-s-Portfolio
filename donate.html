@@ -1,28 +1,27 @@
-
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Donate | Sandy's Portfolio</title>
-  <link rel="stylesheet" href="donate.css" />
-  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Donate | Sandy</title>
+  <link rel="stylesheet" href="donate.css">
+  <!-- Cashfree Checkout SDK -->
+  <script src="https://sdk.cashfree.com/js/v3/cashfree.js"></script>
 </head>
 <body>
   <header>
-    <h2 class="logo">Sandy's Logo</h2>
+    <a class="logo" href="index.html">SANDY</a>
     <nav>
       <a href="index.html">Home</a>
-      <a href="donate.html" class="active">Donate</a>
       <a href="getintouch.html">Contact</a>
       <a href="index.html" id="logout">Logout</a>
     </nav>
   </header>
 
-  <section class="donate-container">
+  <main class="donate-container">
     <div class="donate-box">
       <h2>Support My Work 💖</h2>
-      <p>Your donation helps me keep creating amazing projects and open-source tools</p>
+      <p>Your donation helps me keep building projects, tutorials and tools.</p>
 
       <div class="amount-buttons">
         <button class="amount" data-amount="100">₹100</button>
@@ -37,18 +36,17 @@
         <input type="text" id="name" placeholder="Full Name" required />
         <input type="email" id="email" placeholder="Email Address" required />
         <textarea id="message" placeholder="Write a message (optional)"></textarea>
-        <button type="submit" id="donateBtn">Donate Now 💳</button>
+        <button type="submit" id="donateBtn"><span>Donate Now 💳</span></button>
       </form>
 
       <p class="thanks">Thank you for supporting independent development ❤️</p>
     </div>
-  </section>
+  </main>
 
   <footer>
-    <p>© 2025 Sandy's Portfolio | All Rights Reserved</p>
+    <p>© 2025 Sandeep's Portfolio</p>
   </footer>
 
-  <script src="donate.js"></script>
-   <script src="auth.js"></script>
+  <script src="donate.js" defer></script>
 </body>
 </html>

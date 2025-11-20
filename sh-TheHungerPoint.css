@@ -24,11 +24,30 @@ body {
   padding: 40px 10%;
 }
 
+/* Fix Banner Image */
 .project-banner {
-  width: 50%;
-  border-radius: 12px;
-  margin-bottom: 30px;
-  box-shadow: 0 0 15px rgba(0,255,150,0.3);
+  width: 100%;
+  max-width: 900px; /* reduce size */
+  height: auto;
+  margin: 0 auto 30px;
+  display: block;
+  border-radius: 20px;
+  object-fit: cover;
+}
+
+/* Extra Responsive Fix for Mobile */
+@media (max-width: 768px) {
+  .project-banner {
+    max-width: 600px;
+    border-radius: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .project-banner {
+    max-width: 90%;
+    border-radius: 14px;
+  }
 }
 
 .project-content h2 {

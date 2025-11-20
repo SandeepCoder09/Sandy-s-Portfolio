@@ -58,5 +58,24 @@
     <p>© 2025 Sandy | Designed with ❤️ by Sandy</p>
   </footer>
 
+<script>
+  const devBtn = document.getElementById("devBtn");
+  const devPopup = document.getElementById("devPopup");
+  const closePopup = document.getElementById("closePopup");
+
+  devBtn.addEventListener("click", () => {
+    devPopup.style.display = "flex";
+  });
+
+  closePopup.addEventListener("click", () => {
+    devPopup.style.display = "none";
+  });
+
+  // Close popup by clicking outside the box
+  devPopup.addEventListener("click", (e) => {
+    if (e.target === devPopup) devPopup.style.display = "none";
+  });
+</script>
+
 </body>
 </html>

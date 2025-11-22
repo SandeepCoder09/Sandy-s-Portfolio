@@ -1,60 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sandy | Portfolio</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="shortcut icon" href="favicon.png" type="image/png">
-<!-- Page Load Progress Bar -->
-<!-- <link rel="stylesheet" href="progress.css">
-<script src="progress.js" defer></script> -->
+
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <link rel="shortcut icon" href="portfolio.png" type="image/png" />
+  <!-- <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700&display=swap" rel="stylesheet"> -->
+  <!-- <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"> -->
 </head>
 <body>
-<!-- Theme Toggle Button
-<div class="theme-toggle">
-  <input type="checkbox" id="theme-switch" />
-  <label for="theme-switch" class="theme-label">
-    <span class="sun">☀️</span>
-    <span class="moon">🌙</span>
-  </label>
-</div> -->
-  <header class="navbar">
-    <div class="logo">SANDY</div>
-    <nav class="nav">
-      <ul class="nav-links">
-        <li><a href="#home" class="active">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-    <a href="getintouch.html" class="btn-primary">Get in Touch</a>
-  </header>
+  <!-- ===== NAVBAR ===== -->
+  <nav>
+    <a href="index.html" class="logo">
+      <img src="09logo-black.jpg" alt="Sandy Logo" />
+    </a>
 
-  <!-- HERO SECTION -->
-  <section class="hero" id="home">
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="donate.html" class="donate-btn">Donate</a></li>
+    </ul>
+
+    <div class="menu-icon" id="menuIcon">&#9776;</div>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero" id="home" data-aos="fade-up">
     <div class="hero-content">
-      <h3>Hello, I’m</h3>
-      <h1>Sandeep Coder</h1>
+      <h3>Hi, I’m</h3>
+      <h1>Sandy 09</h1>
       <h2>Front-End Web Developer</h2>
-      <p>I build beautiful, interactive, and user-friendly websites with a modern touch and smooth performance.</p>
+      <p>
+        I craft visually stunning, responsive, and dynamic web experiences that
+        bring your ideas to life.
+      </p>
       <div class="buttons">
         <a href="getintouch.html" class="btn-primary">Hire Me</a>
-        <a href="#projects" class="btn-outline">View Projects</a>
+        <a href="#projects" class="btn-outline">My Projects</a>
       </div>
     </div>
     <div class="hero-img">
-      <img src="profile2.jpg" alt="Sandeep Gautam">
+      <img src="profile2.jpg" alt="Sandy Profile" />
     </div>
   </section>
 
-  <!-- ABOUT -->
-  <section class="about" id="about">
+  <!-- ===== ABOUT ===== -->
+  <section class="about" id="about" data-aos="fade-up">
     <div class="about-text">
       <h2>About Me</h2>
-      <p>I'm a passionate front-end developer who focuses on creating engaging, clean, and accessible digital experiences. I love combining design with technology to bring ideas to life.</p>
+      <p>
+        I’m a passionate front-end developer focused on designing smooth,
+        interactive, and accessible digital experiences. My work merges design
+        and technology for maximum impact.
+      </p>
       <div class="skills">
         <div><h4>HTML</h4><div class="bar html"></div></div>
         <div><h4>CSS</h4><div class="bar css"></div></div>
@@ -62,62 +66,100 @@
       </div>
     </div>
     <div class="about-img">
-      <img src="profile.jpg" alt="About Sandy">
+      <img src="profile.jpg" alt="About Sandy" />
     </div>
   </section>
 
-  <!-- PROJECTS -->
-  <section class="projects" id="projects">
-    <h2>Recent Projects</h2>
+  <!-- ===== PROJECTS ===== -->
+  <section class="projects" id="projects" data-aos="fade-up">
+    <h2 class="section-title">Recent Projects</h2>
+
     <div class="project-grid">
-      <div class="project-card">
-        <img src="webdesign.png" alt="">
+      <a href="#" class="project-card">
+        <img src="webdesign.png" alt="Website Design" />
         <h4>Website Design</h4>
-        <p>Modern responsive design for clients and portfolios.</p>
-      </div>
-      <div class="project-card">
-        <img src="crypto.jpg" alt="">
-        <h4>Crypto Dashboard</h4>
-        <p>Interactive UI/UX with real-time analytics.</p>
-      </div>
-      <div class="project-card">
-        <img src="portfoloi.png" alt="">
-        <h4>Personal Portfolio</h4>
-        <p>Frontend animation and responsive web experience.</p>
-      </div>
+        <p>Modern, elegant and responsive layouts for clients.</p>
+      </a>
+
+      <a href="https://sandeepcoder09.github.io/3DPortfolioBySandy/" class="project-card">
+        <img src="Portfolio3D.png" alt="3D Portfolio" />
+        <h4>3D Portfolio</h4>
+        <p>Explore my futuristic interactive portfolio design.</p>
+      </a>
+
+       <!-- Project BudgeMate -->
+      <a href="budgetmet/index.html" class="project-card">
+        <img src="BudgeMateLogo.png" alt="BudgetMate" />
+        <h4>BudgetMate</h4>
+        <p>Track your income, expenses, and finances efficiently.</p>
+      </a>
+
+      <!-- Project Calulater -->
+      <a href="https://sandeepcoder09.github.io/Sandy-calculater/" class="project-card">
+        <img id="cal" src="cal.png" alt="Calculator" />
+        <h4>Calculator</h4>
+        <p>A Sleek Neon-Themed Calculator With Dual Modes, Keyboard Input, And Smart History.</p>
+      </a>
+
+      <!-- Project SH - The Hunger Point -->
+      <a href="sh-TheHungerPoint.html" class="project-card">
+  <img src="sh-thehungerpoint.png" alt="SH - The Hunger Point Preview" id="sh-logo">
+  <h4>SH - The Hunger Point</h4>
+  <p>A fast-food ordering web application featuring modern UI, Firebase authentication, and responsive layout.</p>
+</a>
     </div>
   </section>
 
-  <!-- SERVICES -->
+  <!-- Service Section -->
   <section class="services" id="services">
-    <h2>Services</h2>
-    <div class="service-grid">
-      <div class="service-card">
-        <h4>Web Design</h4>
-        <p>Clean, attractive, and responsive website design tailored for your brand.</p>
-      </div>
-      <div class="service-card">
-        <h4>UI/UX Design</h4>
-        <p>Creating intuitive and delightful user experiences.</p>
-      </div>
-      <div class="service-card">
-        <h4>Frontend Development</h4>
-        <p>Converting ideas into pixel-perfect, fast, and responsive interfaces.</p>
-      </div>
+  <h2>Services</h2>
+  <div class="service-grid">
+    <div class="service-card">
+      <h3>Web Design</h3>
+      <p>Modern, futuristic, and responsive designs that captivate and convert.</p>
     </div>
-  </section>
 
-  <!-- CONTACT -->
-  <section class="contact" id="contact">
-    <h2>Contact Me</h2>
-    <p>Let's create something amazing together.</p>
+    <div class="service-card">
+      <h3>UI/UX Design</h3>
+      <p>Seamless and interactive designs crafted for superior user experience.</p>
+    </div>
+
+    <div class="service-card">
+      <h3>Frontend Development</h3>
+      <p>High-performance, pixel-perfect code built for modern web standards.</p>
+    </div>
+
+    <div class="service-card">
+      <h3>Cyber Branding</h3>
+      <p>Glowing digital identity with hacker-inspired aesthetics for your brand.</p>
+    </div>
+  </div>
+</section>
+
+ <!-- CONTACT SECTION -->
+<section class="contact" id="contact" data-aos="fade-up">
+  <h2>Contact Me</h2>
+  <p>Let's create something amazing together.</p>
+
+  <div class="contact-buttons">
     <a href="getintouch.html" class="btn-primary">Get in Touch</a>
-  </section>
-
-<button class="donate-btn"><a href="donate.html">Donation</a></button>
+    <!-- DONATION SECTION -->
+    <a href="donate.html" class="btn-donate">Donate</a>
+  </div>
+</section>
 
   <footer>
-    <p>© 2025 Sandeep Gautam | Designed with ❤️ by Sandy</p>
+    <p>© 2025 Sandy | Designed with 💙 by Sandeep 09</p>
   </footer>
+
+  <!-- AOS JS -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 1000, easing: 'ease-in-out', once: true });
+    const menuIcon = document.getElementById("menuIcon");
+    const navLinks = document.querySelector(".nav-links");
+    menuIcon.addEventListener("click", () => navLinks.classList.toggle("active"));
+  </script>
+  <script src="script.js"></script>
 </body>
 </html>

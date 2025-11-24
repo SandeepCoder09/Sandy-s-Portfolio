@@ -169,6 +169,23 @@
     <p>© 2025 Sandy | Designed with 💙 by Sandeep 09</p>
   </footer>
 
+<script>
+  // Auto-refresh CSS & JS by appending timestamp
+  const version = Date.now();
+
+  // Update all CSS files
+  document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll('link[rel="stylesheet"]').forEach(link => {
+      link.href = link.href + "?v=" + version;
+    });
+
+    // Update JS files
+    document.querySelectorAll('script[src]').forEach(script => {
+      script.src = script.src + "?v=" + version;
+    });
+  });
+</script>
+
   <!-- AOS JS -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>

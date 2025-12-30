@@ -347,6 +347,45 @@ nav {
   padding: 0 15px 20px;
 }
 
+/* Make grid slightly tighter */
+.project-grid {
+  gap: 22px;
+}
+
+/* Smaller card */
+.project-card {
+  border-radius: 14px;
+}
+
+/* Smaller, well-fitted images */
+.project-card img {
+  width: 100%;
+  height: 160px;              /* ⬅ reduced */
+  object-fit: contain;        /* ⬅ no crop */
+  background: #000;           /* ⬅ clean padding for logos */
+  padding: 12px;              /* ⬅ breathing space */
+  filter: brightness(0.95);
+}
+
+/* Specific logo fixes */
+#cal,
+#sh-logo,
+#hm-logo {
+  height: 160px;
+  width: 100%;
+  object-fit: contain;
+}
+
+/* Slightly tighter text spacing */
+.project-card h4 {
+  margin: 12px 0 4px;
+}
+
+.project-card p {
+  font-size: 0.85rem;
+  padding: 0 14px 16px;
+}
+
 /* === SERVICES SECTION === */
 .services {
   background: linear-gradient(180deg, #020403, #031107);

@@ -386,29 +386,31 @@ nav {
   padding: 0 14px 16px;
 }
 
-/* ================= MOBILE PROJECT GRID (2 COLUMNS) ================= */
+/* ================= MOBILE PROJECT GRID (EXTRA COMPACT) ================= */
 @media (max-width: 600px) {
   .project-grid {
-    grid-template-columns: repeat(2, 1fr); /* ✅ force 2 columns */
-    gap: 14px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
   }
 
   .project-card {
-    border-radius: 12px;
+    border-radius: 10px;
   }
 
   .project-card img {
-    height: 120px;          /* smaller image */
-    padding: 8px;
+    height: 90px;          /* ⬅ very compact */
+    padding: 6px;
   }
 
   .project-card h4 {
-    font-size: 0.9rem;
+    font-size: 0.82rem;
+    margin: 8px 0 2px;
   }
 
   .project-card p {
-    font-size: 0.78rem;
-    padding: 0 10px 12px;
+    font-size: 0.72rem;
+    line-height: 1.3;
+    padding: 0 8px 10px;
   }
 }
 

@@ -386,6 +386,32 @@ nav {
   padding: 0 14px 16px;
 }
 
+/* ================= MOBILE PROJECT GRID (2 COLUMNS) ================= */
+@media (max-width: 600px) {
+  .project-grid {
+    grid-template-columns: repeat(2, 1fr); /* ✅ force 2 columns */
+    gap: 14px;
+  }
+
+  .project-card {
+    border-radius: 12px;
+  }
+
+  .project-card img {
+    height: 120px;          /* smaller image */
+    padding: 8px;
+  }
+
+  .project-card h4 {
+    font-size: 0.9rem;
+  }
+
+  .project-card p {
+    font-size: 0.78rem;
+    padding: 0 10px 12px;
+  }
+}
+
 /* === SERVICES SECTION === */
 .services {
   background: linear-gradient(180deg, #020403, #031107);

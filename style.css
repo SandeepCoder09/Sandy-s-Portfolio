@@ -1749,3 +1749,90 @@ body {
     transform: none !important;
   }
 }
+
+
+/* ===============================
+   3D HERO — FLOATING CARD STYLE
+================================ */
+.hero {
+  position: relative;
+  perspective: 1200px;
+}
+
+.hero-3d-bg {
+  position: absolute;
+  inset: -100px;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.35;
+}
+
+.hero-3d-bg svg {
+  width: 100%;
+  height: 100%;
+  animation: waveMove 18s linear infinite;
+}
+
+@keyframes waveMove {
+  from { transform: translateX(0); }
+  to { transform: translateX(-200px); }
+}
+
+.hero-content,
+.hero-img {
+  position: relative;
+  z-index: 2;
+}
+
+/* Floating Card Effect */
+.hero-content {
+  background: linear-gradient(
+    180deg,
+    rgba(255,255,255,0.08),
+    rgba(255,255,255,0.02)
+  );
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 26px;
+  padding: 48px;
+  backdrop-filter: blur(22px);
+  box-shadow:
+    0 60px 120px rgba(0,0,0,0.55),
+    inset 0 0 30px rgba(255,255,255,0.05);
+  transform-style: preserve-3d;
+}
+
+/* Depth Layers */
+.hero-content h1 { transform: translateZ(60px); }
+.hero-content h2 { transform: translateZ(40px); }
+.hero-content p  { transform: translateZ(25px); }
+.hero-content .buttons { transform: translateZ(45px); }
+
+/* Hero Image Depth */
+.hero-img img {
+  transform: translateZ(80px);
+  box-shadow: 0 80px 120px rgba(0,0,0,0.6);
+}
+
+/* Glow Accent */
+.hero::after {
+  content: "";
+  position: absolute;
+  width: 520px;
+  height: 520px;
+  background: radial-gradient(circle, rgba(111,124,255,.35), transparent 70%);
+  right: -120px;
+  top: 20%;
+  filter: blur(120px);
+  z-index: 1;
+}
+
+/* Mobile Fallback */
+@media (max-width: 768px) {
+  .hero {
+    perspective: none;
+  }
+  .hero-content,
+  .hero-img img {
+    transform: none !important;
+  }
+}

@@ -1269,3 +1269,483 @@ footer {
     .hero-content h1 { font-size: 3rem; }
     .section-title { font-size: 2.5rem; }
 }
+
+/* New Styling CG */
+
+/* =========================
+   ROOT VARIABLES
+========================= */
+:root {
+  --bg: #0b0f1a;
+  --bg-soft: #11162a;
+  --card: rgba(255, 255, 255, 0.05);
+  --border: rgba(255, 255, 255, 0.12);
+
+  --primary: #00e5ff;
+  --secondary: #7c7cff;
+  --accent: #00ffa2;
+
+  --text: #e8ecff;
+  --muted: #9aa3c7;
+
+  --radius: 16px;
+  --transition: 0.35s ease;
+}
+
+/* =========================
+   GLOBAL RESET
+========================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont;
+  background: radial-gradient(circle at top, #0f1530, #070a14);
+  color: var(--text);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  backdrop-filter: blur(18px);
+  background: rgba(10, 14, 30, 0.7);
+  border-bottom: 1px solid var(--border);
+  padding: 14px 8%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo img {
+  height: 42px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 26px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--text);
+  font-weight: 500;
+  position: relative;
+  transition: var(--transition);
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  transition: var(--transition);
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+.donate-btn {
+  padding: 8px 18px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: #000;
+  font-weight: 600;
+}
+
+.menu-icon {
+  display: none;
+  font-size: 26px;
+  cursor: pointer;
+}
+
+/* =========================
+   HERO SECTION
+========================= */
+.hero {
+  min-height: 100vh;
+  padding: 120px 8% 80px;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  align-items: center;
+  gap: 50px;
+}
+
+.hero-content h3 {
+  color: var(--primary);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.hero-content h1 {
+  font-size: 3.4rem;
+  margin: 10px 0;
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-content h2 {
+  font-size: 1.6rem;
+  color: var(--muted);
+  margin-bottom: 18px;
+}
+
+.hero-content p {
+  max-width: 520px;
+  margin-bottom: 30px;
+  color: #cfd6ff;
+}
+
+.buttons {
+  display: flex;
+  gap: 18px;
+}
+
+.btn-primary,
+.btn-outline,
+.btn-donate {
+  padding: 14px 28px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: var(--transition);
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: #000;
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(0, 229, 255, 0.4);
+}
+
+.btn-outline {
+  border: 1px solid var(--border);
+  color: var(--text);
+  background: transparent;
+}
+
+.btn-outline:hover {
+  background: var(--card);
+}
+
+.hero-img img {
+  width: 100%;
+  max-width: 420px;
+  border-radius: 50%;
+  border: 3px solid var(--border);
+  box-shadow: 0 0 40px rgba(0, 229, 255, 0.35);
+}
+
+/* =========================
+   ABOUT SECTION
+========================= */
+.about {
+  padding: 100px 8%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.about-text h2 {
+  font-size: 2.4rem;
+  margin-bottom: 20px;
+}
+
+.about-text p {
+  color: #cfd6ff;
+  margin-bottom: 30px;
+}
+
+.skills div {
+  margin-bottom: 18px;
+}
+
+.skills h4 {
+  margin-bottom: 6px;
+}
+
+.bar {
+  height: 8px;
+  border-radius: 6px;
+  background: #1c2242;
+  overflow: hidden;
+}
+
+.bar::after {
+  content: "";
+  display: block;
+  height: 100%;
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+}
+
+.bar.html::after { width: 95%; }
+.bar.css::after { width: 90%; }
+.bar.js::after { width: 80%; }
+
+.about-img img {
+  width: 100%;
+  border-radius: var(--radius);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+}
+
+/* =========================
+   PROJECTS
+========================= */
+.projects {
+  padding: 100px 8%;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2.6rem;
+  margin-bottom: 60px;
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+}
+
+.project-card {
+  background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.02));
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px;
+  text-decoration: none;
+  color: var(--text);
+  transition: var(--transition);
+  backdrop-filter: blur(16px);
+}
+
+.project-card img {
+  width: 100%;
+  height: 160px;
+  object-fit: contain;
+  margin-bottom: 18px;
+}
+
+.project-card h4 {
+  margin-bottom: 10px;
+}
+
+.project-card p {
+  font-size: 0.95rem;
+  color: #cfd6ff;
+}
+
+.project-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 30px 80px rgba(0, 229, 255, 0.25);
+  border-color: var(--primary);
+}
+
+/* =========================
+   SERVICES
+========================= */
+.services {
+  padding: 100px 8%;
+  text-align: center;
+}
+
+.service-grid {
+  margin-top: 50px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 26px;
+}
+
+.service-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  padding: 30px;
+  border-radius: var(--radius);
+  transition: var(--transition);
+}
+
+.service-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--accent);
+}
+
+/* =========================
+   CONTACT
+========================= */
+.contact {
+  padding: 100px 8%;
+  text-align: center;
+}
+
+.contact-buttons {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* =========================
+   FOOTER
+========================= */
+footer {
+  padding: 30px;
+  text-align: center;
+  border-top: 1px solid var(--border);
+  background: rgba(10, 14, 30, 0.8);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 900px) {
+  .hero,
+  .about {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .hero-img {
+    margin-top: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: rgba(10, 14, 30, 0.95);
+    backdrop-filter: blur(20px);
+    flex-direction: column;
+    width: 220px;
+    padding: 20px;
+    display: none;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .menu-icon {
+    display: block;
+  }
+}
+
+/* =========================
+   GLOBAL 3D SETUP
+========================= */
+body {
+  perspective: 1200px;
+  transform-style: preserve-3d;
+}
+
+/* =========================
+   HERO IMAGE — 3D FLOAT
+========================= */
+.hero-img {
+  transform-style: preserve-3d;
+}
+
+.hero-img img {
+  transform: translateZ(60px);
+  transition: transform 0.6s cubic-bezier(.03,.98,.52,.99);
+}
+
+.hero-img:hover img {
+  transform: rotateY(12deg) rotateX(-8deg) translateZ(90px);
+}
+
+/* =========================
+   PROJECT CARD — TRUE 3D
+========================= */
+.project-card {
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+.project-card img {
+  transform: translateZ(50px);
+}
+
+.project-card h4 {
+  transform: translateZ(35px);
+}
+
+.project-card p {
+  transform: translateZ(20px);
+}
+
+.project-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(circle at top left, rgba(255,255,255,.18), transparent);
+  transform: translateZ(-40px);
+  opacity: 0;
+  transition: 0.4s;
+}
+
+.project-card:hover::before {
+  opacity: 1;
+}
+
+/* =========================
+   SERVICE CARD DEPTH
+========================= */
+.service-card {
+  transform-style: preserve-3d;
+}
+
+.service-card:hover {
+  transform: rotateX(6deg) rotateY(-6deg) translateZ(20px);
+}
+
+/* =========================
+   BUTTON 3D PRESS
+========================= */
+.btn-primary,
+.btn-outline,
+.btn-donate {
+  transform-style: preserve-3d;
+}
+
+.btn-primary:hover {
+  transform: translateZ(18px);
+}
+
+/* =========================
+   MOBILE SAFETY
+========================= */
+@media (max-width: 768px) {
+  body {
+    perspective: none;
+  }
+
+  .project-card,
+  .service-card,
+  .hero-img img {
+    transform: none !important;
+  }
+}

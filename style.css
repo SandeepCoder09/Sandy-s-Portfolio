@@ -750,385 +750,522 @@ footer {
   100% { box-shadow: 0 0 8px #00ff88; }
 } 
 
-/* New Styling */
+/* New Styling GG*/
 
-/* =========================
-   ROOT VARIABLES
-========================= */
+/* =========================================
+   1. 3D UNIVERSE SETUP & VARIABLES
+   ========================================= */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Poppins:wght@300;400;600&display=swap');
+
 :root {
-  --bg: #0b0f1a;
-  --bg-soft: #11162a;
-  --card: rgba(255, 255, 255, 0.05);
-  --border: rgba(255, 255, 255, 0.12);
-
-  --primary: #00e5ff;
-  --secondary: #7c7cff;
-  --accent: #00ffa2;
-
-  --text: #e8ecff;
-  --muted: #9aa3c7;
-
-  --radius: 16px;
-  --transition: 0.35s ease;
+    /* The neon holographic palette */
+    --bg-space: radial-gradient(circle at 50% 50%, #2b0a4c 0%, #1a042d 60%, #000000 100%);
+    --primary-neon: #ff00e6; /* Hot Pink Neon */
+    --secondary-neon: #00d4ff; /* Cyan Neon */
+    --glass-surface: rgba(255, 255, 255, 0.08);
+    --glass-border: rgba(255, 255, 255, 0.2);
+    --text-glow: 0 0 10px rgba(255, 255, 255, 0.6);
+    
+    /* 3D Depths */
+    --depth-shadow-high: 0 20px 50px rgba(0, 0, 0, 0.8), inset 0 0 30px rgba(255,255,255,0.05);
+    --depth-shadow-low:  0 5px 15px rgba(0, 0, 0, 0.5);
 }
 
-/* =========================
-   GLOBAL RESET
-========================= */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
 body {
-  font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont;
-  background: radial-gradient(circle at top, #0f1530, #070a14);
-  color: var(--text);
-  line-height: 1.6;
-  overflow-x: hidden;
+    background: var(--bg-space);
+    background-attachment: fixed; /* Keeps background static while scrolling */
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+    perspective: 1500px; /* Essential for 3D effect */
+    overflow-x: hidden;
 }
 
-/* =========================
-   NAVBAR
-========================= */
+h1, h2, h3, h4, .logo {
+    font-family: 'Orbitron', sans-serif; /* Sci-fi font for headers */
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/* The Floating Animation */
+@keyframes floating {
+    0% { transform: translateY(0px) rotateX(0deg); }
+    50% { transform: translateY(-20px) rotateX(3deg); }
+    100% { transform: translateY(0px) rotateX(0deg); }
+}
+
+/* Custom Scrollbar for the 3D look */
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: #0f0216; }
+::-webkit-scrollbar-thumb { background: linear-gradient(var(--primary-neon), var(--secondary-neon)); border-radius: 5px; }
+
+/* =========================================
+   2. 3D NAVBAR (Floating Glass)
+   ========================================= */
 nav {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  backdrop-filter: blur(18px);
-  background: rgba(10, 14, 30, 0.7);
-  border-bottom: 1px solid var(--border);
-  padding: 14px 8%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 90px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5%;
+    z-index: 1000;
+
+    /* The 3D Glass Effect */
+    background: rgba(20, 2, 30, 0.7);
+    backdrop-filter: blur(25px) saturate(150%);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: var(--depth-shadow-low), 0 1px 0 rgba(255,255,255,0.1) inset;
+    transform-style: preserve-3d;
+    transform: translateZ(50px); /* Pushes nav closer to screen */
 }
 
 .logo img {
-  height: 42px;
+    height: 50px;
+    border-radius: 50%;
+    /* Glowing Ring */
+    box-shadow: 0 0 20px var(--primary-neon), inset 0 0 10px white;
+    border: 2px solid rgba(255,255,255,0.5);
 }
 
 .nav-links {
-  list-style: none;
-  display: flex;
-  gap: 26px;
+    display: flex;
+    gap: 2rem;
+    list-style: none;
 }
 
 .nav-links a {
-  text-decoration: none;
-  color: var(--text);
-  font-weight: 500;
-  position: relative;
-  transition: var(--transition);
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.8);
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: 0.3s;
+    text-shadow: var(--text-glow);
 }
 
-.nav-links a::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -6px;
-  width: 0;
-  height: 2px;
-  background: linear-gradient(90deg, var(--primary), var(--secondary));
-  transition: var(--transition);
-}
-
-.nav-links a:hover::after {
-  width: 100%;
+.nav-links a:hover {
+    color: var(--secondary-neon);
+    text-shadow: 0 0 20px var(--secondary-neon);
 }
 
 .donate-btn {
-  padding: 8px 18px;
-  border-radius: 999px;
-  background: linear-gradient(135deg, var(--primary), var(--secondary));
-  color: #000;
-  font-weight: 600;
+    /* 3D Button look */
+    background: linear-gradient(135deg, var(--primary-neon), #8a00c2);
+    padding: 10px 25px;
+    border-radius: 30px;
+    color: white !important;
+    box-shadow: inset 2px 2px 5px rgba(255,255,255,0.4), 
+                inset -2px -2px 5px rgba(0,0,0,0.4),
+                0 5px 15px rgba(255, 0, 230, 0.4);
+    transition: 0.3s;
+}
+
+.donate-btn:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 15px 30px rgba(255, 0, 230, 0.6);
 }
 
 .menu-icon {
-  display: none;
-  font-size: 26px;
-  cursor: pointer;
+    display: none;
+    color: white;
+    font-size: 1.8rem;
 }
 
-/* =========================
-   HERO SECTION
-========================= */
+/* =========================================
+   3. HERO SECTION (Holographic Projection)
+   ========================================= */
 .hero {
-  min-height: 100vh;
-  padding: 120px 8% 80px;
-  display: grid;
-  grid-template-columns: 1.2fr 1fr;
-  align-items: center;
-  gap: 50px;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 120px 10% 50px;
+    transform-style: preserve-3d; /* Allows children to float in 3D space */
+}
+
+.hero-content {
+    flex: 1;
+    /* Pushes text forward */
+    transform: translateZ(30px);
 }
 
 .hero-content h3 {
-  color: var(--primary);
-  letter-spacing: 2px;
-  text-transform: uppercase;
+    color: var(--secondary-neon);
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    text-shadow: 0 0 10px var(--secondary-neon);
 }
 
 .hero-content h1 {
-  font-size: 3.4rem;
-  margin: 10px 0;
-  background: linear-gradient(90deg, var(--primary), var(--secondary));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+    font-size: 4rem;
+    font-weight: 900;
+    line-height: 1.1;
+    margin-bottom: 15px;
+    /* Glowing Neon Text */
+    color: #fff;
+    text-shadow: 
+        0 0 5px #fff,
+        0 0 20px var(--primary-neon),
+        0 0 50px var(--primary-neon);
 }
 
 .hero-content h2 {
-  font-size: 1.6rem;
-  color: var(--muted);
-  margin-bottom: 18px;
+    font-size: 2rem;
+    color: #ccc;
+    margin-bottom: 25px;
+    background: linear-gradient(to right, var(--secondary-neon), transparent);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .hero-content p {
-  max-width: 520px;
-  margin-bottom: 30px;
-  color: #cfd6ff;
+    font-size: 1.1rem;
+    color: rgba(255,255,255,0.8);
+    margin-bottom: 40px;
+    max-width: 500px;
+    padding: 20px;
+    /* Subtle glass panel behind text for readability */
+    background: rgba(255,255,255,0.03);
+    border-left: 3px solid var(--secondary-neon);
+    backdrop-filter: blur(5px);
+    border-radius: 0 10px 10px 0;
 }
 
 .buttons {
-  display: flex;
-  gap: 18px;
+    display: flex;
+    gap: 20px;
 }
 
-.btn-primary,
-.btn-outline,
-.btn-donate {
-  padding: 14px 28px;
-  border-radius: 999px;
-  text-decoration: none;
-  font-weight: 600;
-  transition: var(--transition);
+/* 3D Buttons */
+.btn-primary, .btn-outline {
+    padding: 15px 35px;
+    border-radius: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    position: relative;
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, var(--primary), var(--secondary));
-  color: #000;
+    background: linear-gradient(135deg, var(--secondary-neon), #006eff);
+    color: #000;
+    border: none;
+    /* Beveled 3D Look */
+    box-shadow: 
+        inset 2px 2px 2px rgba(255,255,255,0.5),
+        inset -2px -2px 5px rgba(0,0,0,0.3),
+        0 10px 20px -10px rgba(0, 212, 255, 0.7);
 }
 
 .btn-primary:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 30px rgba(0, 229, 255, 0.4);
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px -10px rgba(0, 212, 255, 1);
 }
 
 .btn-outline {
-  border: 1px solid var(--border);
-  color: var(--text);
-  background: transparent;
+    background: rgba(255,255,255,0.05);
+    color: var(--primary-neon);
+    border: 2px solid var(--primary-neon);
+    box-shadow: 0 0 10px var(--primary-neon) inset, 0 0 10px var(--primary-neon);
 }
 
 .btn-outline:hover {
-  background: var(--card);
+    background: var(--primary-neon);
+    color: white;
+    box-shadow: 0 0 50px var(--primary-neon);
+}
+
+.hero-img {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    perspective: 1000px;
 }
 
 .hero-img img {
-  width: 100%;
-  max-width: 420px;
-  border-radius: 50%;
-  border: 3px solid var(--border);
-  box-shadow: 0 0 40px rgba(0, 229, 255, 0.35);
+    width: 400px;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; /* Organic shape */
+    /* Intense glowing halo */
+    box-shadow: 
+        0 0 20px #fff,
+        0 0 60px var(--primary-neon),
+        inset 0 0 30px var(--secondary-neon);
+    border: 3px solid rgba(255,255,255,0.7);
+    /* Floating animation */
+    animation: floating 6s ease-in-out infinite;
+    /* Tilt it slightly back in 3D space */
+    transform: rotateX(10deg) rotateY(-10deg);
 }
 
-/* =========================
-   ABOUT SECTION
-========================= */
+/* =========================================
+   4. ABOUT SECTION (The Glass Slab)
+   ========================================= */
 .about {
-  padding: 100px 8%;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 60px;
-  align-items: center;
+    padding: 100px 10%;
+    display: flex;
+    align-items: center;
+    gap: 5rem;
+    position: relative;
+    /* Make the whole section a floating glass slab */
+    background: var(--glass-surface);
+    backdrop-filter: blur(20px);
+    border-top: 1px solid var(--glass-border);
+    border-bottom: 1px solid var(--glass-border);
+    box-shadow: var(--depth-shadow-high);
+    transform: translateZ(10px) rotateX(2deg); /* Slight tilt */
+    margin: 50px 0;
+}
+
+.about-img img {
+    width: 350px;
+    border-radius: 20px;
+    /* 3D Stacked Look */
+    box-shadow: 
+        20px 20px 0 rgba(0, 212, 255, 0.2), /* Cyan layer */
+        40px 40px 0 rgba(255, 0, 230, 0.2), /* Pink layer */
+        0 0 30px rgba(0,0,0,0.8); /* Main shadow */
+    transform: perspective(1000px) rotateY(15deg);
 }
 
 .about-text h2 {
-  font-size: 2.4rem;
-  margin-bottom: 20px;
+    font-size: 3rem;
+    margin-bottom: 20px;
+    text-shadow: 0 0 15px var(--primary-neon);
 }
 
-.about-text p {
-  color: #cfd6ff;
-  margin-bottom: 30px;
-}
+.skills { margin-top: 40px; }
+.skills h4 { margin-bottom: 10px; color: var(--secondary-neon); }
 
-.skills div {
-  margin-bottom: 18px;
-}
-
-.skills h4 {
-  margin-bottom: 6px;
-}
-
+/* 3D Progress Bars (Glowing Tubes) */
 .bar {
-  height: 8px;
-  border-radius: 6px;
-  background: #1c2242;
-  overflow: hidden;
+    height: 20px;
+    background: rgba(0,0,0,0.5);
+    border-radius: 30px;
+    position: relative;
+    /* Inner shadow for tube effect */
+    box-shadow: inset 0 5px 10px rgba(0,0,0,0.8), inset 0 -2px 5px rgba(255,255,255,0.1);
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.1);
 }
 
-.bar::after {
-  content: "";
-  display: block;
-  height: 100%;
-  background: linear-gradient(90deg, var(--primary), var(--accent));
+.bar::before {
+    content: '';
+    position: absolute;
+    height: 100%;
+    /* Glowing liquid gradient */
+    background: linear-gradient(90deg, var(--primary-neon), var(--secondary-neon));
+    border-radius: 30px;
+    box-shadow: 0 0 20px var(--primary-neon);
+    animation: fillBar 2s ease-out forwards;
 }
+@keyframes fillBar { from { width: 0; } }
+.html::before { width: 95%; }
+.css::before { width: 85%; }
+.js::before { width: 75%; }
 
-.bar.html::after { width: 95%; }
-.bar.css::after { width: 90%; }
-.bar.js::after { width: 80%; }
-
-.about-img img {
-  width: 100%;
-  border-radius: var(--radius);
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
-}
-
-/* =========================
-   PROJECTS
-========================= */
-.projects {
-  padding: 100px 8%;
-}
+/* =========================================
+   5. PROJECTS SECTION (Tilted Cards)
+   ========================================= */
+.projects { padding: 100px 5%; }
 
 .section-title {
-  text-align: center;
-  font-size: 2.6rem;
-  margin-bottom: 60px;
+    text-align: center;
+    font-size: 3.5rem;
+    margin-bottom: 80px;
+    text-shadow: 0 0 20px var(--secondary-neon), 0 0 50px var(--secondary-neon);
 }
 
 .project-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 30px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 4rem;
+    perspective: 2000px; /* Deep perspective for grid */
 }
 
 .project-card {
-  background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.02));
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 24px;
-  text-decoration: none;
-  color: var(--text);
-  transition: var(--transition);
-  backdrop-filter: blur(16px);
-}
-
-.project-card img {
-  width: 100%;
-  height: 160px;
-  object-fit: contain;
-  margin-bottom: 18px;
-}
-
-.project-card h4 {
-  margin-bottom: 10px;
-}
-
-.project-card p {
-  font-size: 0.95rem;
-  color: #cfd6ff;
+    /* The Core 3D Glass Card Look */
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    overflow: hidden;
+    text-decoration: none;
+    color: #fff;
+    
+    /* 3D Transform Properties */
+    transform-style: preserve-3d;
+    /* Initial tilted state */
+    transform: rotateX(10deg) rotateY(-5deg) translateZ(0px);
+    box-shadow: 20px 30px 50px rgba(0,0,0,0.8), inset 0 0 20px rgba(255,255,255,0.05);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Bouncy transition */
 }
 
 .project-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 30px 80px rgba(0, 229, 255, 0.25);
-  border-color: var(--primary);
+    /* Lift up, flatten out, and glow on hover */
+    transform: rotateX(0deg) rotateY(0deg) translateZ(50px) scale(1.05);
+    border-color: var(--secondary-neon);
+    box-shadow: 
+        0 50px 70px rgba(0,0,0,0.9),
+        0 0 40px rgba(0, 212, 255, 0.4), /* Cyan Glow */
+        inset 0 0 20px rgba(255,255,255,0.2);
+    z-index: 10;
 }
 
-/* =========================
-   SERVICES
-========================= */
-.services {
-  padding: 100px 8%;
-  text-align: center;
+.project-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    background: #000; /* Fallback for transparent PNGs */
+    transform: translateZ(10px); /* Pop image slightly off card */
 }
+
+/* Specific fixes for logos */
+#qr-code, #hm-logo, #sh-logo, #cal {
+    object-fit: contain;
+    padding: 30px;
+}
+
+.project-card h4 {
+    padding: 20px 20px 5px;
+    font-size: 1.4rem;
+    color: var(--secondary-neon);
+    text-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
+    transform: translateZ(30px); /* Pop text further off card */
+}
+
+.project-card p {
+    padding: 0 20px 25px;
+    color: rgba(255,255,255,0.7);
+    transform: translateZ(20px);
+}
+
+/* =========================================
+   6. SERVICES SECTION (Floating Prisms)
+   ========================================= */
+.services { padding: 100px 10%; }
+.services h2 { text-align: center; font-size: 3.5rem; margin-bottom: 60px; text-shadow: 0 0 20px var(--primary-neon); }
 
 .service-grid {
-  margin-top: 50px;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 26px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 3rem;
 }
 
 .service-card {
-  background: var(--card);
-  border: 1px solid var(--border);
-  padding: 30px;
-  border-radius: var(--radius);
-  transition: var(--transition);
+    background: linear-gradient(160deg, rgba(255,255,255,0.1), rgba(0,0,0,0.6));
+    backdrop-filter: blur(10px);
+    padding: 40px 30px;
+    border-radius: 30px;
+    text-align: center;
+    border: 1px solid rgba(255,255,255,0.1);
+    box-shadow: var(--depth-shadow-low);
+    transition: 0.5s;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Glowing orb effect behind service cards */
+.service-card::before {
+    content: '';
+    position: absolute;
+    top: -50%; left: -50%;
+    width: 200%; height: 200%;
+    background: radial-gradient(circle, var(--primary-neon) 0%, transparent 60%);
+    opacity: 0;
+    transition: 0.5s;
+    z-index: -1;
 }
 
 .service-card:hover {
-  transform: translateY(-6px);
-  border-color: var(--accent);
+    transform: translateY(-15px) scale(1.05);
+    box-shadow: 0 30px 50px rgba(255, 0, 230, 0.4);
+    border-color: rgba(255,255,255,0.5);
 }
+.service-card:hover::before { opacity: 0.15; }
 
-/* =========================
-   CONTACT
-========================= */
+.service-card h3 { font-size: 1.5rem; margin-bottom: 15px; color: #fff; }
+.service-card p { color: rgba(255,255,255,0.7); }
+
+/* =========================================
+   7. CONTACT & FOOTER
+   ========================================= */
 .contact {
-  padding: 100px 8%;
-  text-align: center;
-}
-
-.contact-buttons {
-  margin-top: 30px;
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-}
-
-/* =========================
-   FOOTER
-========================= */
-footer {
-  padding: 30px;
-  text-align: center;
-  border-top: 1px solid var(--border);
-  background: rgba(10, 14, 30, 0.8);
-}
-
-/* =========================
-   RESPONSIVE
-========================= */
-@media (max-width: 900px) {
-  .hero,
-  .about {
-    grid-template-columns: 1fr;
+    padding: 120px 10%;
     text-align: center;
-  }
+    /* A final floating glass panel */
+    background: rgba(20, 2, 30, 0.6);
+    backdrop-filter: blur(30px);
+    border-top: 1px solid var(--glass-border);
+    box-shadow: 0 -20px 50px rgba(0,0,0,0.8);
+    transform: translateZ(20px);
+}
 
-  .hero-img {
-    margin-top: 40px;
-  }
+.contact h2 {
+    font-size: 3.5rem;
+    text-shadow: 0 0 30px var(--primary-neon);
+}
+
+footer {
+    padding: 30px;
+    text-align: center;
+    background: #000;
+    color: rgba(255,255,255,0.5);
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+}
+
+/* =========================================
+   8. MOBILE FIXES
+   ========================================= */
+@media (max-width: 992px) {
+    .hero {
+        flex-direction: column-reverse;
+        text-align: center;
+        padding-top: 150px;
+        gap: 60px;
+    }
+    .hero-img img { width: 300px; height: 300px; }
+    .buttons { justify-content: center; }
+    .about { flex-direction: column; transform: none; margin: 0; } /* Disable complex 3D on mobile for performance */
+    .about-img img { transform: none; box-shadow: 0 20px 40px rgba(0,0,0,0.5); }
 }
 
 @media (max-width: 768px) {
-  .nav-links {
-    position: absolute;
-    top: 100%;
-    right: 0;
-    background: rgba(10, 14, 30, 0.95);
-    backdrop-filter: blur(20px);
-    flex-direction: column;
-    width: 220px;
-    padding: 20px;
-    display: none;
-  }
-
-  .nav-links.active {
-    display: flex;
-  }
-
-  .menu-icon {
-    display: block;
-  }
+    .nav-links {
+        position: fixed;
+        top: 90px; right: 0;
+        height: calc(100vh - 90px);
+        background: rgba(10,0,20,0.95);
+        backdrop-filter: blur(20px);
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+        transform: translateX(100%);
+        transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        border-left: 1px solid rgba(255,255,255,0.1);
+    }
+    .nav-links.active { transform: translateX(0); }
+    .menu-icon { display: block; }
+    .hero-content h1 { font-size: 3rem; }
+    .section-title { font-size: 2.5rem; }
 }
-

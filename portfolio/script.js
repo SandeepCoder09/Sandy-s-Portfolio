@@ -387,3 +387,37 @@ document.getElementById("signOutBtn").addEventListener("click", async () => {
   await auth.signOut();
   window.location.href = "../users.html";
 });
+
+function showHungerPopup() {
+  const popup = document.getElementById("hungerPopup");
+  const sound = document.getElementById("popupSound");
+  const typing = document.getElementById("typingMsg");
+  const progressBar = document.getElementById("progressBar");
+
+  popup.style.display = "flex";
+  sound.play();
+
+  const msg = "Scanning project files...• Loading components...• Status: Under Development.";
+  typing.innerHTML = "";
+  let idx = 0;
+
+  const typeInterval = setInterval(() => {
+    typing.innerHTML += msg[idx];
+    idx++;
+    if (idx >= msg.length) clearInterval(typeInterval);
+  }, 40);
+
+  let width = 0;
+  const progressInterval = setInterval(() => {
+    if (width >= 100) {
+      clearInterval(progressInterval);
+    } else {
+      width += 2;
+      progressBar.style.width = width + "%";
+    }
+  }, 50);
+}
+
+function closePopup() {
+  document.getElementById("hungerPopup").style.display = "none";
+}

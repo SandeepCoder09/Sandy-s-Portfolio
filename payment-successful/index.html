@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Thank You | Donation Successful</title>
+  <link rel="stylesheet" href=".css" />
+  <link rel="stylesheet" href="success.css" />
+</head>
+<body class="success-page">
+  <div class="success-container">
+    <div class="checkmark">
+      <svg viewBox="0 0 52 52">
+        <circle class="checkmark-circle" cx="26" cy="26" r="25" fill="none"/>
+        <path class="checkmark-check" fill="none" d="M14 27l7 7 17-17"/>
+      </svg>
+    </div>
+
+    <h1>Donation Successful 🎉</h1>
+    <p>Thank you, <strong>Sandy’s Supporter</strong>!  
+    Your donation means a lot — it helps me continue building creative projects and open-source work. ❤️</p>
+
+    <a href="index.html" class="back-home">Back to Home</a>
+
+    <div class="redirect-msg">
+      Redirecting to home page in <span id="countdown">5</span> seconds...
+    </div>
+  </div>
+
+  <script>
+    // Countdown Redirect
+    let counter = 5;
+    const countdown = document.getElementById("countdown");
+    const interval = setInterval(() => {
+      counter--;
+      countdown.textContent = counter;
+      if (counter === 0) {
+        clearInterval(interval);
+        window.location.href = "index.html";
+      }
+    }, 1000);
+  </script>
+</body>
+</html>

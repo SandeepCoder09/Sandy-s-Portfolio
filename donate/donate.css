@@ -1,0 +1,209 @@
+/* donate.css - Hacker green / cyan theme */
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-family: 'Space Mono', monospace;
+	background: radial-gradient(circle at top, #020a05 0%, #000 100%);
+	color: #bfffe6;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+}
+
+/* Header */
+header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 18px 6%;
+	background: rgba(0, 0, 0, 0.6);
+	border-bottom: 1px solid rgba(0, 234, 255, 0.08);
+	z-index: 10;
+}
+
+.logo {
+	color: #00eaff;
+	text-decoration: none;
+	font-weight: 700;
+	letter-spacing: 1px;
+}
+
+header nav a {
+	color: #cfefff;
+	text-decoration: none;
+	margin-left: 18px;
+}
+
+header nav a:hover {
+	color: #00eaff;
+}
+
+/* Main donate box */
+.donate-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 60px 12px;
+	flex: 1;
+}
+
+.donate-box {
+	width: 100%;
+	max-width: 540px;
+	background: rgba(6, 14, 18, 0.7);
+	border: 1px solid rgba(0, 234, 255, 0.12);
+	padding: 32px;
+	border-radius: 14px;
+	box-shadow: 0 10px 35px rgba(0, 234, 255, 0.05);
+	text-align: center;
+}
+
+.donate-box h2 {
+	color: #00eaff;
+	margin-bottom: 6px;
+	text-shadow: 0 0 10px rgba(0, 234, 255, 0.08);
+}
+
+.donate-box p {
+	color: #9fefff;
+	margin-bottom: 18px;
+	font-size: 0.95rem;
+}
+
+/* Amount buttons */
+.amount-buttons {
+	display: flex;
+	justify-content: center;
+	gap: 10px;
+	flex-wrap: wrap;
+	margin-bottom: 12px;
+}
+
+.amount,
+#customBtn {
+	padding: 10px 18px;
+	border: 1px solid rgba(0, 234, 255, 0.15);
+	background: transparent;
+	color: #cfefff;
+	border-radius: 10px;
+	cursor: pointer;
+	transition: all .18s ease;
+}
+
+.amount.active,
+.amount:hover,
+#customBtn:hover {
+	background: #00eaff;
+	color: #001010;
+	box-shadow: 0 6px 20px rgba(0, 234, 255, 0.12);
+}
+
+/* Inputs */
+#customAmount,
+input[type="text"],
+input[type="email"],
+textarea {
+	width: 100%;
+	padding: 12px 14px;
+	margin: 10px 0;
+	border-radius: 8px;
+	border: 1px solid rgba(0, 234, 255, 0.08);
+	background: rgba(0, 0, 0, 0.5);
+	color: #cfefff;
+	resize: none;
+	outline: none;
+}
+
+input:focus,
+textarea:focus,
+#customAmount:focus {
+	box-shadow: 0 0 12px rgba(0, 234, 255, 0.12);
+	border-color: #00eaff;
+}
+
+/* Donate button (pulsing glow) */
+#donateBtn {
+	width: 100%;
+	padding: 14px;
+	border-radius: 10px;
+	background: linear-gradient(90deg, #00eaff, #00ffb3);
+	color: #001010;
+	border: none;
+	font-weight: 700;
+	cursor: pointer;
+	box-shadow: 0 6px 20px rgba(0, 234, 255, 0.14);
+	position: relative;
+	overflow: hidden;
+	transition: transform .18s ease;
+}
+
+#donateBtn span {
+	position: relative;
+	z-index: 2;
+}
+
+#donateBtn::before {
+	content: "";
+	position: absolute;
+	left: -40%;
+	top: -40%;
+	width: 180%;
+	height: 180%;
+	background: conic-gradient(from 0deg, rgba(0, 255, 179, 0.08), rgba(0, 234, 255, 0.08));
+	filter: blur(30px);
+	animation: rotateAura 6s linear infinite;
+	z-index: 1;
+}
+
+@keyframes rotateAura {
+	from {
+		transform: rotate(0deg)
+	}
+
+	to {
+		transform: rotate(360deg)
+	}
+}
+
+#donateBtn:hover {
+	transform: scale(1.03);
+	box-shadow: 0 12px 40px rgba(0, 234, 255, 0.22);
+}
+
+/* thanks text */
+.thanks {
+	margin-top: 14px;
+	color: #86f0de;
+	font-size: 0.95rem;
+}
+
+/* footer */
+footer {
+	text-align: center;
+	padding: 12px 6%;
+	color: #83f3df;
+	border-top: 1px solid rgba(0, 234, 255, 0.04);
+}
+
+/* responsive */
+@media (max-width:600px) {
+	.donate-box {
+		padding: 22px;
+	}
+
+	.amount,
+	#customBtn {
+		padding: 10px 14px;
+		font-size: 0.95rem;
+	}
+
+	#donateBtn {
+		padding: 12px;
+	}
+}

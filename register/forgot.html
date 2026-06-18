@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Forgot Password — Sandy</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sacramento&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../shared.css" />
+    <style>
+      body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        padding: 48px 24px;
+      }
+      .forgot-wrap {
+        width: 100%;
+        max-width: 420px;
+      }
+      .forgot-card {
+        background: var(--dark2);
+        border: 1px solid var(--border);
+        border-radius: 20px;
+        padding: 40px 36px;
+        text-align: center;
+      }
+      .key-icon {
+        width: 72px;
+        height: 72px;
+        background: var(--orange-pale);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 24px;
+      }
+      .key-icon svg {
+        width: 32px;
+        height: 32px;
+        stroke: var(--orange);
+        fill: none;
+        stroke-width: 1.5;
+      }
+      .forgot-card h2 {
+        font-size: 24px;
+        font-weight: 800;
+        margin-bottom: 10px;
+      }
+      .forgot-card p {
+        font-size: 14.5px;
+        color: var(--muted);
+        line-height: 1.7;
+        margin-bottom: 28px;
+      }
+      .success-msg {
+        display: none;
+      }
+      .success-msg .ok-icon {
+        width: 72px;
+        height: 72px;
+        background: rgba(34, 197, 94, 0.1);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 20px;
+      }
+      .success-msg .ok-icon svg {
+        width: 32px;
+        height: 32px;
+        stroke: var(--success);
+        fill: none;
+        stroke-width: 2.5;
+      }
+      @media (max-width: 420px) {
+        .forgot-card {
+          padding: 32px 20px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="cursor-glow" id="cursorGlow"></div>
+
+    <div class="forgot-wrap fade-up">
+      <div class="forgot-card">
+        <!-- Form state -->
+        <div id="formState">
+          <div class="key-icon">
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 11-7.778 7.778 5.5 5.5 0 017.777-7.777zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3m-3.5 3.5L19 4"
+              />
+            </svg>
+          </div>
+          <h2>Forgot your password?</h2>
+          <p>
+            No worries. Enter your email address and we'll send you a link to
+            reset your password.
+          </p>
+          <form id="forgotForm" style="text-align: left">
+            <div class="form-group">
+              <label for="resetEmail">Email Address</label>
+              <input
+                type="email"
+                id="resetEmail"
+                placeholder="you@email.com"
+                required
+              />
+            </div>
+            <button type="submit" class="btn-primary btn-full btn-lg">
+              Send Reset Link
+            </button>
+          </form>
+          <p
+            style="
+              text-align: center;
+              margin-top: 20px;
+              font-size: 13px;
+              color: var(--muted);
+            "
+          >
+            Remember it?
+            <a href="register.html" style="color: var(--orange)">Sign in →</a>
+          </p>
+        </div>
+        <!-- Success state -->
+        <div class="success-msg" id="successState">
+          <div class="ok-icon">
+            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12" /></svg>
+          </div>
+          <h2>Check your inbox</h2>
+          <p>
+            We've sent a password reset link to your email address. It expires
+            in 15 minutes.
+          </p>
+          <a href="register.html" class="btn-primary btn-full"
+            >Back to Sign In</a
+          >
+        </div>
+      </div>
+      <p
+        style="
+          text-align: center;
+          margin-top: 20px;
+          font-size: 13px;
+          color: var(--muted);
+        "
+      >
+        <a href="../index.html" style="color: var(--orange)">← Back to home</a>
+      </p>
+    </div>
+
+    <script src="../shared.js"></script>
+    <script>
+      document.getElementById("forgotForm").addEventListener("submit", (e) => {
+        e.preventDefault();
+        document.getElementById("formState").style.display = "none";
+        document.getElementById("successState").style.display = "block";
+      });
+    </script>
+  </body>
+</html>

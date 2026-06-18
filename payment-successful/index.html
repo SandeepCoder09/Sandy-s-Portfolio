@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Payment Successful — Sandy</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sacramento&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../shared/shared.css" />
+    <style>
+      body {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+      }
+      .success-wrap {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 80px 24px;
+      }
+      .success-card {
+        background: var(--dark2);
+        border: 1px solid var(--border);
+        border-radius: 24px;
+        padding: 56px 48px;
+        max-width: 520px;
+        width: 100%;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+      }
+      .success-card::before {
+        content: "";
+        position: absolute;
+        top: -80px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 280px;
+        height: 280px;
+        background: radial-gradient(
+          circle,
+          rgba(34, 197, 94, 0.12),
+          transparent 70%
+        );
+        pointer-events: none;
+      }
+      .success-anim {
+        width: 88px;
+        height: 88px;
+        background: rgba(34, 197, 94, 0.1);
+        border-radius: 50%;
+        margin: 0 auto 28px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        animation: popIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+      }
+      @keyframes popIn {
+        from {
+          opacity: 0;
+          transform: scale(0.5);
+        }
+        to {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+      .success-anim svg {
+        width: 44px;
+        height: 44px;
+        stroke: var(--success);
+        fill: none;
+        stroke-width: 2.5;
+      }
+      .success-card h1 {
+        font-size: 36px;
+        font-weight: 900;
+        margin-bottom: 10px;
+        animation: fadeUp 0.5s 0.2s ease both;
+      }
+      .success-card .script {
+        font-family: var(--font-display);
+        color: var(--orange);
+        font-size: 1.2em;
+      }
+      .success-card p {
+        font-size: 15.5px;
+        line-height: 1.75;
+        color: var(--light-muted);
+        margin-bottom: 36px;
+        animation: fadeUp 0.5s 0.3s ease both;
+      }
+      .success-actions {
+        display: flex;
+        gap: 12px;
+        justify-content: center;
+        flex-wrap: wrap;
+        animation: fadeUp 0.5s 0.4s ease both;
+      }
+      .receipt-box {
+        background: var(--dark3);
+        border-radius: var(--radius);
+        padding: 20px;
+        margin-bottom: 32px;
+        text-align: left;
+        border: 1px dashed rgba(255, 255, 255, 0.1);
+        animation: fadeUp 0.5s 0.35s ease both;
+      }
+      .receipt-row {
+        display: flex;
+        justify-content: space-between;
+        font-size: 13px;
+        padding: 6px 0;
+      }
+      .receipt-row:not(:last-child) {
+        border-bottom: 1px solid var(--border);
+      }
+      .receipt-row span:first-child {
+        color: var(--muted);
+      }
+      .receipt-row span:last-child {
+        font-weight: 700;
+        color: var(--text);
+      }
+      @keyframes fadeUp {
+        from {
+          opacity: 0;
+          transform: translateY(16px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      @media (max-width: 480px) {
+        .success-card {
+          padding: 40px 24px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="cursor-glow" id="cursorGlow"></div>
+
+    <div class="success-wrap">
+      <div class="success-card">
+        <div class="success-anim">
+          <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12" /></svg>
+        </div>
+        <h1>Payment <span class="script">Successful!</span></h1>
+        <p>
+          Your generous donation has been received. Thank you so much for
+          supporting my work — it truly means the world to me. 💙
+        </p>
+        <div class="receipt-box">
+          <div class="receipt-row">
+            <span>Status</span>
+            <span style="color: var(--success)">✓ Confirmed</span>
+          </div>
+          <div class="receipt-row">
+            <span>Recipient</span>
+            <span>Sandy 09</span>
+          </div>
+          <div class="receipt-row">
+            <span>Purpose</span>
+            <span>Support &amp; Donation</span>
+          </div>
+        </div>
+        <div class="success-actions">
+          <a href="../portfolio/index.html" class="btn-primary"
+            >View Portfolio</a
+          >
+          <a href="../index.html" class="btn-ghost">Back to Home</a>
+        </div>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        <a href="../index.html" class="footer-logo"
+          ><img src="../assets/09logo-black.jpg" alt="Sandy"
+        /></a>
+        <p class="footer-copy">© 2025 Sandy · Thank you for your support 💙</p>
+      </div>
+    </footer>
+
+    <script src="../shared/shared.js"></script>
+  </body>
+</html>

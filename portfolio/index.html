@@ -1,0 +1,466 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sandy | Portfolio</title>
+
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link rel="shortcut icon" href="portfolio.png" type="image/png" />
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700&display=swap" rel="stylesheet"> -->
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"> -->
+  </head>
+  <body>
+    <!-- ===== NAVBAR ===== -->
+    <nav>
+      <a href="index.html" class="logo">
+        <img src="09logo-black.jpg" alt="Sandy Logo" />
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="donate.html" class="donate-btn">Donate</a></li>
+      </ul>
+
+      <div class="menu-icon" id="menuIcon">&#9776;</div>
+    </nav>
+
+    <!-- ===== HERO ===== -->
+    <section class="hero" id="home">
+      <div class="hero-bg-text" aria-hidden="true">SANDY</div>
+      <div class="hero-content">
+        <p class="hero-eyebrow">Available for freelance work</p>
+        <h1 class="hero-name">
+          <span class="script-accent">Hello, I'm</span>
+          <br />Sandy<span class="accent-dot">.</span>
+        </h1>
+        <p class="hero-role">UI/UX Designer &amp; Frontend Developer</p>
+        <p class="hero-desc">
+          I craft visually stunning, responsive, and dynamic web experiences
+          that turn ideas into beautiful digital reality.
+        </p>
+        <div class="hero-actions">
+          <a href="../getintouch/index.html" class="btn-primary">Hire Me</a>
+          <a href="#projects" class="btn-ghost">View Projects</a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat">
+            <span class="stat-num">6+</span
+            ><span class="stat-label">Projects</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat">
+            <span class="stat-num">3+</span
+            ><span class="stat-label">Skills</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat">
+            <span class="stat-num">100%</span
+            ><span class="stat-label">Passion</span>
+          </div>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-img-frame">
+          <img src="../assets/profile2.jpg" alt="Sandy" class="hero-img" />
+          <div class="hero-img-ring"></div>
+          <div class="hero-img-badge">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path
+                d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14 2 9.27l6.91-1.01L12 2z"
+              />
+            </svg>
+            Open to work
+          </div>
+        </div>
+      </div>
+      <div class="scroll-indicator">
+        <span>Scroll</span>
+        <div class="scroll-line"></div>
+      </div>
+    </section>
+
+    <!-- ===== ABOUT ===== -->
+    <section class="about section" id="about">
+      <div class="container">
+        <div class="about-img-col">
+          <div class="about-img-wrap">
+            <img src="../assets/profile.jpg" alt="Sandy working" />
+            <div class="about-img-accent"></div>
+          </div>
+          <div class="about-skills-card">
+            <p class="skills-card-label">Core Stack</p>
+            <div class="skill-tags">
+              <span>HTML5</span><span>CSS3</span><span>JavaScript</span>
+              <span>Node.js</span><span>MongoDB</span><span>Figma</span>
+            </div>
+          </div>
+        </div>
+        <div class="about-text-col">
+          <p class="section-eyebrow">About Me</p>
+          <h2 class="section-title">
+            Design meets<br /><span class="script-accent">Development</span>
+          </h2>
+          <p class="about-body">
+            I'm a passionate UI/UX designer and frontend developer focused on
+            crafting smooth, interactive, and accessible digital experiences. My
+            work merges design thinking and clean code to create products that
+            don't just look great — they feel great to use.
+          </p>
+          <p class="about-body">
+            I take projects from wireframe to working product, handling
+            everything from visual identity to full-stack implementation.
+          </p>
+          <div class="skill-bars">
+            <div class="skill-bar-item">
+              <div class="skill-bar-label">
+                <span>HTML &amp; CSS</span><span>95%</span>
+              </div>
+              <div class="skill-bar-track">
+                <div class="skill-bar-fill" data-width="95"></div>
+              </div>
+            </div>
+            <div class="skill-bar-item">
+              <div class="skill-bar-label">
+                <span>JavaScript</span><span>85%</span>
+              </div>
+              <div class="skill-bar-track">
+                <div class="skill-bar-fill" data-width="85"></div>
+              </div>
+            </div>
+            <div class="skill-bar-item">
+              <div class="skill-bar-label">
+                <span>UI/UX Design</span><span>90%</span>
+              </div>
+              <div class="skill-bar-track">
+                <div class="skill-bar-fill" data-width="90"></div>
+              </div>
+            </div>
+          </div>
+          <a href="../getintouch/index.html" class="btn-primary">Let's Talk</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== PROJECTS ===== -->
+    <section class="projects section" id="projects">
+      <div class="container">
+        <div class="section-header">
+          <p class="section-eyebrow">Recent Work</p>
+          <h2 class="section-title">
+            Selected <span class="script-accent">Projects</span>
+          </h2>
+        </div>
+        <div class="projects-grid">
+          <a
+            href="#"
+            class="project-card featured"
+            target="_blank"
+            rel="noopener"
+          >
+            <div class="project-img-wrap">
+              <img src="../assets/webdesign.png" alt="Website Design" />
+              <div class="project-overlay">
+                <span class="project-link-icon">↗</span>
+              </div>
+            </div>
+            <div class="project-info">
+              <span class="project-tag">Web Design</span>
+              <h3>Website Design</h3>
+              <p>
+                Modern, elegant and responsive layouts crafted for clients with
+                attention to detail.
+              </p>
+            </div>
+          </a>
+
+          <a
+            href="https://sandeepcoder09.github.io/3DPortfolioBySandy/"
+            class="project-card"
+            target="_blank"
+            rel="noopener"
+          >
+            <div class="project-img-wrap">
+              <img src="../assets/Portfolio3D.png" alt="3D Portfolio" />
+              <div class="project-overlay">
+                <span class="project-link-icon">↗</span>
+              </div>
+            </div>
+            <div class="project-info">
+              <span class="project-tag">3D / Interactive</span>
+              <h3>3D Portfolio</h3>
+              <p>
+                Futuristic interactive portfolio with immersive 3D design
+                elements.
+              </p>
+            </div>
+          </a>
+
+          <a
+            href="../budgetmet/index.html"
+            class="project-card"
+            target="_blank"
+            rel="noopener"
+          >
+            <div class="project-img-wrap">
+              <img src="../assets/BudgeMateLogo.png" alt="BudgetMate" />
+              <div class="project-overlay">
+                <span class="project-link-icon">↗</span>
+              </div>
+            </div>
+            <div class="project-info">
+              <span class="project-tag">Finance App</span>
+              <h3>BudgetMate</h3>
+              <p>
+                Track income, expenses, and finances with a clean dashboard
+                interface.
+              </p>
+            </div>
+          </a>
+
+          <a
+            href="https://sandeepcoder09.github.io/Sandy-calculater/"
+            class="project-card"
+            target="_blank"
+            rel="noopener"
+          >
+            <div class="project-img-wrap">
+              <img src="../assets/cal.png" alt="Calculator" />
+              <div class="project-overlay">
+                <span class="project-link-icon">↗</span>
+              </div>
+            </div>
+            <div class="project-info">
+              <span class="project-tag">Tool</span>
+              <h3>Neon Calculator</h3>
+              <p>
+                Sleek neon-themed calculator with dual modes, keyboard input,
+                and smart history.
+              </p>
+            </div>
+          </a>
+
+          <a
+            href="../sh-TheHungerPoint.html"
+            class="project-card"
+            target="_blank"
+            rel="noopener"
+          >
+            <div class="project-img-wrap">
+              <img
+                src="../assets/sh-theHungerPoint.png"
+                alt="SH Hunger Point"
+                onerror="this.src = '../assets/portfolio.png'"
+              />
+              <div class="project-overlay">
+                <span class="project-link-icon">↗</span>
+              </div>
+            </div>
+            <div class="project-info">
+              <span class="project-tag">Food App</span>
+              <h3>SH — The Hunger Point</h3>
+              <p>
+                Fast-food ordering app with Firebase auth, modern UI, and
+                responsive layout.
+              </p>
+            </div>
+          </a>
+
+          <a
+            href="https://habitmover.vercel.app"
+            class="project-card"
+            target="_blank"
+            rel="noopener"
+          >
+            <div class="project-img-wrap">
+              <img src="../assets/habitmover.png" alt="Habit Mover" />
+              <div class="project-overlay">
+                <span class="project-link-icon">↗</span>
+              </div>
+            </div>
+            <div class="project-info">
+              <span class="project-tag">PWA</span>
+              <h3>Habit Mover</h3>
+              <p>
+                Minimalist habit-tracking Progressive Web App built for
+                productivity and consistency.
+              </p>
+            </div>
+          </a>
+
+          <a
+            href="../sh-TheHungerPoint.html"
+            class="project-card"
+            target="_blank"
+            rel="noopener"
+          >
+            <div class="project-img-wrap">
+              <img
+                src="../assets/qr-logo-brand-09.png"
+                alt="SH Hunger Point"
+                onerror="this.src = '../assets/portfolio.png'"
+              />
+              <div class="project-overlay">
+                <span class="project-link-icon">↗</span>
+              </div>
+            </div>
+            <div class="project-info">
+              <span class="project-tag">QR DECODE & GENERATE</span>
+              <h3>QR GENDECODE</h3>
+              <p>
+                QR code generator and decoder tool with a sleek interface and
+                real-time results.
+              </p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SERVICES ===== -->
+    <section class="services section" id="services">
+      <div class="container">
+        <div class="section-header">
+          <p class="section-eyebrow">What I Do</p>
+          <h2 class="section-title">
+            Services I <span class="script-accent">Offer</span>
+          </h2>
+        </div>
+        <div class="services-grid">
+          <div class="service-card">
+            <div class="service-icon">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+              >
+                <rect x="2" y="3" width="20" height="14" rx="2" />
+                <path d="M8 21h8M12 17v4" />
+              </svg>
+            </div>
+            <h3>Web Design</h3>
+            <p>
+              Modern, futuristic, and responsive designs that captivate visitors
+              and drive conversions.
+            </p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+              >
+                <circle cx="12" cy="12" r="3" />
+                <path
+                  d="M19.07 4.93a10 10 0 010 14.14M4.93 4.93a10 10 0 000 14.14"
+                />
+                <path d="M15.54 8.46a5 5 0 010 7.07M8.46 8.46a5 5 0 000 7.07" />
+              </svg>
+            </div>
+            <h3>UI/UX Design</h3>
+            <p>
+              Seamless and interactive designs crafted for a superior, intuitive
+              user experience.
+            </p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+              >
+                <polyline points="16 18 22 12 16 6" />
+                <polyline points="8 6 2 12 8 18" />
+              </svg>
+            </div>
+            <h3>Frontend Development</h3>
+            <p>
+              High-performance, pixel-perfect code built with modern web
+              standards and best practices.
+            </p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+              >
+                <path
+                  d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"
+                />
+              </svg>
+            </div>
+            <h3>Full-Stack Builds</h3>
+            <p>
+              End-to-end web applications with Node.js, Express, and MongoDB
+              backends.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CONTACT ===== -->
+    <section class="contact section" id="contact">
+      <div class="container">
+        <div class="contact-inner">
+          <p class="section-eyebrow">Get in Touch</p>
+          <h2 class="section-title">
+            Let's build something<br /><span class="script-accent"
+              >amazing together</span
+            >
+          </h2>
+          <p class="contact-desc">
+            Have a project in mind? I'd love to hear about it. Send me a message
+            and let's make it happen.
+          </p>
+          <div class="contact-actions">
+            <a href="../getintouch/index.html" class="btn-primary btn-lg"
+              >Start a Project</a
+            >
+            <a href="../donate/index.html" class="btn-ghost"
+              >Support My Work ♥</a
+            >
+          </div>
+          <div class="social-links">
+            <a href="#" aria-label="Instagram">
+              <img src="../assets/icons8-instagram-100.png" alt="Instagram" />
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+      <div class="container footer-inner">
+        <a href="#home" class="footer-logo">
+          <img src="../assets/09logo-black.jpg" alt="Sandy Logo" />
+        </a>
+        <p class="footer-copy">
+          © 2025 Sandy · Designed &amp; built with 💙 by Sandeep 09
+        </p>
+        <a href="#home" class="back-top" aria-label="Back to top">↑</a>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

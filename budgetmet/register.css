@@ -1,0 +1,94 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Orbitron', sans-serif;
+}
+
+body {
+  background-color: #000;
+  color: #00ff99;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.container {
+  background: rgba(0, 0, 0, 0.8);
+  border: 1px solid #00ff99;
+  box-shadow: 0 0 20px #00ff99;
+  border-radius: 15px;
+  padding: 30px;
+  width: 350px;
+  text-align: center;
+  animation: glow 2s infinite alternate;
+}
+
+@keyframes glow {
+  0% { box-shadow: 0 0 10px #00ff99; }
+  100% { box-shadow: 0 0 30px #00ff99; }
+}
+
+h2 {
+  margin-bottom: 20px;
+  color: #00ffcc;
+  text-shadow: 0 0 10px #00ffcc;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  background: black;
+  border: 1px solid #00ff99;
+  color: #00ff99;
+  border-radius: 8px;
+  outline: none;
+  font-size: 14px;
+}
+
+input::placeholder {
+  color: #00ff99a0;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  background: #00ff99;
+  color: black;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: #00cc88;
+  box-shadow: 0 0 15px #00ff99;
+}
+
+#recaptcha-container {
+  margin: 15px 0;
+}
+
+.success {
+  color: #00ffcc;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.error {
+  color: #ff4444;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+@media (max-width: 400px) {
+  .container {
+    width: 90%;
+  }
+}

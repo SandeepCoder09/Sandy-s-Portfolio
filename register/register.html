@@ -1,0 +1,351 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register — Sandy</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sacramento&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../shared.css" />
+    <style>
+      body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        padding: 80px 24px;
+      }
+
+      .auth-wrap {
+        width: 100%;
+        max-width: 460px;
+      }
+      .auth-brand {
+        text-align: center;
+        margin-bottom: 36px;
+      }
+      .auth-brand img {
+        height: 44px;
+        filter: invert(1);
+        opacity: 0.85;
+        margin: 0 auto 12px;
+      }
+      .auth-brand p {
+        font-size: 14px;
+        color: var(--muted);
+      }
+
+      .auth-card {
+        background: var(--dark2);
+        border: 1px solid var(--border);
+        border-radius: 20px;
+        padding: 40px 36px;
+      }
+
+      /* Tabs */
+      .auth-tabs {
+        display: flex;
+        background: var(--dark3);
+        border-radius: var(--radius-sm);
+        padding: 4px;
+        gap: 4px;
+        margin-bottom: 32px;
+      }
+      .auth-tab {
+        flex: 1;
+        padding: 10px;
+        border-radius: 8px;
+        border: none;
+        background: transparent;
+        color: var(--muted);
+        font-family: var(--font-body);
+        font-size: 14px;
+        font-weight: 700;
+        cursor: pointer;
+        transition: var(--transition);
+      }
+      .auth-tab.active {
+        background: var(--dark2);
+        color: var(--text);
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+      }
+
+      .auth-panel {
+        display: none;
+      }
+      .auth-panel.active {
+        display: block;
+      }
+
+      .auth-title {
+        font-size: 22px;
+        font-weight: 800;
+        margin-bottom: 6px;
+      }
+      .auth-sub {
+        font-size: 14px;
+        color: var(--muted);
+        margin-bottom: 24px;
+      }
+
+      .pass-wrap {
+        position: relative;
+      }
+      .pass-toggle {
+        position: absolute;
+        right: 14px;
+        top: 50%;
+        transform: translateY(-50%);
+        background: none;
+        border: none;
+        cursor: pointer;
+        color: var(--muted);
+        padding: 0;
+        display: flex;
+        transition: color var(--transition);
+      }
+      .pass-toggle:hover {
+        color: var(--orange);
+      }
+      .pass-toggle svg {
+        width: 18px;
+        height: 18px;
+        stroke: currentColor;
+        fill: none;
+      }
+
+      .form-divider {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        font-size: 12px;
+        color: var(--muted);
+        margin: 20px 0;
+      }
+      .form-divider::before,
+      .form-divider::after {
+        content: "";
+        flex: 1;
+        height: 1px;
+        background: var(--border);
+      }
+
+      .forgot-link {
+        display: block;
+        text-align: right;
+        font-size: 13px;
+        color: var(--orange);
+        margin-top: -12px;
+        margin-bottom: 20px;
+      }
+      .forgot-link:hover {
+        text-decoration: underline;
+      }
+
+      .terms-note {
+        font-size: 12px;
+        color: var(--muted);
+        text-align: center;
+        margin-top: 16px;
+        line-height: 1.6;
+      }
+      .terms-note a {
+        color: var(--orange);
+      }
+
+      @media (max-width: 480px) {
+        .auth-card {
+          padding: 28px 20px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="cursor-glow" id="cursorGlow"></div>
+
+    <div class="auth-wrap fade-up">
+      <div class="auth-brand">
+        <img src="../assets/09logo-black.jpg" alt="Sandy Logo" />
+        <p>Welcome back to Sandy's world</p>
+      </div>
+
+      <div class="auth-card">
+        <div class="auth-tabs">
+          <button class="auth-tab" id="tabLogin" onclick="switchTab('login')">
+            Sign In
+          </button>
+          <button
+            class="auth-tab active"
+            id="tabRegister"
+            onclick="switchTab('register')"
+          >
+            Create Account
+          </button>
+        </div>
+
+        <!-- REGISTER -->
+        <div class="auth-panel active" id="panelRegister">
+          <h2 class="auth-title">Create an account</h2>
+          <p class="auth-sub">Join and get access to exclusive content.</p>
+          <form id="registerForm">
+            <div
+              style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px"
+            >
+              <div class="form-group">
+                <label for="regFname">First Name</label>
+                <input type="text" id="regFname" placeholder="Alex" required />
+              </div>
+              <div class="form-group">
+                <label for="regLname">Last Name</label>
+                <input
+                  type="text"
+                  id="regLname"
+                  placeholder="Rivera"
+                  required
+                />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="regEmail">Email</label>
+              <input
+                type="email"
+                id="regEmail"
+                placeholder="you@email.com"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="regPass">Password</label>
+              <div class="pass-wrap">
+                <input
+                  type="password"
+                  id="regPass"
+                  placeholder="Min. 8 characters"
+                  required
+                />
+                <button
+                  type="button"
+                  class="pass-toggle"
+                  onclick="togglePass('regPass')"
+                >
+                  <svg viewBox="0 0 24 24">
+                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+                    <circle cx="12" cy="12" r="3" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <button
+              type="submit"
+              class="btn-primary btn-full btn-lg"
+              style="margin-top: 4px"
+            >
+              Create Account
+            </button>
+          </form>
+          <p class="terms-note">
+            By creating an account you agree to the
+            <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>.
+          </p>
+        </div>
+
+        <!-- LOGIN -->
+        <div class="auth-panel" id="panelLogin">
+          <h2 class="auth-title">Welcome back</h2>
+          <p class="auth-sub">Sign in to your account.</p>
+          <form id="loginForm">
+            <div class="form-group">
+              <label for="loginEmail">Email</label>
+              <input
+                type="email"
+                id="loginEmail"
+                placeholder="you@email.com"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="loginPass">Password</label>
+              <div class="pass-wrap">
+                <input
+                  type="password"
+                  id="loginPass"
+                  placeholder="Your password"
+                  required
+                />
+                <button
+                  type="button"
+                  class="pass-toggle"
+                  onclick="togglePass('loginPass')"
+                >
+                  <svg viewBox="0 0 24 24">
+                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+                    <circle cx="12" cy="12" r="3" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <a href="forgot.html" class="forgot-link">Forgot password?</a>
+            <button type="submit" class="btn-primary btn-full btn-lg">
+              Sign In
+            </button>
+          </form>
+          <div class="form-divider">or</div>
+          <p class="terms-note">
+            Don't have an account?
+            <a
+              href="#"
+              onclick="
+                switchTab('register');
+                return false;
+              "
+              >Create one →</a
+            >
+          </p>
+        </div>
+      </div>
+
+      <p
+        style="
+          text-align: center;
+          margin-top: 20px;
+          font-size: 13px;
+          color: var(--muted);
+        "
+      >
+        <a href="../index.html" style="color: var(--orange)">← Back to home</a>
+      </p>
+    </div>
+
+    <script src="../shared.js"></script>
+    <script>
+      function switchTab(tab) {
+        document
+          .getElementById("panelRegister")
+          .classList.toggle("active", tab === "register");
+        document
+          .getElementById("panelLogin")
+          .classList.toggle("active", tab === "login");
+        document
+          .getElementById("tabRegister")
+          .classList.toggle("active", tab === "register");
+        document
+          .getElementById("tabLogin")
+          .classList.toggle("active", tab === "login");
+      }
+      function togglePass(id) {
+        const input = document.getElementById(id);
+        input.type = input.type === "password" ? "text" : "password";
+      }
+      ["registerForm", "loginForm"].forEach((fid) => {
+        document.getElementById(fid)?.addEventListener("submit", (e) => {
+          e.preventDefault();
+          window.location.href = "../portfolio/index.html";
+        });
+      });
+    </script>
+  </body>
+</html>

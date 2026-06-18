@@ -10,222 +10,15 @@
       href="https://fonts.googleapis.com/css2?family=Sacramento&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="../donate/donate.css" />
     <link rel="stylesheet" href="../shared/shared.css" />
-    <style>
-      .page-wrap {
-        padding: calc(var(--nav-h) + 64px) 0 80px;
-      }
-      .donate-grid {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 60px;
-        align-items: start;
-      }
-
-      /* Left */
-      .donate-info .section-title {
-        margin-bottom: 16px;
-      }
-      .donate-info .donate-desc {
-        font-size: 15.5px;
-        line-height: 1.8;
-        color: var(--light-muted);
-        margin-bottom: 36px;
-      }
-      .donate-perks {
-        display: flex;
-        flex-direction: column;
-        gap: 14px;
-        margin-bottom: 36px;
-      }
-      .perk {
-        display: flex;
-        align-items: center;
-        gap: 14px;
-        padding: 16px 18px;
-        background: var(--card-bg);
-        border: 1px solid var(--border);
-        border-radius: var(--radius);
-      }
-      .perk-icon {
-        color: var(--orange);
-        font-size: 22px;
-        flex-shrink: 0;
-      }
-      .perk-text p:first-child {
-        font-size: 14px;
-        font-weight: 700;
-        margin-bottom: 2px;
-      }
-      .perk-text p:last-child {
-        font-size: 13px;
-        color: var(--muted);
-      }
-      .qr-card {
-        background: var(--card-bg);
-        border: 1px solid var(--border);
-        border-radius: var(--radius);
-        padding: 24px;
-        display: flex;
-        align-items: center;
-        gap: 20px;
-      }
-      .qr-card img {
-        width: 80px;
-        height: 80px;
-        border-radius: 8px;
-        background: #fff;
-        padding: 4px;
-      }
-      .qr-card p:first-child {
-        font-size: 13px;
-        font-weight: 700;
-        margin-bottom: 4px;
-      }
-      .qr-card p:last-child {
-        font-size: 12px;
-        color: var(--muted);
-      }
-
-      /* Right form */
-      .donate-form-wrap {
-        background: var(--dark2);
-        border: 1px solid var(--border);
-        border-radius: 20px;
-        padding: 40px 36px;
-        position: sticky;
-        top: calc(var(--nav-h) + 24px);
-      }
-      .donate-form-wrap h3 {
-        font-size: 22px;
-        font-weight: 800;
-        margin-bottom: 6px;
-      }
-      .donate-form-wrap .form-sub {
-        font-size: 14px;
-        color: var(--muted);
-        margin-bottom: 28px;
-      }
-      .amount-grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 10px;
-        margin-bottom: 20px;
-      }
-      .amount-btn {
-        padding: 14px 10px;
-        border-radius: var(--radius-sm);
-        background: var(--dark3);
-        border: 1px solid var(--border);
-        color: var(--muted);
-        font-size: 14px;
-        font-weight: 700;
-        cursor: pointer;
-        transition: var(--transition);
-        text-align: center;
-      }
-      .amount-btn:hover,
-      .amount-btn.active {
-        border-color: var(--orange);
-        color: var(--orange);
-        background: var(--orange-pale);
-      }
-      .custom-amount-wrap {
-        position: relative;
-        margin-bottom: 20px;
-      }
-      .custom-amount-wrap span {
-        position: absolute;
-        left: 14px;
-        top: 50%;
-        transform: translateY(-50%);
-        color: var(--muted);
-        font-weight: 700;
-        font-size: 15px;
-      }
-      .custom-amount-wrap input {
-        padding-left: 32px !important;
-      }
-      .donate-total {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        background: var(--orange-pale);
-        border: 1px solid rgba(255, 107, 43, 0.2);
-        border-radius: var(--radius-sm);
-        padding: 14px 18px;
-        margin-bottom: 20px;
-      }
-      .donate-total span:first-child {
-        font-size: 13px;
-        font-weight: 600;
-        color: var(--muted);
-      }
-      .donate-total span:last-child {
-        font-size: 20px;
-        font-weight: 800;
-        color: var(--orange);
-      }
-      .secure-note {
-        display: flex;
-        align-items: center;
-        gap: 8px;
-        justify-content: center;
-        font-size: 12px;
-        color: var(--muted);
-        margin-top: 14px;
-      }
-      .secure-note svg {
-        width: 14px;
-        height: 14px;
-        stroke: var(--muted);
-        fill: none;
-      }
-
-      .donate-success {
-        display: none;
-        text-align: center;
-        padding: 20px;
-      }
-      .donate-success .heart {
-        font-size: 52px;
-        margin-bottom: 16px;
-      }
-      .donate-success h4 {
-        font-size: 22px;
-        font-weight: 800;
-        margin-bottom: 10px;
-      }
-      .donate-success p {
-        font-size: 14px;
-        color: var(--muted);
-        margin-bottom: 20px;
-      }
-
-      @media (max-width: 860px) {
-        .donate-grid {
-          grid-template-columns: 1fr;
-          gap: 40px;
-        }
-        .donate-form-wrap {
-          position: static;
-        }
-      }
-      @media (max-width: 480px) {
-        .donate-form-wrap {
-          padding: 28px 20px;
-        }
-        .amount-grid {
-          grid-template-columns: repeat(2, 1fr);
-        }
-      }
-    </style>
   </head>
   <body>
     <div class="cursor-glow" id="cursorGlow"></div>
 
+    <!-- ===== NAVBAR ===== -->
     <nav class="nav" id="nav">
-      <a href="../index.html" class="nav-logo"
+      <a href="../portfolio/index.html" class="nav-logo"
         ><img
           src="../assets/09logo-black.jpg"
           alt="Sandy Logo"
@@ -373,7 +166,7 @@
 
     <footer class="footer">
       <div class="footer-inner">
-        <a href="../index.html" class="footer-logo"
+        <a href="../portfolio/index.html" class="footer-logo"
           ><img src="../assets/09logo-black.jpg" alt="Sandy"
         /></a>
         <p class="footer-copy">© 2025 Sandy · Designed with 💙 by Sandeep 09</p>
@@ -382,39 +175,6 @@
     </footer>
 
     <script src="../shared/shared.js"></script>
-    <script>
-      let selected = 100;
-      const totalDisplay = document.getElementById("totalDisplay");
-      const customWrap = document.getElementById("customWrap");
-      const customAmt = document.getElementById("customAmt");
-
-      document.querySelectorAll(".amount-btn").forEach((btn) => {
-        btn.addEventListener("click", () => {
-          document
-            .querySelectorAll(".amount-btn")
-            .forEach((b) => b.classList.remove("active"));
-          btn.classList.add("active");
-          const amt = parseInt(btn.dataset.amount);
-          if (amt === 0) {
-            customWrap.style.display = "block";
-            totalDisplay.textContent = "₹" + (customAmt.value || "0");
-          } else {
-            customWrap.style.display = "none";
-            selected = amt;
-            totalDisplay.textContent = "₹" + amt;
-          }
-        });
-      });
-
-      customAmt.addEventListener("input", () => {
-        totalDisplay.textContent = "₹" + (customAmt.value || "0");
-      });
-
-      document.getElementById("donateForm").addEventListener("submit", (e) => {
-        e.preventDefault();
-        e.target.style.display = "none";
-        document.getElementById("donateSuccess").style.display = "block";
-      });
-    </script>
+    <script src="../donate/donate.js"></script>
   </body>
 </html>

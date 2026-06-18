@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sandy 09 — UI/UX Designer & Frontend Developer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sacramento&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <div class="cursor-glow" id="cursorGlow"></div>
+    <div class="grid-bg" aria-hidden="true"></div>
+
+    <section class="hero">
+      <div class="hero-tag">Open for freelance projects</div>
+      <h1 class="hero-name">Sandy<span>.</span></h1>
+      <span class="hero-script">where design meets code</span>
+      <p class="hero-tagline">
+        UI/UX Designer &amp; Frontend Developer crafting visually stunning,
+        responsive digital experiences that bring ideas to life.
+      </p>
+      <div class="hero-actions">
+        <a href="/portfolio/index.html" class="btn-primary">
+          <svg
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2.5"
+          >
+            <path d="M5 12h14M12 5l7 7-7 7" />
+          </svg>
+          View Portfolio
+        </a>
+        <a href="/getintouch/index.html" class="btn-ghost">Hire Me</a>
+      </div>
+      <div class="skills-row">
+        <span class="skill-pill">HTML5</span>
+        <span class="skill-pill">CSS3</span>
+        <span class="skill-pill">JavaScript</span>
+        <span class="skill-pill">Node.js</span>
+        <span class="skill-pill">MongoDB</span>
+        <span class="skill-pill">Figma</span>
+        <span class="skill-pill">UI/UX Design</span>
+        <span class="skill-pill">Firebase</span>
+      </div>
+    </section>
+
+    <div class="preview-section">
+      <p class="preview-label">What I bring to every project</p>
+      <div class="preview-grid">
+        <div class="preview-card">
+          <div class="pc-icon">
+            <svg viewBox="0 0 24 24">
+              <rect x="2" y="3" width="20" height="14" rx="2" />
+              <path d="M8 21h8M12 17v4" />
+            </svg>
+          </div>
+          <h3>Web Design</h3>
+          <p>
+            Modern, responsive designs that captivate visitors and convert them
+            into customers.
+          </p>
+        </div>
+        <div class="preview-card">
+          <div class="pc-icon">
+            <svg viewBox="0 0 24 24">
+              <polyline points="16 18 22 12 16 6" />
+              <polyline points="8 6 2 12 8 18" />
+            </svg>
+          </div>
+          <h3>Frontend Dev</h3>
+          <p>
+            Pixel-perfect, high-performance code built with modern web
+            standards.
+          </p>
+        </div>
+        <div class="preview-card">
+          <div class="pc-icon">
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"
+              />
+            </svg>
+          </div>
+          <h3>Full-Stack</h3>
+          <p>
+            End-to-end apps with Node.js, Express, MongoDB — from concept to
+            deployment.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <p>© 2025 Sandy · Designed &amp; built with 💙 by Sandeep 09</p>
+    </footer>
+
+    <script>
+      const g = document.getElementById("cursorGlow");
+      document.addEventListener("mousemove", (e) => {
+        g.style.left = e.clientX + "px";
+        g.style.top = e.clientY + "px";
+      });
+    </script>
+  </body>
+</html>

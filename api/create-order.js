@@ -20,10 +20,17 @@ module.exports = async (req, res) => {
       currency: "INR",
     });
 
-    return res.status(200).json(order);
+    return res.status(200).json({
+      id: order.id,
+      amount: order.amount,
+      key: process.env.RAZORPAY_KEY_ID,
+    });
+
   } catch (error) {
+
     return res.status(500).json({
       error: error.message,
     });
+
   }
 };

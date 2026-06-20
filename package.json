@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/SandeepCoder09/Sandy-s-Portfolio#readme",
   "dependencies": {
+    "@vercel/node": "^5.8.17",
     "dotenv": "^17.4.2",
     "razorpay": "^2.9.6"
   }

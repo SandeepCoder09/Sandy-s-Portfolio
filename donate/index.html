@@ -12,7 +12,6 @@
     />
     <link rel="stylesheet" href="../shared/shared.css" />
     <link rel="stylesheet" href="../donate/donate.css" />
-    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
   </head>
   <body>
     <div class="cursor-glow" id="cursorGlow"></div>
@@ -177,38 +176,53 @@
 
     <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
     <script src="../shared/shared.js"></script>
-    <script>
-      let selected = 100;
-      const totalDisplay = document.getElementById("totalDisplay");
-      const customWrap = document.getElementById("customWrap");
-      const customAmt = document.getElementById("customAmt");
+    ```html
+<script>
+let selected = 100;
 
-      document.querySelectorAll(".amount-btn").forEach((btn) => {
-        btn.addEventListener("click", () => {
-          document
-            .querySelectorAll(".amount-btn")
-            .forEach((b) => b.classList.remove("active"));
-          btn.classList.add("active");
-          const amt = parseInt(btn.dataset.amount);
-          if (amt === 0) {
-            customWrap.style.display = "block";
-            totalDisplay.textContent = "₹" + (customAmt.value || "0");
-          } else {
-            customWrap.style.display = "none";
-            selected = amt;
-            totalDisplay.textContent = "₹" + amt;
-          }
-        });
-      });
+const totalDisplay = document.getElementById("totalDisplay");
+const customWrap = document.getElementById("customWrap");
+const customAmt = document.getElementById("customAmt");
 
-      customAmt.addEventListener("input", () => {
-        totalDisplay.textContent = "₹" + (customAmt.value || "0");
-      });
+document.querySelectorAll(".amount-btn").forEach((btn)=>{
 
-      document
-.getElementById("donateForm")
+btn.addEventListener("click",()=>{
 
-.addEventListener("submit", async function(e){
+document.querySelectorAll(".amount-btn")
+.forEach((b)=>b.classList.remove("active"));
+
+btn.classList.add("active");
+
+const amt=parseInt(btn.dataset.amount);
+
+if(amt===0){
+
+customWrap.style.display="block";
+
+totalDisplay.textContent="₹"+(customAmt.value||"0");
+
+}else{
+
+customWrap.style.display="none";
+
+selected=amt;
+
+totalDisplay.textContent="₹"+amt;
+
+}
+
+});
+
+});
+
+customAmt.addEventListener("input",()=>{
+
+totalDisplay.textContent="₹"+(customAmt.value||"0");
+
+});
+
+document.getElementById("donateForm")
+.addEventListener("submit",async function(e){
 
 e.preventDefault();
 
@@ -224,13 +238,15 @@ amount=selected;
 
 }
 
-if(!amount || amount<1){
+if(!amount||amount<1){
 
 alert("Enter valid amount");
 
 return;
 
 }
+
+try{
 
 const response=await fetch("/api/create-order",{
 
@@ -249,6 +265,14 @@ amount
 })
 
 });
+
+if(!response.ok){
+
+alert("Unable to create order.");
+
+return;
+
+}
 
 const order=await response.json();
 
@@ -274,6 +298,8 @@ color:"#ff6b2b"
 
 handler:async function(response){
 
+try{
+
 const verify=await fetch(
 
 "/api/verify-payment",
@@ -298,16 +324,16 @@ const result=await verify.json();
 
 if(result.success){
 
-document
+console.log(
 
-.getElementById("donateForm")
+response.razorpay_payment_id
 
+);
+
+document.getElementById("donateForm")
 .style.display="none";
 
-document
-
-.getElementById("donateSuccess")
-
+document.getElementById("donateSuccess")
 .style.display="block";
 
 }else{
@@ -316,13 +342,45 @@ alert("Verification failed");
 
 }
 
+}catch(error){
+
+console.error(error);
+
+alert("Verification error.");
+
+}
+
 }
 
 };
 
-new Razorpay(options).open();
+const rzp=new Razorpay(options);
+
+rzp.on("payment.failed",function(response){
+
+alert(
+
+"Payment failed.\n\n"
+
++
+
+response.error.description
+
+);
 
 });
-    </script>
+
+rzp.open();
+
+}catch(error){
+
+console.error(error);
+
+alert("Something went wrong.");
+
+}
+
+});
+</script>
   </body>
 </html>

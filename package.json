@@ -1,0 +1,25 @@
+{
+  "name": "sandy-s-portfolio",
+  "version": "1.0.0",
+  "description": "Thank You, This is my portfoli0. My First Project will be live soon. keep updated plz keep in our touch get family-friendly looking website. keep wait until i announce officially on our social profiles. thank you..... love you all of you users......",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SandeepCoder09/Sandy-s-Portfolio.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/SandeepCoder09/Sandy-s-Portfolio/issues"
+  },
+  "homepage": "https://github.com/SandeepCoder09/Sandy-s-Portfolio#readme",
+  "dependencies": {
+    "dotenv": "^17.4.2",
+    "razorpay": "^2.9.6"
+  }
+}

@@ -67,7 +67,7 @@ document
         amount: order.amount,
         currency: "INR",
         name: "Support Sandy's Work ❤️",
-        description: "Portfolio Donation",
+        description:"Website Development & Creative Services Support",
         image:
           "https://sandy-s-portfolio-nine.vercel.app/assets/09logo-black.jpg",
         order_id: order.id,

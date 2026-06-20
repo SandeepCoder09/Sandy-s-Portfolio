@@ -205,3 +205,11 @@
     grid-template-columns: repeat(2, 1fr);
   }
 }
+
+.service-note {
+  font-size: 12px;
+  opacity: 0.8;
+  line-height: 1.5;
+  margin-top: 15px;
+  text-align: center;
+}

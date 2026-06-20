@@ -288,6 +288,8 @@ name:"Sandeep Kumar Gautam",
 
 description:"Portfolio Donation",
 
+image:"https://sandy-s-portfolio-nine.vercel.app/assets/09logo-black.jpg",
+
 order_id:order.id,
 
 theme:{
@@ -330,11 +332,14 @@ response.razorpay_payment_id
 
 );
 
-document.getElementById("donateForm")
-.style.display="none";
+alert(
+"Thank you ❤️\n\nPayment Successful\n\nPayment ID:\n" +
+response.razorpay_payment_id
+);
 
-document.getElementById("donateSuccess")
-.style.display="block";
+document.getElementById("donateForm").style.display="none";
+
+document.getElementById("donateSuccess").style.display="block";
 
 }else{
 

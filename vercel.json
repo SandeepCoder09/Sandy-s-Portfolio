@@ -9,6 +9,26 @@
     {
       "source": "/donate",
       "destination": "/donate/index.html"
+    },
+    {
+      "source": "/support",
+      "destination": "/support/index.html"
+    },
+    {
+      "source": "/payment-successful",
+      "destination": "/payment-successful/index.html"
+    },
+    {
+      "source": "/getintouch",
+      "destination": "/getintouch/index.html"
+    },
+    {
+      "source": "/blog",
+      "destination": "/blog/index.html"
+    },
+    {
+      "source": "/blog/posts/post-1/how-i-built-my-portfolio",
+      "destination": "/blog/posts/post-1/how-i-built-my-portfolio.html"
     }
   ]
 }

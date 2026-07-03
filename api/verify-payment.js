@@ -36,8 +36,12 @@ module.exports = async (req, res) => {
       success: false,
     });
   } catch (error) {
-    return res.status(500).json({
-      error: error.message,
-    });
-  }
+  console.error("FULL ERROR:", error);
+  console.error("MESSAGE:", error.message);
+  console.error("STACK:", error.stack);
+
+  return res.status(500).json({
+    error: error.message,
+  });
+}
 };

@@ -55,7 +55,11 @@ document
       const response = await fetch("/api/create-order", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ amount }),
+        body: JSON.stringify({
+          amount,
+          donorName: document.getElementById("donorName").value,
+          donorMsg: document.getElementById("donorMsg").value,
+        }),
       });
 
       if (!response.ok) {

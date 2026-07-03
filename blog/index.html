@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Sandy's Blog — thoughts on UI/UX design, frontend development, and building cool things."
+    />
+    <title>Blog — Sandy</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sacramento&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../shared/shared.css" />
+    <link rel="stylesheet" href="../blog/shared/blog.css" />
+    <link rel="stylesheet" href="../blog/index-style/style.css" />
+  </head>
+  <body>
+    <div class="cursor-glow" id="cursorGlow"></div>
+
+    <!-- ── NAV ── -->
+    <nav class="nav" id="nav">
+      <a href="../index.html" class="nav-logo">
+        <img
+          src="../assets/09logo-black.jpg"
+          alt="Sandy Logo"
+          class="logo-img"
+        />
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="../portfolio/index.html">Portfolio</a></li>
+        <li><a href="#" class="active">Blog</a></li>
+        <li><a href="../getintouch/index.html">Contact</a></li>
+        <li>
+          <a href="../support/index.html" class="nav-donate">Support ♥</a>
+        </li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+
+    <!-- ── HERO ── -->
+    <section class="blog-hero">
+      <div class="container">
+        <div class="blog-hero-eyebrow">Sandy's Blog</div>
+        <h1>Thoughts &amp; <span class="script">Stories</span></h1>
+        <p class="blog-hero-sub">
+          Design tips, dev tutorials, project breakdowns and everything in
+          between — written by a developer who actually enjoys writing.
+        </p>
+        <div class="blog-stats">
+          <div class="blog-stat">
+            <span id="totalPosts">8</span>
+            <span>Articles</span>
+          </div>
+          <div class="blog-stat-div"></div>
+          <div class="blog-stat">
+            <span>4</span>
+            <span>Topics</span>
+          </div>
+          <div class="blog-stat-div"></div>
+          <div class="blog-stat">
+            <span>~5 min</span>
+            <span>Avg Read</span>
+          </div>
+        </div>
+        <!-- Search -->
+        <div class="search-bar-wrap">
+          <svg class="search-icon" viewBox="0 0 24 24">
+            <circle cx="11" cy="11" r="8" />
+            <path d="M21 21l-4.35-4.35" />
+          </svg>
+          <input
+            type="search"
+            class="search-bar"
+            id="searchBar"
+            placeholder="Search articles…"
+          />
+          <button class="search-clear" id="searchClear" onclick="clearSearch()">
+            ✕
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── FILTERS ── -->
+    <div class="filter-section">
+      <div class="container">
+        <div class="filter-tabs" id="filterTabs">
+          <button class="filter-tab active" data-cat="all">✦ All Posts</button>
+          <button class="filter-tab" data-cat="design">🎨 Design</button>
+          <button class="filter-tab" data-cat="dev">💻 Development</button>
+          <button class="filter-tab" data-cat="android">📱 Android</button>
+          <button class="filter-tab" data-cat="tips">💡 Tips & Tricks</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── FEATURED POST ── -->
+    <section class="featured-section" id="featuredSection">
+      <div class="container">
+        <div class="featured-label">📌 Featured Post</div>
+        <a
+          href="posts/post-1/how-i-built-my-portfolio.html"
+          class="featured-card"
+          id="featuredCard"
+        >
+          <div class="featured-img">
+            <span class="featured-img-emoji">🎨</span>
+          </div>
+          <div class="featured-content">
+            <span class="featured-badge">✦ Design · Dev</span>
+            <h2 class="featured-title">
+              How I Built My Portfolio from Scratch — Design to Deployment
+            </h2>
+            <p class="featured-excerpt">
+              A behind-the-scenes look at how I designed and coded my personal
+              portfolio site from a blank canvas to a live Vercel deployment —
+              every decision, every mistake, every win.
+            </p>
+            <div class="post-meta">
+              <div class="post-meta-item">
+                <svg viewBox="0 0 24 24">
+                  <rect x="3" y="4" width="18" height="18" rx="2" />
+                  <line x1="16" y1="2" x2="16" y2="6" />
+                  <line x1="8" y1="2" x2="8" y2="6" />
+                  <line x1="3" y1="10" x2="21" y2="10" />
+                </svg>
+                June 15, 2025
+              </div>
+              <div class="post-meta-item">
+                <svg viewBox="0 0 24 24">
+                  <circle cx="12" cy="12" r="10" />
+                  <polyline points="12 6 12 12 16 14" />
+                </svg>
+                8 min read
+              </div>
+            </div>
+            <span class="read-more-link">Read Article →</span>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- ── POSTS GRID ── -->
+    <section class="posts-section">
+      <div class="container">
+        <div class="posts-header">
+          <h2 style="font-size: 20px; font-weight: 800">All Articles</h2>
+          <span class="posts-count" id="postsCount">8 articles</span>
+        </div>
+        <div class="posts-grid" id="postsGrid"></div>
+      </div>
+    </section>
+
+    <!-- ── NEWSLETTER ── -->
+    <div class="container">
+      <div class="newsletter-section fade-up">
+        <h3>Stay in the <span style="color: var(--orange)">loop</span> 🔔</h3>
+        <p>
+          New articles on design, dev, and building cool things — no spam, ever.
+        </p>
+        <form class="newsletter-form" onsubmit="subscribeNewsletter(event)">
+          <input
+            type="email"
+            class="newsletter-input"
+            placeholder="your@email.com"
+            required
+          />
+          <button type="submit" class="newsletter-btn">Subscribe →</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- ── FOOTER ── -->
+    <footer class="footer">
+      <div class="footer-inner">
+        <a href="../index.html" class="footer-logo">
+          <img src="../assets/09logo-black.jpg" alt="Sandy" />
+        </a>
+        <p class="footer-copy">
+          © 2025 Sandy · Designed &amp; Built With 🧡 By Sandy Coder
+        </p>
+        <a href="#" class="back-top" aria-label="Top">↑</a>
+      </div>
+    </footer>
+
+    <script src="../shared/shared.js"></script>
+    <script src="../blog/index-js/script.js"></script>
+  </body>
+</html>

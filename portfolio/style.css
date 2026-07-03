@@ -167,7 +167,7 @@ a {
   font-size: 16px;
 }
 
-/* ── NAV ── */
+/* ── NAV ──
 .nav {
   position: fixed;
   top: 0;
@@ -259,7 +259,7 @@ a {
   background: var(--text);
   border-radius: 2px;
   transition: var(--transition);
-}
+} */
 
 /* ── HERO ── */
 .hero {
@@ -896,7 +896,7 @@ a {
     grid-template-columns: 1fr;
   }
 }
-@media (max-width: 680px) {
+/* @media (max-width: 680px) {
   .nav {
     padding: 0 20px;
   }
@@ -944,4 +944,4 @@ a {
     animation: none !important;
     transition: none !important;
   }
-}
+} */

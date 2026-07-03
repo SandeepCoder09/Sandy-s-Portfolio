@@ -1,0 +1,390 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="A behind-the-scenes look at how Sandy designed and built their portfolio from scratch to live deployment."
+    />
+    <title>How I Built My Portfolio from Scratch — Sandy Blog</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sacramento&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Lora:ital,wght@0,400;0,600;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../../shared/shared.css" />
+    <link rel="stylesheet" href="../post-1/how-i-built-my-portfolio.css" />
+    <link rel="stylesheet" href="../../../blog/shared/blog.css">
+  </head>
+  <body>
+    <!-- Reading progress -->
+    <div class="progress-bar" id="progressBar"></div>
+    <div class="cursor-glow" id="cursorGlow"></div>
+
+    <!-- ── NAV ── -->
+    <nav class="nav" id="nav">
+      <a href="../../../index.html" class="nav-logo">
+        <img
+          src="../../../assets/09logo-black.jpg"
+          alt="Sandy Logo"
+          class="logo-img"
+        />
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="../../../portfolio/index.html">Portfolio</a></li>
+        <li><a href="../../index.html" class="active">Blog</a></li>
+        <li><a href="../../../getintouch/index.html">Contact</a></li>
+        <li>
+          <a href="../../../support/index.html" class="nav-donate">Support ♥</a>
+        </li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+
+    <!-- ── ARTICLE HERO ── -->
+    <div class="article-hero">
+      <div class="article-hero-inner">
+        <a href="../index.html" class="back-link">
+          <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6" /></svg>
+          Back to Blog
+        </a>
+        <div class="article-tags">
+          <span class="article-tag">Design</span>
+          <span class="article-tag">Development</span>
+          <span class="article-tag">Portfolio</span>
+        </div>
+        <h1 class="article-title">
+          How I Built My Portfolio from Scratch — Design to Deployment
+        </h1>
+        <p class="article-subtitle">
+          A behind-the-scenes look at every decision, every mistake, and every
+          win from blank canvas to live Vercel deployment.
+        </p>
+        <div class="article-meta">
+          <div class="meta-chip">
+            <svg viewBox="0 0 24 24">
+              <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2" />
+              <circle cx="12" cy="7" r="4" />
+            </svg>
+            Sandeep 09
+          </div>
+          <div class="meta-chip">
+            <svg viewBox="0 0 24 24">
+              <rect x="3" y="4" width="18" height="18" rx="2" />
+              <line x1="16" y1="2" x2="16" y2="6" />
+              <line x1="8" y1="2" x2="8" y2="6" />
+              <line x1="3" y1="10" x2="21" y2="10" />
+            </svg>
+            June 15, 2025
+          </div>
+          <div class="meta-chip">
+            <svg viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="10" />
+              <polyline points="12 6 12 12 16 14" />
+            </svg>
+            8 min read
+          </div>
+          <div class="meta-chip views">
+            <svg viewBox="0 0 24 24">
+              <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+              <circle cx="12" cy="12" r="3" />
+            </svg>
+            2.4k views
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Cover image -->
+    <div class="article-cover">
+      <span class="article-cover-emoji">🎨</span>
+    </div>
+
+    <!-- ── ARTICLE LAYOUT ── -->
+    <div class="article-layout">
+      <!-- ── CONTENT ── -->
+      <article class="article-body">
+        <div class="article-content">
+          <p>
+            Every portfolio you see online started somewhere — usually a blank
+            HTML file, a vague idea, and a lot of "I'll figure this out as I
+            go." Mine was no different. In this post I want to break down
+            exactly how I built <strong>Sandy's Portfolio</strong>
+            — the design decisions, the tech choices, the parts that broke, and
+            what I'd do differently.
+          </p>
+
+          <h2 id="s1">1. Starting with the Brand</h2>
+          <p>
+            Before writing a single line of code, I spent time figuring out what
+            the portfolio should <em>feel</em> like. I wanted something that
+            was:
+          </p>
+          <ul>
+            <li>Dark and premium — not generic Bootstrap</li>
+            <li>Warm, not cold — so I chose orange (#FF6B2B) as the accent</li>
+            <li>
+              Personal — hence the Sacramento cursive font for script accents
+            </li>
+            <li>Fast — no heavy frameworks, just clean HTML/CSS/JS</li>
+          </ul>
+
+          <div class="callout">
+            <strong>Tip:</strong> Spend at least a day on brand before coding.
+            Pick one accent colour, two fonts (display + body), and your
+            background values. Everything else flows from those decisions.
+          </div>
+
+          <h2 id="s2">2. The Folder Structure</h2>
+          <p>
+            I decided to keep things simple but scalable. Each page lives in its
+            own folder with an
+            <code>index.html</code>. Shared styles and scripts live in a
+            <code>/shared</code> folder that every page imports.
+          </p>
+
+          <pre><code>/
+├── index.html          ← landing page
+├── portfolio/
+│   ├── index.html
+│   └── style.css
+├── blog/
+│   ├── index.html
+│   └── posts/
+│       └── post-1.html
+├── shared/
+│   ├── shared.css      ← tokens, nav, footer
+│   └── shared.js
+└── assets/             ← images, logos</code></pre>
+
+          <p>
+            This structure makes Vercel deployments trivial — just push to
+            GitHub and it's live. No build step, no bundler, no config.
+          </p>
+
+          <h2 id="s3">3. CSS Custom Properties as the Foundation</h2>
+          <p>
+            The entire site runs on CSS variables defined in
+            <code>shared.css</code>. This means changing the brand colour across
+            every page takes exactly one line:
+          </p>
+
+          <pre><code>:root {
+  --orange:      #FF6B2B;
+  --orange-pale: rgba(255,107,43,0.07);
+  --dark:        #0E0E0F;
+  --dark2:       #161618;
+  --text:        #F0EDE8;
+  --muted:       #9D9A96;
+  --radius:      16px;
+  --transition:  0.35s cubic-bezier(0.4,0,0.2,1);
+}</code></pre>
+
+          <div class="article-divider"><span>✦</span></div>
+
+          <h2 id="s4">4. The Animations (Where Most Time Went)</h2>
+          <p>
+            I'll be honest — the animations took longer than everything else
+            combined. The cursor glow, the hero scroll indicator, the card hover
+            effects, the skill bar animations on scroll... each one started as
+            "this will take 20 minutes" and ended as a 2-hour rabbit hole.
+          </p>
+
+          <p>The ones I'm most proud of:</p>
+
+          <ul>
+            <li>
+              <strong>Cursor glow</strong> — a 500px radial gradient that
+              follows the mouse
+            </li>
+            <li>
+              <strong>Scroll-triggered fade-ups</strong> — IntersectionObserver
+              with stagger delays
+            </li>
+            <li>
+              <strong>Skill bars</strong> — CSS width transition fired when the
+              section enters view
+            </li>
+            <li>
+              <strong>Hero image ring</strong> — a floating orange ring with
+              keyframe animation
+            </li>
+          </ul>
+
+          <div class="callout">
+            <strong>Lesson learned:</strong> Always add
+            <code>prefers-reduced-motion</code> media query to disable
+            animations for users who need it. It's one CSS block and shows you
+            care about accessibility.
+          </div>
+
+          <h2 id="s5">5. Deploying to Vercel</h2>
+          <p>
+            Deployment was the easiest part. Connect your GitHub repo to Vercel,
+            set the root directory, and that's it. Every push to
+            <code>main</code> auto-deploys. Custom domain took under 10 minutes
+            to configure.
+          </p>
+
+          <p>
+            The whole site scores <strong>98+ on Lighthouse</strong> for
+            performance because there are no unnecessary dependencies, no unused
+            CSS frameworks, and all images are properly sized.
+          </p>
+
+          <h2 id="s6">What I'd Do Differently</h2>
+          <p>If I were starting over today, I'd do two things differently:</p>
+          <ol>
+            <li>
+              Plan the component system upfront — I refactored the nav and
+              footer 3 times
+            </li>
+            <li>Start with mobile layout first, then scale up to desktop</li>
+          </ol>
+
+          <p>
+            But honestly? Build it messy first. Refactor later. A live site
+            beats a perfect Figma file every single time.
+          </p>
+
+          <div class="article-divider"><span>✦</span></div>
+
+          <p>
+            If you've read this far — thanks for sticking around. I write about
+            design and dev on this blog regularly. If something here helped you,
+            share it with someone who's building their own portfolio. 🚀
+          </p>
+        </div>
+
+        <!-- ── AUTHOR CARD ── -->
+        <div class="author-card">
+          <div class="author-avatar">
+            👤
+            <img
+              src="../../assets/profile.jpg"
+              alt="Sandy"
+              onerror="this.style.display = 'none'"
+            />
+          </div>
+          <div class="author-info">
+            <div class="author-name">Sandeep 09</div>
+            <div class="author-role">UI/UX Designer & Frontend Developer</div>
+            <div class="author-bio">
+              Building digital products from India. I write about design
+              systems, frontend dev, and the occasional Android project. Reach
+              out if you want to collaborate.
+            </div>
+          </div>
+        </div>
+
+        <!-- ── RELATED POSTS ── -->
+        <div class="related-section">
+          <h3 class="related-title">You might also like</h3>
+          <div class="related-grid">
+            <a href="5-css-tricks.html" class="related-card">
+              <div
+                class="related-emoji"
+                style="background: linear-gradient(135deg, #060e1a, #0a1828)"
+              >
+                ✨
+              </div>
+              <div class="related-info">
+                <span class="related-tag">Development</span>
+                <div class="related-card-title">
+                  5 CSS Tricks That Will Level Up Your UI Instantly
+                </div>
+                <div class="related-read-time">5 min read</div>
+              </div>
+            </a>
+            <a href="why-keep-a-portfolio.html" class="related-card">
+              <div
+                class="related-emoji"
+                style="background: linear-gradient(135deg, #1a0a10, #2a0e18)"
+              >
+                🚀
+              </div>
+              <div class="related-info">
+                <span class="related-tag">Tips & Tricks</span>
+                <div class="related-card-title">
+                  Why Every Developer Should Keep a Public Portfolio
+                </div>
+                <div class="related-read-time">4 min read</div>
+              </div>
+            </a>
+            <a href="dark-mode-design.html" class="related-card">
+              <div
+                class="related-emoji"
+                style="background: linear-gradient(135deg, #0a0a12, #14141e)"
+              >
+                🌙
+              </div>
+              <div class="related-info">
+                <span class="related-tag">Design</span>
+                <div class="related-card-title">
+                  Dark Mode Design: How to Get the Colours Right
+                </div>
+                <div class="related-read-time">5 min read</div>
+              </div>
+            </a>
+            <a href="10-figma-tips.html" class="related-card">
+              <div
+                class="related-emoji"
+                style="background: linear-gradient(135deg, #1a140a, #2a1e08)"
+              >
+                💡
+              </div>
+              <div class="related-info">
+                <span class="related-tag">Tips & Tricks</span>
+                <div class="related-card-title">
+                  10 Figma Tips That Save Me Hours Every Week
+                </div>
+                <div class="related-read-time">4 min read</div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- ── SIDEBAR ── -->
+      <aside class="toc-wrap">
+        <div class="toc-card">
+          <div class="toc-title">Table of Contents</div>
+          <nav class="toc-list" id="tocList">
+            <a href="#s1" class="toc-item active">1. Starting with the Brand</a>
+            <a href="#s2" class="toc-item">2. Folder Structure</a>
+            <a href="#s3" class="toc-item">3. CSS Custom Properties</a>
+            <a href="#s4" class="toc-item">4. Animations</a>
+            <a href="#s5" class="toc-item">5. Deploying to Vercel</a>
+            <a href="#s6" class="toc-item">6. What I'd Do Differently</a>
+          </nav>
+        </div>
+        <div class="share-card">
+          <div class="share-title">Share this article</div>
+          <div class="share-btns">
+            <button class="share-btn" onclick="shareTwitter()">𝕏 Tweet</button>
+            <button class="share-btn" onclick="copyLink()">🔗 Copy</button>
+          </div>
+        </div>
+      </aside>
+    </div>
+    <!-- /.article-layout -->
+
+    <!-- ── FOOTER ── -->
+    <footer class="footer">
+      <div class="footer-inner">
+        <a href="../../index.html" class="footer-logo">
+          <img src="../../assets/09logo-black.jpg" alt="Sandy" />
+        </a>
+        <p class="footer-copy">© 2025 Sandy · Designed with 💙 by Sandeep 09</p>
+        <a href="#" class="back-top" aria-label="Top">↑</a>
+      </div>
+    </footer>
+
+    <script src="../../../shared/shared.js"></script>
+    <script src="../post-1/how-i-built-my-portfolio.js"></script>
+  </body>
+</html>

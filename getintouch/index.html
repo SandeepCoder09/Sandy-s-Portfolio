@@ -13,6 +13,7 @@
     />
     <link rel="stylesheet" href="../shared/shared.css" />
     <link rel="stylesheet" href="../getintouch/getintouch.css" />
+    <link rel="stylesheet" href="../shared/animation.css" />
   </head>
   <body>
     <div class="cursor-glow" id="cursorGlow"></div>
@@ -41,18 +42,18 @@
         <div class="git-grid">
           <!-- ── LEFT: INFO ── -->
           <div class="git-info fade-up">
-            <p class="section-eyebrow">Get In Touch</p>
-            <h1 class="section-title">
+            <p class="section-eyebrow" data-animate="fade-up">Get In Touch</p>
+            <h1 class="section-title" data-animate="fade-up" data-delay="1">
               Let's build something<br />
-              <span class="script-accent">amazing together</span>
+              <span class="script-accent" data-animate="fade-up" data-delay="2">amazing together</span>
             </h1>
-            <p class="git-desc">
+            <p class="git-desc" data-animate="fade-up" data-delay="3">
               Got a project in mind, a collaboration idea, or just want to say
               hello? Fill out the form and I'll get back to you within 24 hours.
             </p>
 
             <div class="contact-chips">
-              <div class="contact-chip">
+              <div class="contact-chip" data-animate="fade-left" data-delay="4">
                 <div class="chip-icon">
                   <svg viewBox="0 0 24 24">
                     <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
@@ -66,7 +67,7 @@
                   </div>
                 </div>
               </div>
-              <div class="contact-chip">
+              <div class="contact-chip" data-animate="fade-right" data-delay="5">
                 <div class="chip-icon">
                   <svg viewBox="0 0 24 24">
                     <circle cx="12" cy="12" r="10" />
@@ -80,7 +81,7 @@
               </div>
             </div>
 
-            <div class="perks">
+            <div class="perks" data-animate="fade-up" data-delay="6">
               <div class="perk">
                 Full-stack delivery from design to deployment
               </div>
@@ -93,7 +94,7 @@
           </div>
 
           <!-- ── RIGHT: GOOGLE FORM ── -->
-          <div class="fade-up" style="animation-delay: 0.1s">
+          <div class="fade-up" data-animate="fade-up" data-delay="1">
             <div class="form-card">
               <div class="form-card-header">
                 <div>
@@ -157,5 +158,6 @@
 
     <script src="../shared/shared.js"></script>
     <script src="../getintouch/getintouch.js"></script>
+    <script src="../shared/animation.js"></script>
   </body>
 </html>

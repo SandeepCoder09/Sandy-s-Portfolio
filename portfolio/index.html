@@ -3,39 +3,21 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#161618" />
-    <title>Sandy | Portfolio</title>
-    <link rel="stylesheet" href="../portfolio/style.css" />
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-    <link rel="shortcut icon" href="../assets/portfolio.png" type="image/png" />
-    <!-- <link rel="stylesheet" href="../shared/legal.css" /> -->
+    <title>Sandy | UI/UX Designer & Frontend Developer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sacramento&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="../shared/shared.css" />
+    <link rel="stylesheet" href="../shared/animation.css" />
+    <link rel="stylesheet" href="../portfolio/style.css" />
   </head>
   <body>
     <div class="cursor-glow" id="cursorGlow"></div>
-   <!-- ===== NAVBAR ===== -->
-    <nav class="nav" id="nav">
-      <a href="../index.html" class="nav-logo"
-        ><img
-          src="../assets/09logo-black.jpg"
-          alt="Sandy Logo"
-          class="logo-img"
-      /></a>
-      <ul class="nav-links" id="navLinks">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#contact">Contact</a></li>
-        <li><a href="../blog/index.html">Blog</a></li>
-          <li><a href="../support/index.html" class="nav-donate">Support ♥</a></li>
-      </ul>
-      <button class="hamburger" id="hamburger" aria-label="Menu">
-        <span></span><span></span><span></span>
-      </button>
-    </nav>
 
-    <!-- ── NAV ──
+    <!-- ═══ NAV ═══ -->
     <nav class="nav" id="nav">
       <a href="../index.html" class="nav-logo">
         <img
@@ -44,56 +26,66 @@
           class="logo-img"
         />
       </a>
-     <li><a href="#home">Home</a></li>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home">Home</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#projects">Projects</a></li>
         <li><a href="#services">Services</a></li>
         <li><a href="#contact">Contact</a></li>
-        <li>
-          <a href="../support/index.html" class="donate-btn">Support ♥</a>
-        </li>
+        <li><a href="https://portfolio4sandy.vercel.app/support" class="nav-donate">Support ♥</a></li>
       </ul>
       <button class="hamburger" id="hamburger" aria-label="Menu">
         <span></span><span></span><span></span>
       </button>
-    </nav> -->
+    </nav>
 
-    <!-- ===== HERO ===== -->
+    <!-- ═══ HERO ═══ -->
     <section class="hero" id="home">
       <div class="hero-bg-text" aria-hidden="true">SANDY</div>
+
       <div class="hero-content">
-        <p class="hero-eyebrow">Available for freelance work</p>
-        <h1 class="hero-name">
-          <span class="script-accent">Hello, I'm</span>
-          <br />Sandy<span class="accent-dot">.</span>
+        <p class="hero-eyebrow" data-animate="fade-up">
+          Available for freelance work
+        </p>
+        <h1 class="hero-name" data-animate="fade-up" data-delay="2">
+          <span class="script-accent">Hello, I'm</span><br />
+          Sandy<span class="accent-dot">.</span>
         </h1>
-        <p class="hero-role">UI/UX Designer &amp; Frontend Developer</p>
-        <p class="hero-desc">
+        <p class="hero-role" data-animate="fade-up" data-delay="3">
+          UI/UX Designer &amp; Frontend Developer
+        </p>
+        <p class="hero-desc" data-animate="fade-up" data-delay="4">
           I craft visually stunning, responsive, and dynamic web experiences
           that turn ideas into beautiful digital reality.
         </p>
-        <div class="hero-actions">
-          <a href="../getintouch/index.html" class="btn-primary">Hire Me</a>
+        <div class="hero-actions" data-animate="fade-up" data-delay="5">
+          <a
+            href="../getintouch/index.html"
+            class="btn-primary"
+            data-magnetic="0.3"
+            >Hire Me</a
+          >
           <a href="#projects" class="btn-ghost">View Projects</a>
         </div>
-        <div class="hero-stats">
+        <div class="hero-stats" data-animate="fade-up" data-delay="6">
           <div class="stat">
-            <span class="stat-num">6+</span
-            ><span class="stat-label">Projects</span>
+            <span class="stat-num" data-count="6" data-suffix="+">6+</span>
+            <span class="stat-label">Projects</span>
           </div>
           <div class="stat-divider"></div>
           <div class="stat">
-            <span class="stat-num">3+</span
-            ><span class="stat-label">Skills</span>
+            <span class="stat-num" data-count="3" data-suffix="+">3+</span>
+            <span class="stat-label">Skills</span>
           </div>
           <div class="stat-divider"></div>
           <div class="stat">
-            <span class="stat-num">100%</span
-            ><span class="stat-label">Passion</span>
+            <span class="stat-num" data-count="100" data-suffix="%">100%</span>
+            <span class="stat-label">Passion</span>
           </div>
         </div>
       </div>
-      <div class="hero-visual">
+
+      <div class="hero-visual" data-animate="fade-right" data-delay="3">
         <div class="hero-img-frame">
           <img src="../assets/profile2.png" alt="Sandy" class="hero-img" />
           <div class="hero-img-ring"></div>
@@ -112,15 +104,17 @@
           </div>
         </div>
       </div>
+
       <div class="scroll-indicator">
         <span>Scroll</span>
         <div class="scroll-line"></div>
       </div>
     </section>
 
-    <!-- ===== ABOUT ===== -->
+    <!-- ═══ ABOUT ═══ -->
     <section class="about section" id="about">
-      <div class="container">
+      <div class="container" data-split>
+        <!-- Left: image (slides in from left) -->
         <div class="about-img-col">
           <div class="about-img-wrap">
             <img src="../assets/fullstack.png" alt="Sandy working" />
@@ -131,12 +125,19 @@
             <div class="skill-tags">
               <span>HTML5</span><span>CSS3</span><span>JavaScript</span>
               <span>Node.js</span><span>MongoDB</span><span>Figma</span>
+              <span>UI/UX Design</span><span>Firebase</span><span>React</span>
+              <span>Next.js</span><span>Tailwind CSS</span><span>Responsive Design</span>
+              <span>Web Animations</span><span>Portfolio Development</span>
+              <span>Digital Creative Services</span><span>E-commerce</span>
+              <span>SEO</span><span>Performance Optimization</span><span>Accessibility</span>
             </div>
           </div>
         </div>
+
+        <!-- Right: text (slides in from right) -->
         <div class="about-text-col">
           <p class="section-eyebrow">About Me</p>
-          <h2 class="section-title">
+          <h2 class="section-title reveal-line">
             Design meets<br /><span class="script-accent">Development</span>
           </h2>
           <p class="about-body">
@@ -175,21 +176,28 @@
               </div>
             </div>
           </div>
-          <a href="../getintouch/index.html" class="btn-primary">Let's Talk</a>
+          <a
+            href="../getintouch/index.html"
+            class="btn-primary"
+            data-magnetic="0.3"
+            >Let's Talk</a
+          >
         </div>
       </div>
     </section>
 
-    <!-- ===== PROJECTS ===== -->
+    <!-- ═══ PROJECTS ═══ -->
     <section class="projects section" id="projects">
       <div class="container">
-        <div class="section-header">
+        <div class="section-header" data-animate="fade-up">
           <p class="section-eyebrow">Recent Work</p>
           <h2 class="section-title">
             Selected <span class="script-accent">Projects</span>
           </h2>
         </div>
-        <div class="projects-grid">
+
+        <!-- Stagger: each card zooms in with auto delay -->
+        <div class="projects-grid" data-stagger="zoom-in">
           <a
             href="#"
             class="project-card featured"
@@ -279,14 +287,14 @@
           </a>
 
           <a
-            href="https://sh-thehungerpoint.vercel.app/"
+            href="../sh-TheHungerPoint.html"
             class="project-card"
             target="_blank"
             rel="noopener"
           >
             <div class="project-img-wrap">
               <img
-                src="../assets/sh-thehungerpoint.png"
+                src="../assets/sh-theHungerPoint.png"
                 alt="SH Hunger Point"
                 onerror="this.src = '../assets/portfolio.png'"
               />
@@ -325,46 +333,22 @@
               </p>
             </div>
           </a>
-
-          <a
-            href="https://qrcode-phi-lyart.vercel.app/"
-            class="project-card"
-            target="_blank"
-            rel="noopener"
-          >
-            <div class="project-img-wrap">
-              <img
-                src="../assets/qr-logo-brand-09.png"
-                alt="SH Hunger Point"
-                onerror="this.src = '../assets/portfolio.png'"
-              />
-              <div class="project-overlay">
-                <span class="project-link-icon">↗</span>
-              </div>
-            </div>
-            <div class="project-info">
-              <span class="project-tag">QR DECODE & GENERATE</span>
-              <h3>QR GENDECODE</h3>
-              <p>
-                QR code generator and decoder tool with a sleek interface and
-                real-time results.
-              </p>
-            </div>
-          </a>
         </div>
       </div>
     </section>
 
-    <!-- ===== SERVICES ===== -->
+    <!-- ═══ SERVICES ═══ -->
     <section class="services section" id="services">
       <div class="container">
-        <div class="section-header">
+        <div class="section-header" data-animate="fade-up">
           <p class="section-eyebrow">What I Do</p>
           <h2 class="section-title">
-            Services i <span class="script-accent">Offer</span>
+            Services I <span class="script-accent">Offer</span>
           </h2>
         </div>
-        <div class="services-grid">
+
+        <!-- Stagger: cards fade up one by one -->
+        <div class="services-grid" data-stagger="fade-up">
           <div class="service-card">
             <div class="service-icon">
               <svg
@@ -383,6 +367,7 @@
               and drive conversions.
             </p>
           </div>
+
           <div class="service-card">
             <div class="service-icon">
               <svg
@@ -404,6 +389,7 @@
               user experience.
             </p>
           </div>
+
           <div class="service-card">
             <div class="service-icon">
               <svg
@@ -422,6 +408,7 @@
               standards and best practices.
             </p>
           </div>
+
           <div class="service-card">
             <div class="service-icon">
               <svg
@@ -445,10 +432,10 @@
       </div>
     </section>
 
-    <!-- ===== CONTACT ===== -->
+    <!-- ═══ CONTACT ═══ -->
     <section class="contact section" id="contact">
       <div class="container">
-        <div class="contact-inner">
+        <div class="contact-inner" data-animate="zoom-in">
           <p class="section-eyebrow">Get in Touch</p>
           <h2 class="section-title">
             Let's build something<br /><span class="script-accent"
@@ -460,7 +447,10 @@
             and let's make it happen.
           </p>
           <div class="contact-actions">
-            <a href="../getintouch/index.html" class="btn-primary btn-lg"
+            <a
+              href="../getintouch/index.html"
+              class="btn-primary btn-lg"
+              data-magnetic="0.3"
               >Start a Project</a
             >
             <a href="../support/index.html" class="btn-ghost"
@@ -468,7 +458,7 @@
             >
           </div>
           <div class="social-links">
-            <a target="_blank" href="https://www.instagram.com/official.suzu.09/" aria-label="Instagram">
+            <a href="#" aria-label="Instagram">
               <img src="../assets/icons8-instagram-100.png" alt="Instagram" />
             </a>
           </div>
@@ -476,12 +466,14 @@
       </div>
     </section>
 
-    <!-- ===== FOOTER ===== -->
+    <!-- ═══ FOOTER ═══ -->
     <footer class="footer">
       <div class="container footer-inner">
-        <!-- <a href="#home" class="footer-logo">
+        <!-- img is hidden by animation.css .footer .footer-logo img { display:none } -->
+        <!-- "Sandy" text appears via ::after pseudo-element -->
+        <a href="#home" class="footer-logo">
           <img src="../assets/09logo-black.jpg" alt="Sandy Logo" />
-        </a> -->
+        </a>
         <p class="footer-copy">
           © 2025 · Designed &amp; Built With 🧡 By Sandy
         </p>
@@ -489,16 +481,8 @@
       </div>
     </footer>
 
-    <!-- <div class="footer">
-      <a href="../legal/about.html">About</a>
-      <a href="../legal/services.html">Services</a>
-      <a href="../legal/contact.html">Contact</a>
-      <a href="../legal/privacy-policy.html">Privacy</a>
-      <a href="../legal/terms.html">Terms</a>
-      <a href="../legal/refund-policy.html">Refund</a>
-    </div>
-    <script src="../shared/legal.js"></script> -->
-
     <script src="../shared/shared.js"></script>
+    <script src="../shared/animation.js"></script>
+    <script src="../portfolio/script.js"></script>
   </body>
 </html>

@@ -11,24 +11,61 @@
       href="https://fonts.googleapis.com/css2?family=Sacramento&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="shared/shared.css" />
-    <!-- <link rel="stylesheet" href="../shared/legal.css" /> -->
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="../shared/shared.css" />
+    <link rel="stylesheet" href="../shared/animation.css" />
+    <link rel="stylesheet" href="./portfolio/style.css" />
+    <!-- <link rel="stylesheet" href="./shared/legal.css" /> -->
   </head>
   <body>
     <div class="cursor-glow" id="cursorGlow"></div>
     <div class="grid-bg" aria-hidden="true"></div>
 
+    <!-- ═══ NAV ═══ -->
+    <nav class="nav" id="nav">
+      <a href="../index.html" class="nav-logo">
+        <img
+          src="../assets/09logo-black.jpg"
+          alt="Sandy Logo"
+          class="logo-img"
+        />
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="../portfolio/index.html">Portfolio</a></li>
+        <li><a href="../blog/index.html">Blog</a></li>
+        <li><a href="../getintouch/index.html">Contact</a></li>
+        <li><a href="../support/index.html" class="nav-donate">Support ♥</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+
+    <!-- ═══ HERO ═══ -->
     <section class="hero">
-      <div class="hero-tag">Open for freelance projects</div>
-      <h1 class="hero-name">Sandy<span>.</span></h1>
-      <span class="hero-script">where design meets code</span>
-      <p class="hero-tagline">
+      <div class="hero-tag" data-animate="fade-up">
+        Open for freelance projects
+      </div>
+
+      <h1 class="hero-name" data-animate="fade-up" data-delay="2">
+        Sandy<span>.</span>
+      </h1>
+
+      <span class="hero-script" data-animate="fade-up" data-delay="3">
+        where design meets code
+      </span>
+
+      <p class="hero-tagline" data-animate="fade-up" data-delay="4">
         UI/UX Designer &amp; Frontend Developer crafting visually stunning,
         responsive digital experiences that bring ideas to life.
       </p>
-      <div class="hero-actions">
-        <a href="./portfolio/index.html" class="btn-primary">
+
+      <div class="hero-actions" data-animate="fade-up" data-delay="5">
+        <a
+          href="./portfolio/index.html"
+          class="btn-primary"
+          data-magnetic="0.3"
+        >
           <svg
             width="16"
             height="16"
@@ -41,9 +78,11 @@
           </svg>
           View Portfolio
         </a>
-        <a href="/getintouch/index.html" class="btn-ghost">Hire Me</a>
+        <a href="./getintouch/index.html" class="btn-ghost">Hire Me</a>
       </div>
-      <div class="skills-row">
+
+      <!-- Skills row — each pill zooms in with stagger -->
+      <div class="skills-row" data-stagger="zoom-in" data-delay="6">
         <span class="skill-pill">HTML5</span>
         <span class="skill-pill">CSS3</span>
         <span class="skill-pill">JavaScript</span>
@@ -52,70 +91,142 @@
         <span class="skill-pill">Figma</span>
         <span class="skill-pill">UI/UX Design</span>
         <span class="skill-pill">Firebase</span>
+        <span class="skill-pill">React</span>
+        <span class="skill-pill">Next.js</span>
+        <span class="skill-pill">Tailwind CSS</span>
+        <span class="skill-pill">Responsive Design</span>
+        <span class="skill-pill">Web Animations</span>
+        <span class="skill-pill">Portfolio Development</span>
+        <span class="skill-pill">Digital Creative Services</span>
+        <span class="skill-pill">E-commerce</span>
+        <span class="skill-pill">SEO</span>
+        <span class="skill-pill">Performance Optimization</span>
+        <span class="skill-pill">Accessibility</span>
       </div>
     </section>
 
+    <!-- ═══ PREVIEW SECTION ═══ -->
     <div class="preview-section">
-      <p class="preview-label">What I bring to every project</p>
-      <div class="preview-grid">
-        <div class="preview-card">
-          <div class="pc-icon">
-            <svg viewBox="0 0 24 24">
-              <rect x="2" y="3" width="20" height="14" rx="2" />
-              <path d="M8 21h8M12 17v4" />
-            </svg>
-          </div>
-          <h3>Web Design</h3>
-          <p>
-            Modern, responsive designs that captivate visitors and convert them
-            into customers.
-          </p>
-        </div>
-        <div class="preview-card">
-          <div class="pc-icon">
-            <svg viewBox="0 0 24 24">
-              <polyline points="16 18 22 12 16 6" />
-              <polyline points="8 6 2 12 8 18" />
-            </svg>
-          </div>
-          <h3>Frontend Dev</h3>
-          <p>
-            Pixel-perfect, high-performance code built with modern web
-            standards.
-          </p>
-        </div>
-        <div class="preview-card">
-          <div class="pc-icon">
-            <svg viewBox="0 0 24 24">
-              <path
-                d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"
-              />
-            </svg>
-          </div>
-          <h3>Full-Stack</h3>
-          <p>
-            End-to-end apps with Node.js, Express, MongoDB — from concept to
-            deployment.
-          </p>
-        </div>
-      </div>
-    </div>
+      <p class="preview-label" data-animate="fade-up">
+        What I bring to every project
+      </p>
 
+      <!-- Stagger: cards fade up one by one -->
+        <div class="services-grid" data-stagger="fade-up">
+          <div class="service-card">
+            <div class="service-icon">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+              >
+                <rect x="2" y="3" width="20" height="14" rx="2" />
+                <path d="M8 21h8M12 17v4" />
+              </svg>
+            </div>
+            <h3>Web Design</h3>
+            <p>
+              Modern, futuristic, and responsive designs that captivate visitors
+              and drive conversions.
+            </p>
+          </div>
+
+          <div class="service-card">
+            <div class="service-icon">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+              >
+                <circle cx="12" cy="12" r="3" />
+                <path
+                  d="M19.07 4.93a10 10 0 010 14.14M4.93 4.93a10 10 0 000 14.14"
+                />
+                <path d="M15.54 8.46a5 5 0 010 7.07M8.46 8.46a5 5 0 000 7.07" />
+              </svg>
+            </div>
+            <h3>UI/UX Design</h3>
+            <p>
+              Seamless and interactive designs crafted for a superior, intuitive
+              user experience.
+            </p>
+          </div>
+
+          <div class="service-card">
+            <div class="service-icon">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+              >
+                <polyline points="16 18 22 12 16 6" />
+                <polyline points="8 6 2 12 8 18" />
+              </svg>
+            </div>
+            <h3>Frontend Development</h3>
+            <p>
+              High-performance, pixel-perfect code built with modern web
+              standards and best practices.
+            </p>
+          </div>
+
+          <div class="service-card">
+            <div class="service-icon">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+              >
+                <path
+                  d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"
+                />
+              </svg>
+            </div>
+            <h3>Full-Stack Builds</h3>
+            <p>
+              End-to-end web applications with Node.js, Express, and MongoDB
+              backends.
+            </p>
+          </div>
+        </div>
+    </div>
+    <!-- /.preview-section -->
+
+    <!-- ═══ FOOTER ═══ -->
     <footer class="footer">
-      <p>© 2025 · Designed &amp; Built With 🧡 By Sandy</p>
+      <div class="container footer-inner">
+        <!-- img is hidden by animation.css .footer .footer-logo img { display:none } -->
+        <!-- "Sandy" text appears via ::after pseudo-element -->
+        <a href="#home" class="footer-logo">
+          <img src="../assets/09logo-black.jpg" alt="Sandy Logo" />
+        </a>
+        <p class="footer-copy">
+          © 2025 · Designed &amp; Built With 🧡 By Sandy
+        </p>
+        <a href="#home" class="back-top" aria-label="Back to top">↑</a>
+      </div>
     </footer>
 
+
     <!-- <div class="footer">
-      <a href="../legal/about.html">About</a>
-      <a href="../legal/services.html">Services</a>
-      <a href="../legal/contact.html">Contact</a>
-      <a href="../legal/privacy-policy.html">Privacy</a>
-      <a href="../legal/terms.html">Terms</a>
-      <a href="../legal/refund-policy.html">Refund</a>
+      <a href="./legal/about.html">About</a>
+      <a href="./legal/services.html">Services</a>
+      <a href="./legal/contact.html">Contact</a>
+      <a href="./legal/privacy-policy.html">Privacy</a>
+      <a href="./legal/terms.html">Terms</a>
+      <a href="./legal/refund-policy.html">Refund</a>
     </div>
-    <script src="../shared/legal.js"></script> -->
+    <script src="./shared/legal.js"></script> -->
+
+    <script src="../shared/shared.js"></script>
+    <script src="../shared/animation.js"></script>
 
     <script>
+      // Cursor glow
       const g = document.getElementById("cursorGlow");
       document.addEventListener("mousemove", (e) => {
         g.style.left = e.clientX + "px";

@@ -5,6 +5,21 @@
    ============================================================ */
 
 /* ─────────────────────────────────────────────────────────────
+   0.  OVERFLOW GUARD
+   Prevents initial translateX transforms (fade-left / fade-right)
+   from creating a horizontal scrollbar or pushing the nav
+   hamburger off-screen before animations fire.
+───────────────────────────────────────────────────────────── */
+html {
+  overflow-x: hidden;
+}
+body {
+  overflow-x: hidden;
+  /* Fixed-positioned elements (nav) are viewport-relative,
+     so overflow-x: hidden on body does NOT clip them.      */
+}
+
+/* ─────────────────────────────────────────────────────────────
    1.  INITIAL HIDDEN STATES
    Elements start invisible / off-position.
    The JS adds .is-animated which transitions them into view.
@@ -113,7 +128,6 @@
     transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-/* stagger child types — JS sets transition-delay individually */
 [data-stagger="fade-up"] > * {
   transform: translateY(44px);
 }
@@ -143,7 +157,7 @@
 /* ─────────────────────────────────────────────────────────────
    5.  SPLIT LEFT ↔ RIGHT
    Place data-split on a 2-column parent.
-   First child slides from left, second from right — instantly.
+   First child slides from left, second from right.
 ───────────────────────────────────────────────────────────── */
 [data-split] > *:first-child {
   opacity: 0;
@@ -185,8 +199,6 @@
 
 /* ─────────────────────────────────────────────────────────────
    7.  SECTION REVEAL UNDERLINE
-   Add class .reveal-line to any <h2> — an orange underline
-   draws from left to right when it enters the viewport.
 ───────────────────────────────────────────────────────────── */
 .reveal-line {
   position: relative;
@@ -209,7 +221,6 @@
 
 /* ─────────────────────────────────────────────────────────────
    8.  COUNTER NUMBER ANIMATION
-   Wrap numbers in <span data-count="95"> — they count up.
 ───────────────────────────────────────────────────────────── */
 [data-count] {
   display: inline-block;
@@ -218,7 +229,7 @@
 
 /* ─────────────────────────────────────────────────────────────
    9.  FOOTER LOGO FIX
-   Hide the 09 logo image inside the footer only.
+   Hides the 09 logo image inside the footer only.
    The top .nav .nav-logo img is unaffected.
 ───────────────────────────────────────────────────────────── */
 .footer .footer-logo img {

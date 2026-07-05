@@ -4,7 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#161618" />
-    <title>Support My Work ❤️</title>
+    <meta
+      name="description"
+      content="Support Sandy's web development and UI/UX design work. Secure payments via Razorpay."
+    />
+    <title>Support My Work — Sandy</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -12,6 +16,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="../shared/shared.css" />
+    <link rel="stylesheet" href="../shared/animation.css" />
     <link rel="stylesheet" href="../support/support.css" />
     <!-- <link rel="stylesheet" href="../shared/legal.css" /> -->
   </head>
@@ -19,6 +24,7 @@
   <body>
     <div class="cursor-glow" id="cursorGlow"></div>
 
+    <!-- ═══ NAV ═══ -->
     <nav class="nav" id="nav">
       <a href="../index.html" class="nav-logo">
         <img
@@ -38,78 +44,232 @@
       </button>
     </nav>
 
+    <!-- ═══ PAGE ═══ -->
     <div class="page-wrap">
       <div class="container">
         <div class="donate-grid">
-          <!-- ── LEFT: INFO ── -->
-          <div class="donate-info fade-up">
-            <p class="section-eyebrow">Support My Work</p>
-            <h1 class="section-title">
+          <!-- ══════════════════════════════
+               LEFT — INFO COLUMN
+          ══════════════════════════════ -->
+          <div class="donate-info">
+            <p class="section-eyebrow" data-animate="fade-up">
+              Support My Work
+            </p>
+            <h1 class="section-title" data-animate="fade-up" data-delay="1">
               Fuel the<br /><span class="script-accent">creativity</span>
             </h1>
-            <p class="donate-desc">
+            <p class="donate-desc" data-animate="fade-up" data-delay="2">
               Every project I build is driven by passion and countless hours of
               design and code. Payments made on this page are for website
               development, UI/UX design and digital creative services provided
               through this portfolio website.
             </p>
 
-            <div class="donate-perks">
+            <!-- PERKS — SVG icons, no emojis -->
+            <div class="donate-perks" data-stagger="fade-up">
               <div class="perk">
-                <span class="perk-icon">☕</span>
+                <div class="perk-icon-wrap">
+                  <!-- Coffee cup -->
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M18 8h1a4 4 0 010 8h-1" />
+                    <path d="M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8z" />
+                    <line x1="6" y1="1" x2="6" y2="4" />
+                    <line x1="10" y1="1" x2="10" y2="4" />
+                    <line x1="14" y1="1" x2="14" y2="4" />
+                  </svg>
+                </div>
                 <div class="perk-text">
                   <p>Buy me a coffee</p>
                   <p>Fuel the late-night coding sessions</p>
                 </div>
               </div>
+
               <div class="perk">
-                <span class="perk-icon">🚀</span>
+                <div class="perk-icon-wrap">
+                  <!-- Code / open-source -->
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <polyline points="16 18 22 12 16 6" />
+                    <polyline points="8 6 2 12 8 18" />
+                  </svg>
+                </div>
                 <div class="perk-text">
                   <p>Support open-source projects</p>
                   <p>Help keep free tools and templates alive</p>
                 </div>
               </div>
+
               <div class="perk">
-                <span class="perk-icon">🎨</span>
+                <div class="perk-icon-wrap">
+                  <!-- Sparkle / experiments -->
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path
+                      d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"
+                    />
+                  </svg>
+                </div>
                 <div class="perk-text">
                   <p>Support my new experiments</p>
                   <p>More animations, interactions &amp; creative work</p>
                 </div>
               </div>
             </div>
+            <!-- /.donate-perks -->
 
-            <div class="perk">
-              <span class="perk-icon">📋</span>
+            <!-- LEGAL NOTICE -->
+            <div class="legal-perk" data-animate="fade-up">
+              <div class="perk-icon-wrap legal">
+                <!-- Shield checkmark -->
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                  <polyline points="9 12 11 14 15 10" />
+                </svg>
+              </div>
               <div class="perk-text">
+                <p>Payments accepted for services only</p>
                 <p>
-                  Payments are accepted for website development, UI/UX design
-                  and digital creative services.
-                </p>
-                <p>
-                  This website does not accept charitable donations or
+                  Website development, UI/UX design and digital creative
+                  services. This page does not accept charitable donations or
                   fundraising contributions.
                 </p>
               </div>
             </div>
-            <br>
 
-            <!-- <div class="qr-card" style="margin-top: 24px">
-              <img
-                src="../assets/qr-logo-brand-09.png"
-                alt="QR Code"
-                onerror="this.style.display = 'none'"
-              />
+            <!-- TRUST BADGES -->
+            <div class="trust-section" data-animate="fade-up">
+              <p class="trust-label">Why people trust this page</p>
+              <div class="trust-badges">
+                <div class="trust-badge">
+                  <div class="trust-badge-icon">
+                    <!-- Lock -->
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                    >
+                      <rect x="3" y="11" width="18" height="11" rx="2" />
+                      <path d="M7 11V7a5 5 0 0110 0v4" />
+                    </svg>
+                  </div>
+                  <div>
+                    <div class="trust-badge-title">256-bit SSL</div>
+                    <div class="trust-badge-sub">Encrypted</div>
+                  </div>
+                </div>
+
+                <div class="trust-badge">
+                  <div class="trust-badge-icon">
+                    <!-- Shield -->
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                    >
+                      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <div class="trust-badge-title">Razorpay</div>
+                    <div class="trust-badge-sub">Secured</div>
+                  </div>
+                </div>
+
+                <div class="trust-badge">
+                  <div class="trust-badge-icon">
+                    <!-- Credit card -->
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                    >
+                      <rect x="1" y="4" width="22" height="16" rx="2" />
+                      <line x1="1" y1="10" x2="23" y2="10" />
+                    </svg>
+                  </div>
+                  <div>
+                    <div class="trust-badge-title">PCI-DSS</div>
+                    <div class="trust-badge-sub">Compliant</div>
+                  </div>
+                </div>
+
+                <div class="trust-badge">
+                  <div class="trust-badge-icon">
+                    <!-- Person verified -->
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                    >
+                      <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2" />
+                      <circle cx="12" cy="7" r="4" />
+                    </svg>
+                  </div>
+                  <div>
+                    <div class="trust-badge-title">Verified</div>
+                    <div class="trust-badge-sub">Developer</div>
+                  </div>
+                </div>
+              </div>
+              <!-- /.trust-badges -->
+            </div>
+            <!-- /.trust-section -->
+          </div>
+          <!-- /.donate-info — properly closed here -->
+
+          <!-- ══════════════════════════════
+               RIGHT — FORM COLUMN
+          ══════════════════════════════ -->
+          <div class="donate-form-wrap" data-animate="fade-up" data-delay="2">
+            <!-- Form header with secured badge -->
+            <div class="form-header">
               <div>
-                <p>Scan to pay</p>
-                <p>UPI / QR Code accepted</p>
+                <h3>Make a Support</h3>
+                <p class="form-sub">Choose an amount or enter your own.</p>
+              </div>
+              <div class="form-secured-badge">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <rect x="3" y="11" width="18" height="11" rx="2" />
+                  <path d="M7 11V7a5 5 0 0110 0v4" />
+                </svg>
+                Secured
               </div>
             </div>
-          </div> -->
-
-          <!-- ── RIGHT: FORM ── -->
-          <div class="donate-form-wrap fade-up">
-            <h3>Make a Support</h3>
-            <p class="form-sub">Choose an amount or enter your own.</p>
 
             <form id="donateForm">
               <div class="amount-grid">
@@ -143,21 +303,17 @@
               </div>
 
               <div class="form-group">
-                <label for="donorName"
-                  >Your Name
-                  <span style="color: var(--muted); font-weight: 400"
-                    >(optional)</span
-                  >
+                <label for="donorName">
+                  Your Name
+                  <span class="optional">(optional)</span>
                 </label>
                 <input type="text" id="donorName" placeholder="Anonymous" />
               </div>
 
               <div class="form-group">
-                <label for="donorMsg"
-                  >Leave a message
-                  <span style="color: var(--muted); font-weight: 400"
-                    >(optional)</span
-                  >
+                <label for="donorMsg">
+                  Leave a message
+                  <span class="optional">(optional)</span>
                 </label>
                 <textarea
                   id="donorMsg"
@@ -166,22 +322,152 @@
                 ></textarea>
               </div>
 
-              <button type="submit" class="btn-primary btn-full btn-lg">
-                Support ♥
+              <button
+                type="submit"
+                class="btn-primary btn-full btn-lg support-btn"
+              >
+                <svg
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2.5"
+                >
+                  <path
+                    d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"
+                  />
+                </svg>
+                Support Sandy's Work
               </button>
 
-              <p class="secure-note">
-                <svg viewBox="0 0 24 24">
-                  <rect x="3" y="11" width="18" height="11" rx="2" />
-                  <path d="M7 11V7a5 5 0 0110 0v4" />
-                </svg>
-                Secure payment · Powered By Razorpay
-              </p>
+              <!-- Payment methods row -->
+              <div class="payment-methods">
+                <span class="pm-label">Accepted via</span>
+                <div class="pm-icons">
+                  <!-- UPI -->
+                  <div class="pm-badge" title="UPI">
+                    <svg viewBox="0 0 48 20" fill="none">
+                      <text
+                        x="4"
+                        y="15"
+                        font-family="Plus Jakarta Sans,sans-serif"
+                        font-size="13"
+                        font-weight="800"
+                        fill="#6B4EFF"
+                      >
+                        UPI
+                      </text>
+                    </svg>
+                  </div>
+                  <!-- Visa -->
+                  <div class="pm-badge" title="Visa">
+                    <svg viewBox="0 0 50 20" fill="none">
+                      <text
+                        x="2"
+                        y="15"
+                        font-family="Plus Jakarta Sans,sans-serif"
+                        font-size="13"
+                        font-weight="800"
+                        fill="#1A1F71"
+                      >
+                        VISA
+                      </text>
+                    </svg>
+                  </div>
+                  <!-- Mastercard -->
+                  <div class="pm-badge mc" title="Mastercard">
+                    <svg viewBox="0 0 30 20" fill="none">
+                      <circle cx="10" cy="10" r="9" fill="#EB001B" />
+                      <circle cx="20" cy="10" r="9" fill="#F79E1B" />
+                      <path
+                        d="M15 4.8a9 9 0 010 10.4A9 9 0 0115 4.8z"
+                        fill="#FF5F00"
+                      />
+                    </svg>
+                  </div>
+                  <!-- RuPay -->
+                  <div class="pm-badge" title="RuPay">
+                    <svg viewBox="0 0 56 20" fill="none">
+                      <text
+                        x="2"
+                        y="15"
+                        font-family="Plus Jakarta Sans,sans-serif"
+                        font-size="11"
+                        font-weight="800"
+                        fill="#0A6E3F"
+                      >
+                        RuPay
+                      </text>
+                    </svg>
+                  </div>
+                  <!-- Net Banking -->
+                  <div class="pm-badge" title="Net Banking">
+                    <svg
+                      viewBox="0 0 24 20"
+                      fill="none"
+                      stroke="#555"
+                      stroke-width="1.5"
+                    >
+                      <rect x="2" y="5" width="20" height="14" rx="2" />
+                      <line x1="2" y1="9" x2="22" y2="9" />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Secure note -->
+              <div class="secure-note-row">
+                <div class="secure-item">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <rect x="3" y="11" width="18" height="11" rx="2" />
+                    <path d="M7 11V7a5 5 0 0110 0v4" />
+                  </svg>
+                  SSL Encrypted
+                </div>
+                <div class="secure-item">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                  </svg>
+                  Powered by Razorpay
+                </div>
+                <div class="secure-item">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path d="M22 11.08V12a10 10 0 11-5.93-9.14" />
+                    <polyline points="22 4 12 14.01 9 11.01" />
+                  </svg>
+                  PCI-DSS Compliant
+                </div>
+              </div>
             </form>
 
-            <!-- Legacy success block (hidden — popup handles success now) -->
+            <!-- Legacy success block (hidden — popup handles success) -->
             <div class="donate-success" id="donateSuccess">
-              <div class="heart">🧡</div>
+              <div class="success-icon-wrap">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2.5"
+                >
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>
+              </div>
               <h4>Thank you so much!</h4>
               <p>
                 Your support means everything. It fuels every late-night build
@@ -192,27 +478,27 @@
               >
             </div>
           </div>
+          <!-- /.donate-form-wrap -->
         </div>
         <!-- /.donate-grid -->
       </div>
+      <!-- /.container -->
     </div>
+    <!-- /.page-wrap -->
 
-    <!-- ===== FOOTER ===== -->
+    <!-- ═══ FOOTER ═══ -->
     <footer class="footer">
       <div class="container footer-inner">
-        <!-- <a href="#home" class="footer-logo">
+        <!-- footer-logo img hidden via animation.css, shows "Sandy" text -->
+        <a href="#" class="footer-logo">
           <img src="../assets/09logo-black.jpg" alt="Sandy Logo" />
-        </a> -->
-        <p class="footer-copy">
-          © 2025 · Designed &amp; Built With 🧡 By Sandy
-        </p>
-        <a href="#home" class="back-top" aria-label="Back to top">↑</a>
+        </a>
+        <p class="footer-copy">© 2025 · Designed &amp; Built With ♥ By Sandy</p>
+        <a href="#" class="back-top" aria-label="Back to top">↑</a>
       </div>
     </footer>
 
-    <!-- ════════════════════════════════════════════════════════
-       PAYMENT POPUP
-  ════════════════════════════════════════════════════════ -->
+    <!-- ═══ PAYMENT POPUP ═══ -->
     <div
       class="payment-popup-overlay"
       id="paymentPopup"
@@ -222,10 +508,8 @@
     >
       <div class="popup-backdrop" onclick="closePaymentPopup()"></div>
       <div class="popup-card" id="popupCard">
-        <!-- Confetti container -->
         <div class="popup-confetti" id="popupConfetti"></div>
 
-        <!-- Close button -->
         <button
           class="popup-close"
           onclick="closePaymentPopup()"
@@ -234,16 +518,13 @@
           ✕
         </button>
 
-        <!-- Animated icon -->
         <div class="popup-icon-wrap">
           <div class="popup-icon-ring-pulse"></div>
           <div class="popup-icon-ring"></div>
           <div class="popup-icon-circle" id="popupIconCircle">
-            <!-- Success checkmark -->
             <svg id="popupIconSuccess" viewBox="0 0 24 24">
               <polyline points="20 6 9 17 4 12" />
             </svg>
-            <!-- Error X -->
             <svg id="popupIconError" viewBox="0 0 24 24" style="display: none">
               <line x1="18" y1="6" x2="6" y2="18" />
               <line x1="6" y1="6" x2="18" y2="18" />
@@ -251,17 +532,15 @@
           </div>
         </div>
 
-        <!-- SUCCESS content -->
+        <!-- SUCCESS -->
         <div id="popupSuccessContent">
           <h2 class="popup-title" id="popupTitle">
             Thank you <span class="script">so much!</span>
           </h2>
           <p class="popup-subtitle">
             Your support means everything — it fuels every late-night build and
-            every creative experiment. 🧡
+            every creative experiment.
           </p>
-
-          <!-- Payment ID -->
           <div class="popup-pay-id" id="popupPayIdBox">
             <div style="flex: 1; min-width: 0">
               <div class="popup-pay-id-label">Payment ID</div>
@@ -279,7 +558,6 @@
               </svg>
             </button>
           </div>
-
           <div class="popup-actions">
             <a href="../portfolio/index.html" class="popup-btn-primary"
               >View My Work →</a
@@ -288,7 +566,6 @@
               Close
             </button>
           </div>
-
           <div class="popup-meta">
             <svg viewBox="0 0 24 24">
               <rect x="3" y="11" width="18" height="11" rx="2" />
@@ -298,7 +575,7 @@
           </div>
         </div>
 
-        <!-- ERROR content -->
+        <!-- ERROR -->
         <div id="popupErrorContent" style="display: none">
           <h2 class="popup-title" id="popupErrorTitle">Payment Failed</h2>
           <p class="popup-subtitle" id="popupErrorMsg">
@@ -325,6 +602,7 @@
     <!-- ── SCRIPTS ── -->
     <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
     <script src="../shared/shared.js"></script>
+    <script src="../shared/animation.js"></script>
     <script src="../support/support.js"></script>
   </body>
 </html>

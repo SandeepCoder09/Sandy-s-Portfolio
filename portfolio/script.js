@@ -17,7 +17,7 @@ const sectionObserver = new IntersectionObserver((entries) => {
     if (entry.isIntersecting) {
       const currentId = entry.target.getAttribute("id");
 
-      // 1. Remove the 'active' class from all navigation links
+      // 1. Remove the 'active' class from navigation links
       navItems.forEach((link) => {
         link.classList.remove("active");
       });

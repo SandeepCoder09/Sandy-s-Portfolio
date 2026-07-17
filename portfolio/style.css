@@ -484,7 +484,7 @@ a {
 .skill-bar-track {
   width: 100%;
   height: 6px;
-  background: var(--dark);
+  background: var(--orange);
   border-radius: 3px;
   overflow: hidden;
 }

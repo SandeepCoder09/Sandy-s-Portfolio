@@ -144,7 +144,7 @@ function SectionHeading({ index, kicker, title, accent, note }) {
 
 function ProjectCard({ project, index }) {
   return (
-    <Reveal delay={index * 0.08} className={`project-card ${project.featured ? "project-featured" : ""}`}>
+    <Reveal delay={index * 0.08} className={`project-card project-${project.number} ${project.featured ? "project-featured" : ""}`}>
       <a href={project.href} target={project.href.startsWith("http") ? "_blank" : undefined} rel="noreferrer" className="project-link">
         <div className="project-image-wrap">
           <img src={project.image} alt="" loading="lazy" decoding="async" />

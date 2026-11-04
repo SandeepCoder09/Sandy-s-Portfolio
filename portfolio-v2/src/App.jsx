@@ -1,4 +1,6 @@
 import { useEffect, useRef, useState } from "react";
+import { useLocation } from "react-router-dom";
+import SitePages from "./Pages.jsx";
 import {
   ArrowDownRight, ArrowRight, ArrowUpRight, Asterisk, Code2,
   Command, Github, Instagram, Layers3, Mail, Menu, MoveUpRight,
@@ -7,7 +9,7 @@ import {
 import { projects, skills } from "./data/projects.js";
 
 const navItems = [
-  ["Work", "#work"], ["About", "#about"], ["Services", "#services"], ["Contact", "#contact"],
+  ["Work", "/#work"], ["About", "/#about"], ["Services", "/#services"], ["Blog", "/blog"], ["Contact", "/contact"],
 ];
 
 function Reveal({ children, delay = 0, className = "" }) {
@@ -54,7 +56,7 @@ function Header() {
         {navItems.map(([label, href]) => (
           <a key={label} href={href} onClick={() => setOpen(false)}>{label}</a>
         ))}
-        <a className="nav-cta" href="https://sandycoder.vercel.app/getintouch/index.html">Let's talk <ArrowUpRight size={14} /></a>
+        <a className="nav-cta" href="/contact">Let's talk <ArrowUpRight size={14} /></a>
       </nav>
       <button className="menu-toggle" onClick={() => setOpen(!open)} aria-label={open ? "Close menu" : "Open menu"}>
         {open ? <X size={21} /> : <Menu size={21} />}
@@ -223,7 +225,7 @@ function Contact() {
         <div className="section-kicker"><span>04</span> HAVE A GOOD ONE IN MIND?</div>
         <h2>Let's make<br /><em>something matter.</em></h2>
         <p>Have a project, an idea, or just want to say hello? My inbox is open.</p>
-        <a className="button button-light" href="https://sandycoder.vercel.app/getintouch/index.html">Start a conversation <ArrowUpRight size={17} /></a>
+        <a className="button button-light" href="/contact">Start a conversation <ArrowUpRight size={17} /></a>
         <span className="contact-side-note">GOOD THINGS START WITH A HELLO</span>
       </div>
     </section>
@@ -235,6 +237,7 @@ function Footer() {
     <footer className="footer section-shell">
       <a className="brand footer-brand" href="#top"><span className="brand-mark">S<span>.</span></span><span className="brand-name">SANDY<span>CODER</span></span></a>
       <span className="footer-note">DESIGNED WITH INTENTION. BUILT WITH CURIOSITY.</span>
+      <div className="footer-page-links"><a href="/blog">Blog</a><a href="/contact">Contact</a><a href="/support">Support</a><a href="/legal/privacy-policy">Privacy</a></div>
       <div className="social-links">
         <a href="https://github.com/SandeepCoder09" target="_blank" rel="noreferrer" aria-label="GitHub"><Github size={17} /></a>
         <a href="https://instagram.com/sandycoder09" target="_blank" rel="noreferrer" aria-label="Instagram"><Instagram size={17} /></a>
@@ -246,9 +249,11 @@ function Footer() {
 }
 
 export default function App() {
+  const { pathname } = useLocation();
   useEffect(() => {
-    document.title = "Sandy Coder — Creative Developer";
-  }, []);
+    if (pathname === "/" || pathname === "/index.html") document.title = "Sandy Coder — Creative Developer";
+  }, [pathname]);
+  if (pathname !== "/" && pathname !== "/index.html") return <SitePages />;
   return (
     <>
       <div className="ambient ambient-one" aria-hidden="true" />

@@ -29,7 +29,7 @@ const posts = [
 function PageHeader() {
   const [open, setOpen] = useState(false);
   return <header className="sub-header page-shell">
-    <a className="sub-brand" href="/"><span className="sub-brand-mark">S<span>.</span></span><span>SANDY<span>CODER</span></span></a>
+    <a className="sub-brand" href="/"><span className="sub-brand-mark"><img src="/wolf-logo.png" alt="" /></span><span>SANDY<span>CODER</span></span></a>
     <button className="sub-menu" aria-label={open ? "Close navigation" : "Open navigation"} onClick={() => setOpen(!open)}>{open ? <X/> : <span>☰</span>}</button>
     <nav className={open ? "sub-nav sub-nav-open" : "sub-nav"} aria-label="Main navigation">
       <a href="/" onClick={() => setOpen(false)}>Home</a><a href="/#work" onClick={() => setOpen(false)}>Work</a><a href="/#about" onClick={() => setOpen(false)}>About</a><a href="/#services" onClick={() => setOpen(false)}>Services</a><a href="/blog" onClick={() => setOpen(false)}>Blog</a><a href="/contact" onClick={() => setOpen(false)}>Contact</a><a className="sub-nav-cta" href="/contact" onClick={() => setOpen(false)}>Let&apos;s talk <span>↗</span></a>
@@ -39,7 +39,7 @@ function PageHeader() {
 
 function PageFooter() {
   return <footer className="sub-footer page-shell">
-    <a className="sub-brand" href="/"><span className="sub-brand-mark">S<span>.</span></span><span>SANDY<span>CODER</span></span></a>
+    <a className="sub-brand" href="/"><span className="sub-brand-mark"><img src="/wolf-logo.png" alt="" /></span><span>SANDY<span>CODER</span></span></a>
     <div className="sub-footer-links"><a href="/legal/about">About</a><a href="/legal/services">Services</a><a href="/legal/privacy-policy">Privacy</a><a href="/legal/terms">Terms</a><a href="/legal/refund-policy">Refunds</a></div>
     <div className="sub-footer-bottom"><span>DESIGNED WITH INTENTION. BUILT WITH CURIOSITY.</span><span>© {new Date().getFullYear()} SANDY CODER</span></div>
   </footer>;

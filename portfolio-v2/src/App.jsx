@@ -1,5 +1,4 @@
-import { useEffect, useState } from "react";
-import { motion, useReducedMotion } from "motion/react";
+import { useEffect, useRef, useState } from "react";
 import {
   ArrowDownRight, ArrowRight, ArrowUpRight, Asterisk, Code2,
   Command, Github, Instagram, Layers3, Mail, Menu, MoveUpRight,
@@ -12,18 +11,27 @@ const navItems = [
 ];
 
 function Reveal({ children, delay = 0, className = "" }) {
-  const reduceMotion = useReducedMotion();
-  return (
-    <motion.div
-      className={className}
-      initial={reduceMotion ? false : { opacity: 0, y: 28 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.18 }}
-      transition={{ duration: 0.7, delay, ease: [0.22, 1, 0.36, 1] }}
-    >
-      {children}
-    </motion.div>
-  );
+  const ref = useRef(null);
+  useEffect(() => {
+    const node = ref.current;
+    if (!node) return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches || !("IntersectionObserver" in window)) {
+      node.classList.add("is-visible");
+      return;
+    }
+    node.style.setProperty("--reveal-delay", `${delay}s`);
+    node.classList.add("is-hidden");
+    const observer = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting) {
+        node.classList.remove("is-hidden");
+        node.classList.add("is-visible");
+        observer.disconnect();
+      }
+    }, { threshold: 0.12 });
+    observer.observe(node);
+    return () => observer.disconnect();
+  }, [delay]);
+  return <div ref={ref} className={`reveal ${className}`}>{children}</div>;
 }
 
 function Header() {
@@ -38,7 +46,7 @@ function Header() {
 
   return (
     <header className={`site-header ${scrolled ? "is-scrolled" : ""}`}>
-      <a className="brand" href="#top" aria-label="Sandy Coder home">
+      <a className="brand" href="#top">
         <span className="brand-mark">S<span>.</span></span>
         <span className="brand-name">SANDY<span>CODER</span></span>
       </a>
@@ -78,23 +86,23 @@ function Hero() {
   return (
     <section className="hero section-shell" id="top">
       <div className="hero-copy">
-        <motion.div className="eyebrow" initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }}>
+        <div className="eyebrow hero-enter hero-enter-one">
           <span className="status-dot" /> INDEPENDENT CREATIVE DEVELOPER
-        </motion.div>
-        <motion.h1 initial={{ opacity: 0, y: 32 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.18 }}>
+        </div>
+        <h1 className="hero-enter hero-enter-two">
           I build digital<br />things with <em>feeling.</em>
-        </motion.h1>
-        <motion.p className="hero-description" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.55, duration: 0.8 }}>
+        </h1>
+        <p className="hero-description hero-enter hero-enter-three">
           I'm Sandy — a frontend developer with a designer's eye. I turn ambitious ideas into thoughtful, interactive experiences for the web.
-        </motion.p>
-        <motion.div className="hero-actions" initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.7 }}>
+        </p>
+        <div className="hero-actions hero-enter hero-enter-four">
           <a className="button button-primary" href="#work">Explore selected work <ArrowUpRight size={17} /></a>
           <a className="text-link" href="#about">A little about me <ArrowDownRight size={16} /></a>
-        </motion.div>
+        </div>
       </div>
-      <motion.div className="hero-art" initial={{ opacity: 0, scale: 0.86, rotate: -7 }} animate={{ opacity: 1, scale: 1, rotate: 0 }} transition={{ duration: 1.1, delay: 0.25, ease: [0.16, 1, 0.3, 1] }}>
+      <div className="hero-art hero-enter hero-enter-art">
         <OrbScene />
-      </motion.div>
+      </div>
       <div className="hero-bottom">
         <span>DESIGN MINDED. CODE DRIVEN.</span>
         <a href="#work">SCROLL TO EXPLORE <ArrowDownRight size={14} /></a>
@@ -135,9 +143,9 @@ function SectionHeading({ index, kicker, title, accent, note }) {
 function ProjectCard({ project, index }) {
   return (
     <Reveal delay={index * 0.08} className={`project-card ${project.featured ? "project-featured" : ""}`}>
-      <a href={project.href} target={project.href.startsWith("http") ? "_blank" : undefined} rel="noreferrer" className="project-link" aria-label={`View ${project.name}`}>
+      <a href={project.href} target={project.href.startsWith("http") ? "_blank" : undefined} rel="noreferrer" className="project-link">
         <div className="project-image-wrap">
-          <img src={project.image} alt={`${project.name} project preview`} loading="lazy" />
+          <img src={project.image} alt="" loading="lazy" decoding="async" />
           <span className="project-number">{project.number} / 06</span>
           <span className="project-open"><ArrowUpRight size={20} /></span>
         </div>

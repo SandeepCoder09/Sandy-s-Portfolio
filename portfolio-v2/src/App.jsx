@@ -49,7 +49,7 @@ function Header() {
   return (
     <header className={`site-header ${scrolled ? "is-scrolled" : ""}`}>
       <a className="brand" href="#top">
-        <span className="brand-mark">S<span>.</span></span>
+        <span className="brand-mark"><img src="/wolf-logo.png" alt="" /></span>
         <span className="brand-name">SANDY<span>CODER</span></span>
       </a>
       <nav className={`desktop-nav ${open ? "nav-open" : ""}`} aria-label="Main navigation">
@@ -235,7 +235,7 @@ function Contact() {
 function Footer() {
   return (
     <footer className="footer section-shell">
-      <a className="brand footer-brand" href="#top"><span className="brand-mark">S<span>.</span></span><span className="brand-name">SANDY<span>CODER</span></span></a>
+      <a className="brand footer-brand" href="#top"><span className="brand-mark"><img src="/wolf-logo.png" alt="" /></span><span className="brand-name">SANDY<span>CODER</span></span></a>
       <span className="footer-note">DESIGNED WITH INTENTION. BUILT WITH CURIOSITY.</span>
       <div className="footer-page-links"><a href="/blog">Blog</a><a href="/contact">Contact</a><a href="/support">Support</a><a href="/legal/privacy-policy">Privacy</a></div>
       <div className="social-links">

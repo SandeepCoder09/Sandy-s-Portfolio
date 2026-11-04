@@ -265,3 +265,17 @@ button { font: inherit; }
 /* Keep the SH — The Hunger Point logo visually balanced inside its project card */
 .project-06 .project-image-wrap { background: #fff; }
 .project-06 .project-image-wrap img { object-fit: contain; padding: 12%; }
+
+
+/* Solid mobile navigation panel: no page content bleeding through */
+@media (max-width: 650px) {
+  .site-header { z-index: 1000; }
+  .desktop-nav {
+    z-index: 1001; top: calc(100% + 8px); left: -15px; right: -15px; padding: 10px;
+    background: #160f24; border-color: rgba(226, 210, 255, .18);
+    box-shadow: 0 22px 55px rgba(0,0,0,.58);
+    opacity: 0; visibility: hidden; pointer-events: none; transform: translateY(-8px);
+  }
+  .desktop-nav.nav-open { opacity: 1; visibility: visible; pointer-events: auto; transform: translateY(0); }
+  .desktop-nav > a:not(.nav-cta) { padding: 15px 13px; }
+}

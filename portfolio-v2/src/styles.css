@@ -305,3 +305,36 @@ button { font: inherit; }
   border-radius: 11px;
   background: linear-gradient(155deg, rgba(26,18,40,.98), rgba(16,11,27,.98));
 }
+
+
+/* Mobile project-card text layout: prevent descriptions escaping narrow cards */
+@media (max-width: 650px) {
+  .project-card,
+  .project-link,
+  .project-meta,
+  .project-meta > div {
+    min-width: 0;
+    max-width: 100%;
+  }
+  .project-meta {
+    display: block;
+    padding-top: 13px;
+  }
+  .project-meta > div {
+    width: 100%;
+  }
+  .project-meta h3 {
+    max-width: 100%;
+    overflow-wrap: anywhere;
+    word-break: normal;
+  }
+  .project-meta p {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    margin: 9px 0 0;
+    overflow-wrap: anywhere;
+    word-break: normal;
+    line-height: 1.65;
+  }
+}

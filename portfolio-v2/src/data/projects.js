@@ -1,0 +1,70 @@
+const image = (name) => `https://raw.githubusercontent.com/SandeepCoder09/Sandy-s-Portfolio/master/assets/${name}`;
+
+export const projects = [
+  {
+    number: "01",
+    name: "Arthix Tracker",
+    category: "Productivity · Finance",
+    description: "A focused finance and expense-tracking experience designed to make everyday money decisions clearer.",
+    image: image("crypto.jpg"),
+    tags: ["JavaScript", "UI Design", "Dashboard"],
+    href: "https://arthixtracker.vercel.app/",
+    featured: true,
+  },
+  {
+    number: "02",
+    name: "Binary Language Hub",
+    category: "Developer Tools",
+    description: "A hacker-inspired learning and utility experience built around binary language and interactive tools.",
+    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=85",
+    tags: ["React", "Vite", "CSS"],
+    href: "https://binarylanguagehub.vercel.app/",
+    featured: true,
+  },
+  {
+    number: "03",
+    name: "Mohalla",
+    category: "Community · Web App",
+    description: "A community-focused digital platform connecting people with useful local information and services.",
+    image: image("mohalla.png"),
+    tags: ["Web App", "Responsive", "JavaScript"],
+    href: "https://mohalla-app.onrender.com/",
+    featured: true,
+  },
+  {
+    number: "04",
+    name: "Habit Mover",
+    category: "Productivity",
+    description: "A habit-building interface that makes daily progress feel simple, visible and rewarding.",
+    image: image("habitmover.png"),
+    tags: ["Frontend", "Product Design"],
+    href: "#contact",
+    featured: false,
+  },
+  {
+    number: "05",
+    name: "BudgetMate",
+    category: "Finance",
+    description: "A personal budgeting concept for organizing expenses and keeping financial goals in view.",
+    image: image("BudgeMateLogo.png"),
+    tags: ["JavaScript", "Finance UI"],
+    href: "#contact",
+    featured: false,
+  },
+  {
+    number: "06",
+    name: "SH — The Hunger Point",
+    category: "Food · Business",
+    description: "A food-business web experience with an emphasis on clear presentation and easy discovery.",
+    image: image("sh-thehungerpoint.png"),
+    tags: ["Web Design", "Business"],
+    href: "#contact",
+    featured: false,
+  },
+];
+
+export const skills = [
+  "HTML5", "CSS3", "JavaScript", "React", "Vite", "Node.js",
+  "MongoDB", "Firebase", "Tailwind CSS", "Figma", "Responsive UI",
+  "Performance", "Accessibility", "Git & GitHub",
+];

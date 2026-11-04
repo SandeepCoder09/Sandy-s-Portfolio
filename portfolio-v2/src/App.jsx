@@ -46,7 +46,7 @@ function Header() {
         {navItems.map(([label, href]) => (
           <a key={label} href={href} onClick={() => setOpen(false)}>{label}</a>
         ))}
-        <a className="nav-cta" href="mailto:hello@sandycoder.dev">Let's talk <ArrowUpRight size={14} /></a>
+        <a className="nav-cta" href="https://sandycoder.vercel.app/getintouch/index.html">Let's talk <ArrowUpRight size={14} /></a>
       </nav>
       <button className="menu-toggle" onClick={() => setOpen(!open)} aria-label={open ? "Close menu" : "Open menu"}>
         {open ? <X size={21} /> : <Menu size={21} />}
@@ -215,7 +215,7 @@ function Contact() {
         <div className="section-kicker"><span>04</span> HAVE A GOOD ONE IN MIND?</div>
         <h2>Let's make<br /><em>something matter.</em></h2>
         <p>Have a project, an idea, or just want to say hello? My inbox is open.</p>
-        <a className="button button-light" href="mailto:hello@sandycoder.dev">Start a conversation <ArrowUpRight size={17} /></a>
+        <a className="button button-light" href="https://sandycoder.vercel.app/getintouch/index.html">Start a conversation <ArrowUpRight size={17} /></a>
         <span className="contact-side-note">GOOD THINGS START WITH A HELLO</span>
       </div>
     </section>
@@ -230,7 +230,7 @@ function Footer() {
       <div className="social-links">
         <a href="https://github.com/SandeepCoder09" target="_blank" rel="noreferrer" aria-label="GitHub"><Github size={17} /></a>
         <a href="https://instagram.com/sandycoder09" target="_blank" rel="noreferrer" aria-label="Instagram"><Instagram size={17} /></a>
-        <a href="mailto:hello@sandycoder.dev" aria-label="Email"><Mail size={17} /></a>
+        <a href="https://sandycoder.vercel.app/getintouch/index.html" aria-label="Contact"><Mail size={17} /></a>
       </div>
       <span className="copyright">© {new Date().getFullYear()} SANDY CODER</span>
     </footer>

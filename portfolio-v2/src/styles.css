@@ -260,3 +260,8 @@ button { font: inherit; }
 .footer-page-links a { color:#b9afc8; font:9px var(--mono); transition:color .2s; }
 .footer-page-links a:hover { color:#e7d7ff; }
 @media(max-width:650px) { .footer-page-links { order:4; width:100%; gap:18px; } }
+
+
+/* Keep the SH — The Hunger Point logo visually balanced inside its project card */
+.project-06 .project-image-wrap { background: #fff; }
+.project-06 .project-image-wrap img { object-fit: contain; padding: 12%; }

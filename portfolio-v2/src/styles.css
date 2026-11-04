@@ -251,3 +251,7 @@ button { font: inherit; }
   *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
   .marquee-track { animation: none; }
 }
+.footer-page-links { display:flex; align-items:center; flex-wrap:wrap; gap:13px; }
+.footer-page-links a { color:#b9afc8; font:9px var(--mono); transition:color .2s; }
+.footer-page-links a:hover { color:#e7d7ff; }
+@media(max-width:650px) { .footer-page-links { order:4; width:100%; gap:18px; } }

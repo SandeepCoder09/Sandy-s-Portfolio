@@ -179,7 +179,14 @@ function LegalPage({ page }) {
 export default function SitePages() {
   const { pathname } = useLocation();
   const rawPath = pathname.replace(/\/$/, "") || "/";
-  const aliases = { "/legal/about.html": "/legal/about", "/legal/contact.html": "/legal/contact", "/legal/services.html": "/legal/services", "/legal/privacy-policy.html": "/legal/privacy-policy", "/legal/terms.html": "/legal/terms", "/legal/refund-policy.html": "/legal/refund-policy" };
+  const aliases = {
+    "/legal/about.html": "/legal/about", "/legal/contact.html": "/legal/contact",
+    "/legal/services.html": "/legal/services", "/legal/privacy-policy.html": "/legal/privacy-policy",
+    "/legal/terms.html": "/legal/terms", "/legal/refund-policy.html": "/legal/refund-policy",
+    "/about": "/legal/about", "/services": "/legal/services", "/privacy": "/legal/privacy-policy",
+    "/privacy-policy": "/legal/privacy-policy", "/terms": "/legal/terms", "/refund": "/legal/refund-policy",
+    "/refund-policy": "/legal/refund-policy", "/legal": "/legal/about"
+  };
   const path = aliases[rawPath] || rawPath;
   let page = null;
   if (path === "/contact" || path === "/getintouch" || path === "/getintouch/index.html") page = <ContactPage/>;

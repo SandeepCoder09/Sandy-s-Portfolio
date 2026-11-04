@@ -2,6 +2,16 @@ const image = (name) => `https://raw.githubusercontent.com/SandeepCoder09/Sandy-
 
 export const projects = [
   {
+    number: "07",
+    name: "Sandy Digital Hub",
+    category: "Digital Services · Business",
+    description: "My own digital services business, bringing citizen support, online services and web solutions together in one place.",
+    image: image("webdesign.png"),
+    tags: ["Business Website", "Digital Services", "Web Development"],
+    href: "https://sandydigitalhub.org/",
+    featured: true,
+  },,
+  {
     number: "01",
     name: "Arthix Tracker",
     category: "Productivity · Finance",
@@ -61,16 +71,7 @@ export const projects = [
     href: "#contact",
     featured: false,
   },
-  {
-    number: "07",
-    name: "Sandy Digital Hub",
-    category: "Digital Services · Business",
-    description: "My own digital services business, bringing citizen support, online services and web solutions together in one place.",
-    image: image("webdesign.png"),
-    tags: ["Business Website", "Digital Services", "Web Development"],
-    href: "https://sandydigitalhub.org/",
-    featured: true,
-  },
+
 ];
 
 export const skills = [

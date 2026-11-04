@@ -2,7 +2,7 @@ const image = (name) => `https://raw.githubusercontent.com/SandeepCoder09/Sandy-
 
 export const projects = [
   {
-    number: "07",
+    number: "01",
     name: "Sandy Digital Hub",
     category: "Digital Services · Business",
     description: "My own digital services business, bringing citizen support, online services and web solutions together in one place.",
@@ -10,9 +10,9 @@ export const projects = [
     tags: ["Business Website", "Digital Services", "Web Development"],
     href: "https://sandydigitalhub.org/",
     featured: true,
-  },,
+  },
   {
-    number: "01",
+    number: "02",
     name: "Arthix Tracker",
     category: "Productivity · Finance",
     description: "A focused finance and expense-tracking experience designed to make everyday money decisions clearer.",
@@ -22,7 +22,7 @@ export const projects = [
     featured: true,
   },
   {
-    number: "02",
+    number: "03",
     name: "Binary Language Hub",
     category: "Developer Tools",
     description: "A hacker-inspired learning and utility experience built around binary language and interactive tools.",
@@ -32,7 +32,7 @@ export const projects = [
     featured: true,
   },
   {
-    number: "03",
+    number: "04",
     name: "Mohalla",
     category: "Community · Web App",
     description: "A community-focused digital platform connecting people with useful local information and services.",
@@ -42,7 +42,7 @@ export const projects = [
     featured: true,
   },
   {
-    number: "04",
+    number: "05",
     name: "Habit Mover",
     category: "Productivity",
     description: "A habit-building interface that makes daily progress feel simple, visible and rewarding.",
@@ -52,7 +52,7 @@ export const projects = [
     featured: false,
   },
   {
-    number: "05",
+    number: "06",
     name: "BudgetMate",
     category: "Finance",
     description: "A personal budgeting concept for organizing expenses and keeping financial goals in view.",
@@ -62,7 +62,7 @@ export const projects = [
     featured: false,
   },
   {
-    number: "06",
+    number: "07",
     name: "SH — The Hunger Point",
     category: "Food · Business",
     description: "A food-business web experience with an emphasis on clear presentation and easy discovery.",

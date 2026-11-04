@@ -166,7 +166,7 @@ function ArticlePage() {
     ["Deployment and iteration", "Deployment is not the finish line. Testing on real devices, checking accessibility and reviewing performance help turn a visual concept into a useful website."],
   ];
   return <PageFrame eyebrow="FIELD NOTES / 01" title="How I built my" accent="portfolio." description="A look at the thinking, structure and iterations behind a personal developer website.">
-    <article className="article-layout"><div className="article-main"><div className="article-cover"><div className="article-cover-orb"/><span>DESIGN × DEVELOPMENT</span></div><div className="article-meta">JUNE 15, 2025 <span>·</span> 8 MIN READ <span>·</span> SANDY CODER</div><p className="article-lead">A portfolio is more than a place to put projects. It is a chance to show how you think, what you care about and how you turn ideas into experiences.</p>{sections.map(([title,body],i)=><section className="article-section" key={title}><span>0{i+1} / NOTE</span><h2>{title}</h2><p>{body}</p></section>)}<div className="article-end"><Sparkles/><p>Thanks for reading. More build notes and practical experiments are on the way.</p><a className="page-inline-link" href="/blog">Back to all articles <ArrowRight size={15}/></a></div></div><aside className="article-aside"><span>IN THIS ARTICLE</span>{sections.map(([title],i)=><a href={`#article-${i}`} key={title}>{String(i+1).padStart(2,"0")} · {title}</a>)}</aside></article>
+    <article className="article-layout"><div className="article-main"><div className="article-cover"><div className="article-cover-orb"/><span>DESIGN × DEVELOPMENT</span></div><div className="article-meta">JUNE 15, 2025 <span>·</span> 8 MIN READ <span>·</span> SANDY CODER</div><p className="article-lead">A portfolio is more than a place to put projects. It is a chance to show how you think, what you care about and how you turn ideas into experiences.</p>{sections.map(([title,body],i)=><section className="article-section" id={`article-${i}`} key={title}><span>0{i+1} / NOTE</span><h2>{title}</h2><p>{body}</p></section>)}<div className="article-end"><Sparkles/><p>Thanks for reading. More build notes and practical experiments are on the way.</p><a className="page-inline-link" href="/blog">Back to all articles <ArrowRight size={15}/></a></div></div><aside className="article-aside"><span>IN THIS ARTICLE</span>{sections.map(([title],i)=><a href={`#article-${i}`} key={title}>{String(i+1).padStart(2,"0")} · {title}</a>)}</aside></article>
   </PageFrame>;
 }
 
@@ -178,7 +178,9 @@ function LegalPage({ page }) {
 
 export default function SitePages() {
   const { pathname } = useLocation();
-  const path = pathname.replace(/\/$/, "") || "/";
+  const rawPath = pathname.replace(/\/$/, "") || "/";
+  const aliases = { "/legal/about.html": "/legal/about", "/legal/contact.html": "/legal/contact", "/legal/services.html": "/legal/services", "/legal/privacy-policy.html": "/legal/privacy-policy", "/legal/terms.html": "/legal/terms", "/legal/refund-policy.html": "/legal/refund-policy" };
+  const path = aliases[rawPath] || rawPath;
   let page = null;
   if (path === "/contact" || path === "/getintouch" || path === "/getintouch/index.html") page = <ContactPage/>;
   else if (path === "/support" || path === "/support/index.html") page = <SupportPage/>;

@@ -108,7 +108,7 @@ function Hero() {
       <div className="hero-bottom">
         <span>DESIGN MINDED. CODE DRIVEN.</span>
         <a href="#work">SCROLL TO EXPLORE <ArrowDownRight size={14} /></a>
-        <span className="hero-index">01 / 06</span>
+        <span className="hero-index">01 / 07</span>
       </div>
     </section>
   );
@@ -148,7 +148,7 @@ function ProjectCard({ project, index }) {
       <a href={project.href} target={project.href.startsWith("http") ? "_blank" : undefined} rel="noreferrer" className="project-link">
         <div className="project-image-wrap">
           <img src={project.image} alt="" loading="lazy" decoding="async" />
-          <span className="project-number">{project.number} / 06</span>
+          <span className="project-number">{project.number} / 07</span>
           <span className="project-open"><ArrowUpRight size={20} /></span>
         </div>
         <div className="project-meta">
